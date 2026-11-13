@@ -1,0 +1,4 @@
+algorithm,split,config,HR@10,Recall@10,Precision@10,NDCG@10,MRR,mean_rank,test_users,training_seconds,selected
+ItemKNN,test,"{""neighbors"": 120, ""popularity_weight"": 0.02}",0.6415357766143106,0.6415357766143106,0.6415357766143106,0.369624267041692,0.2862646472201446,12.15479930191972,5730,0.5,True
+LightFM-adapted,test,"{""batch_size"": 4096, ""embedding_dim"": 32, ""epochs"": 10, ""learning_rate"": 0.01, ""loss"": ""BPR""}",0.5640488656195463,0.5640488656195463,0.5640488656195463,0.31168113350806886,0.2348074738912435,14.332460732984293,5730,0.03,True
+ICSRec-inspired,test,"{""batch_size"": 256, ""embedding_dim"": 64, ""epochs"": 6, ""learning_rate"": 0.003, ""loss"": ""BPR + intent InfoNCE"", ""n_intents"": 16}",0.4806282722513089,0.4806282722513089,0.4806282722513089,0.25621306962894236,0.18833326407933734,18.57242582897033,5730,0.2,True

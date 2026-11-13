@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this project or its analysis, cite the MovieLens 1M dataset."
+title: "MovieLens Hybrid Movie Recommender"
+type: software
+license: MIT
+repository-code: "https://github.com/showmaker1014/movielens-movie-recommender"
+date-released: "2026-11-13"
+references:
+  - type: article
+    title: "The MovieLens Datasets: History and Context"
+    authors:
+      - family-names: Harper
+        given-names: F. Maxwell
+      - family-names: Konstan
+        given-names: Joseph A.
+    journal: "ACM Transactions on Interactive Intelligent Systems"
+    volume: 5
+    issue: 4
+    year: 2015
+    doi: "10.1145/2827872"
+

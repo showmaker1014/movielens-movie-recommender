@@ -1,0 +1,35 @@
+{
+  "models": {
+    "ItemKNN": {
+      "neighbors": 120,
+      "popularity_weight": 0.02
+    },
+    "LightFM-adapted": {
+      "batch_size": 4096,
+      "embedding_dim": 32,
+      "epochs": 10,
+      "learning_rate": 0.01,
+      "loss": "BPR"
+    },
+    "ICSRec-inspired": {
+      "batch_size": 256,
+      "embedding_dim": 64,
+      "epochs": 6,
+      "learning_rate": 0.003,
+      "loss": "BPR + intent InfoNCE",
+      "n_intents": 16
+    }
+  },
+  "candidate_generation": {
+    "validation": {
+      "users": 5802,
+      "candidates_per_user": 100,
+      "positive_items": 5802
+    },
+    "test": {
+      "users": 5730,
+      "candidates_per_user": 100,
+      "positive_items": 5730
+    }
+  }
+}

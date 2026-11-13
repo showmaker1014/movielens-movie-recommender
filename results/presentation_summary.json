@@ -1,0 +1,211 @@
+{
+  "dataset": {
+    "shapes": {
+      "users": [
+        6040,
+        5
+      ],
+      "movies": [
+        3883,
+        3
+      ],
+      "ratings": [
+        1000209,
+        4
+      ]
+    },
+    "rating_mean": 3.581564453029317,
+    "split_rows": {
+      "train": 802553,
+      "validation": 100273,
+      "test": 97383
+    },
+    "null_columns": {
+      "users": [],
+      "movies": [],
+      "ratings": []
+    },
+    "rating_counts": {
+      "1": 56174,
+      "2": 107557,
+      "3": 261197,
+      "4": 348971,
+      "5": 226310
+    }
+  },
+  "training": {
+    "models": {
+      "ItemKNN": {
+        "neighbors": 120,
+        "popularity_weight": 0.02
+      },
+      "LightFM-adapted": {
+        "batch_size": 4096,
+        "embedding_dim": 32,
+        "epochs": 10,
+        "learning_rate": 0.01,
+        "loss": "BPR"
+      },
+      "ICSRec-inspired": {
+        "batch_size": 256,
+        "embedding_dim": 64,
+        "epochs": 6,
+        "learning_rate": 0.003,
+        "loss": "BPR + intent InfoNCE",
+        "n_intents": 16
+      }
+    },
+    "candidate_generation": {
+      "validation": {
+        "users": 5802,
+        "candidates_per_user": 100,
+        "positive_items": 5802
+      },
+      "test": {
+        "users": 5730,
+        "candidates_per_user": 100,
+        "positive_items": 5730
+      }
+    }
+  },
+  "final_metrics": [
+    {
+      "algorithm": "ItemKNN",
+      "HR@10": 0.6415357766143106,
+      "NDCG@10": 0.369624267041692,
+      "MRR": 0.2862646472201446,
+      "test_users": 5730
+    },
+    {
+      "algorithm": "LightFM-adapted",
+      "HR@10": 0.5640488656195463,
+      "NDCG@10": 0.31168113350806886,
+      "MRR": 0.2348074738912435,
+      "test_users": 5730
+    },
+    {
+      "algorithm": "ICSRec-inspired",
+      "HR@10": 0.4806282722513089,
+      "NDCG@10": 0.25621306962894236,
+      "MRR": 0.18833326407933734,
+      "test_users": 5730
+    }
+  ],
+  "validation_metrics": [
+    {
+      "algorithm": "ItemKNN",
+      "config": "{\"neighbors\": 30, \"popularity_weight\": 0.02}",
+      "HR@10": 0.6999310582557738,
+      "NDCG@10": 0.42039284826004597,
+      "MRR": 0.3343792233657797
+    },
+    {
+      "algorithm": "ItemKNN",
+      "config": "{\"neighbors\": 60, \"popularity_weight\": 0.02}",
+      "HR@10": 0.7132023440193037,
+      "NDCG@10": 0.42996189095482096,
+      "MRR": 0.3427516100085904
+    },
+    {
+      "algorithm": "ItemKNN",
+      "config": "{\"neighbors\": 120, \"popularity_weight\": 0.02}",
+      "HR@10": 0.7106170286108239,
+      "NDCG@10": 0.4314042965154633,
+      "MRR": 0.3454830846506131
+    },
+    {
+      "algorithm": "LightFM-adapted",
+      "config": "{\"batch_size\": 4096, \"embedding_dim\": 32, \"epochs\": 10, \"learning_rate\": 0.01, \"loss\": \"BPR\"}",
+      "HR@10": 0.6185798000689418,
+      "NDCG@10": 0.35204065292865727,
+      "MRR": 0.27055845548606666
+    },
+    {
+      "algorithm": "LightFM-adapted",
+      "config": "{\"batch_size\": 4096, \"embedding_dim\": 64, \"epochs\": 10, \"learning_rate\": 0.01, \"loss\": \"BPR\"}",
+      "HR@10": 0.6113409169251982,
+      "NDCG@10": 0.34491071693362313,
+      "MRR": 0.26344726503723404
+    },
+    {
+      "algorithm": "ICSRec-inspired",
+      "config": "{\"batch_size\": 256, \"embedding_dim\": 32, \"epochs\": 6, \"learning_rate\": 0.003, \"loss\": \"BPR + intent InfoNCE\", \"n_intents\": 8}",
+      "HR@10": 0.5079283005860048,
+      "NDCG@10": 0.27302101143893026,
+      "MRR": 0.2017799691403621
+    },
+    {
+      "algorithm": "ICSRec-inspired",
+      "config": "{\"batch_size\": 256, \"embedding_dim\": 64, \"epochs\": 6, \"learning_rate\": 0.003, \"loss\": \"BPR + intent InfoNCE\", \"n_intents\": 16}",
+      "HR@10": 0.5058600482592209,
+      "NDCG@10": 0.27445242512985296,
+      "MRR": 0.20418903169678765
+    }
+  ],
+  "sample_user": 521,
+  "sample_recommendations": [
+    {
+      "algorithm": "ICSRec-inspired",
+      "rank": 1,
+      "title": "Breakfast Club, The (1985)",
+      "genres": "Comedy|Drama",
+      "release_year": 1985
+    },
+    {
+      "algorithm": "ICSRec-inspired",
+      "rank": 2,
+      "title": "Get Shorty (1995)",
+      "genres": "Action|Comedy|Drama",
+      "release_year": 1995
+    },
+    {
+      "algorithm": "ICSRec-inspired",
+      "rank": 3,
+      "title": "Taxi Driver (1976)",
+      "genres": "Drama|Thriller",
+      "release_year": 1976
+    },
+    {
+      "algorithm": "ItemKNN",
+      "rank": 1,
+      "title": "Deliverance (1972)",
+      "genres": "Adventure|Thriller",
+      "release_year": 1972
+    },
+    {
+      "algorithm": "ItemKNN",
+      "rank": 2,
+      "title": "Taxi Driver (1976)",
+      "genres": "Drama|Thriller",
+      "release_year": 1976
+    },
+    {
+      "algorithm": "ItemKNN",
+      "rank": 3,
+      "title": "Boogie Nights (1997)",
+      "genres": "Drama",
+      "release_year": 1997
+    },
+    {
+      "algorithm": "LightFM-adapted",
+      "rank": 1,
+      "title": "Atlantic City (1980)",
+      "genres": "Crime|Drama|Romance",
+      "release_year": 1980
+    },
+    {
+      "algorithm": "LightFM-adapted",
+      "rank": 2,
+      "title": "Dangerous Liaisons (1988)",
+      "genres": "Drama|Romance",
+      "release_year": 1988
+    },
+    {
+      "algorithm": "LightFM-adapted",
+      "rank": 3,
+      "title": "Taxi Driver (1976)",
+      "genres": "Drama|Thriller",
+      "release_year": 1976
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# Downloaded raw data is intentionally excluded.
+data/raw/*
+!data/raw/README.md
+
+# Rebuildable intermediate data and large model checkpoints.
+data/processed/*
+!data/processed/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+
+# Python and editor state.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.idea/
+.vscode/
+.DS_Store
+
+# Streamlit runtime.
+.streamlit/secrets.toml
+
+# Private deck authoring and validation workspace.
+.build/
+.codex-finalizer/
+.chart-data-*/
+
+
