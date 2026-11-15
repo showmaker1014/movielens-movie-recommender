@@ -177,17 +177,17 @@ def save_training_curves(
     if icsrec_history:
         axes[1].plot(
             [row["epoch"] for row in icsrec_history],
-            [row["bpr_loss"] for row in icsrec_history],
+            [row["rec_loss"] for row in icsrec_history],
             marker="o",
-            label="BPR",
+            label="Recommendation CE",
         )
         axes[1].plot(
             [row["epoch"] for row in icsrec_history],
-            [row["intent_loss"] for row in icsrec_history],
+            [row["cicl_loss"] + row["ficl_loss"] for row in icsrec_history],
             marker="x",
-            label="Intent InfoNCE",
+            label="CICL + FICL",
         )
-    axes[1].set_title("ICSRec-inspired losses")
+    axes[1].set_title("ICSRec losses")
     axes[1].set_xlabel("Epoch")
     axes[1].set_ylabel("Loss")
     axes[1].legend(frameon=False)

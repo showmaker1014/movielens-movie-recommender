@@ -7,6 +7,8 @@ import json
 import pickle
 import sys
 import time
+import platform
+from dataclasses import asdict
 from pathlib import Path
 
 import numpy as np
@@ -210,7 +212,7 @@ def main() -> None:
         "item_feature_names": item_feature_names,
         "dataset_summary": summary,
         "software": {
-            "python": "3.12",
+            "python": platform.python_version(),
             "numpy": np.__version__,
             "pandas": pd.__version__,
             "torch": torch.__version__,
@@ -221,7 +223,7 @@ def main() -> None:
 
     metric_rows: list[dict] = []
     hyperparameter_rows: list[dict] = []
-    training_info: dict = {"models": {}, "candidate_generation": {}}
+    training_info: dict = {"models": {}, "candidate_generation": {}, "software": metadata["software"], "seed": SEED, "quick": args.quick, "pretrained_checkpoints": False}
     for name, data in candidates.items():
         training_info["candidate_generation"][name] = {
             "users": int(len(data["user_ids"])),
@@ -308,6 +310,7 @@ def main() -> None:
     epochs = 3 if args.quick else 10
     for dimension in lightfm_configs:
         started = time.perf_counter()
+        torch.manual_seed(SEED)
         model = LightFMAdapted(
             n_users=len(user_ids),
             n_items=len(movie_ids),
@@ -346,7 +349,7 @@ def main() -> None:
             "loss": "BPR",
         }
         row = evaluate_scores(
-            "LightFM-adapted",
+            "LightFM-BPR",
             "validation",
             validation_scores,
             candidates["validation"]["labels"],
@@ -358,7 +361,7 @@ def main() -> None:
         lightfm_models[dimension] = model
         lightfm_losses[dimension] = losses
         print(f"dim={dimension}: val NDCG@10={row['NDCG@10']:.4f}")
-    best_lfm = choose_best(metric_rows, "LightFM-adapted")
+    best_lfm = choose_best(metric_rows, "LightFM-BPR")
     best_lfm_dim = int(json.loads(best_lfm["config"])["embedding_dim"])
     mark_selected(metric_rows, best_lfm)
     best_lfm_model = lightfm_models[best_lfm_dim]
@@ -372,7 +375,7 @@ def main() -> None:
     )
     metric_rows.append(
         evaluate_scores(
-            "LightFM-adapted",
+            "LightFM-BPR",
             "test",
             test_scores,
             candidates["test"]["labels"],
@@ -381,7 +384,7 @@ def main() -> None:
             selected=True,
         )
     )
-    training_info["models"]["LightFM-adapted"] = json.loads(best_lfm["config"])
+    training_info["models"]["LightFM-BPR"] = json.loads(best_lfm["config"])
     torch.save(
         {
             "state_dict": best_lfm_model.state_dict(),
@@ -394,13 +397,13 @@ def main() -> None:
         artifacts / "lightfm_adapted.pt",
     )
 
-    # 3) Recent algorithm: ICSRec-inspired latent-intent sequence model.
-    print("\n=== ICSRec-inspired sequential recommender ===")
+    # 3) Recent algorithm: ICSRec (GRU) latent-intent sequence model.
+    print("\n=== ICSRec (GRU) sequential recommender ===")
     sequences = sequences_from_frame(
         train_positive,
         user_ids,
         movie_to_idx,
-        max_length=50,
+        max_length=None,
     )
     ics_configs = [(32, 8), (64, 16)] if not args.quick else [(32, 8)]
     ics_models: dict[tuple[int, int], ICSRecInspired] = {}
@@ -413,10 +416,13 @@ def main() -> None:
             hidden_dim=embedding_dim,
             n_intents=n_intents,
             epochs=ics_epochs,
+            max_examples_per_epoch=4096 if args.quick else 30000,
+            cluster_sample_size=4096 if args.quick else 10000,
             batch_size=256,
             learning_rate=0.003,
             seed=SEED,
         )
+        torch.manual_seed(SEED)
         model = ICSRecInspired(
             n_items=len(movie_ids),
             embedding_dim=embedding_dim,
@@ -437,10 +443,15 @@ def main() -> None:
             "epochs": ics_epochs,
             "batch_size": 256,
             "learning_rate": 0.003,
-            "loss": "BPR + intent InfoNCE",
+            "loss": "CE + CICL + FICL",
+            "max_examples_per_epoch": config.max_examples_per_epoch,
+            "cluster_sample_size": config.cluster_sample_size,
+            "seed": SEED,
+            "max_length": 50,
+            "pretrained": False,
         }
         row = evaluate_scores(
-            "ICSRec-inspired",
+            "ICSRec (GRU)",
             "validation",
             validation_scores,
             candidates["validation"]["labels"],
@@ -455,7 +466,7 @@ def main() -> None:
             f"dim={embedding_dim}, intents={n_intents}: "
             f"val NDCG@10={row['NDCG@10']:.4f}"
         )
-    best_ics = choose_best(metric_rows, "ICSRec-inspired")
+    best_ics = choose_best(metric_rows, "ICSRec (GRU)")
     best_ics_config = json.loads(best_ics["config"])
     best_ics_key = (
         int(best_ics_config["embedding_dim"]),
@@ -472,7 +483,7 @@ def main() -> None:
     )
     metric_rows.append(
         evaluate_scores(
-            "ICSRec-inspired",
+            "ICSRec (GRU)",
             "test",
             test_scores,
             candidates["test"]["labels"],
@@ -481,7 +492,7 @@ def main() -> None:
             selected=True,
         )
     )
-    training_info["models"]["ICSRec-inspired"] = best_ics_config
+    training_info["models"]["ICSRec (GRU)"] = best_ics_config
     torch.save(
         {
             "state_dict": best_ics_model.state_dict(),
@@ -528,8 +539,8 @@ def main() -> None:
     )
     score_by_algorithm = {
         "ItemKNN": item_knn_scores,
-        "LightFM-adapted": lightfm_scores,
-        "ICSRec-inspired": ics_scores,
+        "LightFM-BPR": lightfm_scores,
+        "ICSRec (GRU)": ics_scores,
     }
     sample_recommendations(
         users,
@@ -540,6 +551,7 @@ def main() -> None:
         top_k=10,
     ).to_csv(results_dir / "sample_user_recommendations.csv", index=False)
 
+    (results_dir / "icsrec_training_history.json").write_text(json.dumps(ics_histories[best_ics_key], indent=2), encoding="utf-8")
     best_ics_history = ics_histories[best_ics_key]
     make_result_figures(metrics_frame, figures_dir)
     save_training_curves(
