@@ -60,3 +60,7 @@ Add core-method/difference mapping, a runbook, course checklist, five-minute scr
 ## Step 13 — Independently validate a clean environment
 
 Install all direct dependencies in a new Windows/Python 3.11 venv without system packages. pip check passes; 30 tests pass. Recompute saved-model metrics/examples, run live AppTest including empty filters, and train all three models on isolated synthetic data without replacing MovieLens results. Record all resolved packages and validation evidence. Full clean-environment optimization was not rerun.
+
+## Step 14 — Respect custom preprocessing paths
+
+Downloaded archives now extract the expected dataset files directly into --raw-dir. Reprocessing retains the cached archive checksum. Required members are checked before writes and unrelated ZIP paths are ignored. Add custom-path/rerun and incomplete-archive regression tests.

@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import shutil
 import sys
 import zipfile
 from pathlib import Path
@@ -52,6 +53,22 @@ def downloadable_archive(raw_dir: Path) -> Path:
     return archive
 
 
+def extract_movielens_archive(archive: Path, raw_dir: Path) -> None:
+    """Extract only the expected dataset files into the requested directory."""
+    required = ["ratings.dat", "movies.dat", "users.dat"]
+    with zipfile.ZipFile(archive) as zipped:
+        members = set(zipped.namelist())
+        missing = [name for name in required if "ml-1m/" + name not in members]
+        if missing:
+            raise ValueError(f"MovieLens archive is missing required files: {missing}")
+        raw_dir.mkdir(parents=True, exist_ok=True)
+        for name in [*required, "README"]:
+            member = "ml-1m/" + name
+            if member in members:
+                with zipped.open(member) as source, (raw_dir / name).open("wb") as target:
+                    shutil.copyfileobj(source, target)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -79,7 +96,8 @@ def main() -> None:
     raw_dir = args.raw_dir.resolve()
     processed_dir = args.processed_dir.resolve()
     required = [raw_dir / "ratings.dat", raw_dir / "movies.dat", raw_dir / "users.dat"]
-    archive_hash = None
+    cached_archive = PROJECT_ROOT / "data" / "raw" / "ml-1m.zip"
+    archive_hash = sha256(cached_archive) if cached_archive.exists() else None
     if not all(path.exists() for path in required):
         if not args.download:
             raise FileNotFoundError(
@@ -88,8 +106,7 @@ def main() -> None:
             )
         archive = downloadable_archive(PROJECT_ROOT / "data" / "raw")
         archive_hash = sha256(archive)
-        with zipfile.ZipFile(archive) as zipped:
-            zipped.extractall(PROJECT_ROOT / "data" / "raw")
+        extract_movielens_archive(archive, raw_dir)
 
     users, movies, ratings = load_movielens(raw_dir)
     movies_prepared, genre_columns = prepare_movies(movies)
