@@ -24,3 +24,7 @@ Complete metadata feature biases, refresh reproducible negative samples per epoc
 ## Step 4 — Restore ICSRec core objectives
 
 Implement sliding subsequences, same-target CICL pairs with false-negative masking, refreshed KMeans-centroid FICL, and full-catalog CE. Retain all training history before per-prefix windowing. GRU/CPU KMeans and explicit 30000-prefix/10000-clustering CPU caps are disclosed adaptations; no pretrained checkpoint. Six mechanism tests and the complete 25-test suite pass.
+
+## Step 5 — Robust recommendation interface
+
+Preserve columns for empty candidates, explain fewer-than-five results, use actual genre labels, check all required inputs, and show corrected metric definitions. Full-history exclusion is retained.

@@ -19,7 +19,7 @@ from src.models.lightfm_adapted import LightFMAdapted
 
 
 ROOT = Path(__file__).resolve().parent
-ALGORITHMS = ["ItemKNN", "LightFM-adapted", "ICSRec-inspired"]
+ALGORITHMS = ["ItemKNN", "LightFM-BPR", "ICSRec (GRU)"]
 AGE_GROUPS = {
     1: "Under 18",
     18: "18-24",
@@ -39,11 +39,16 @@ def load_bundle() -> dict:
         ROOT / "artifacts" / "item_knn.npz",
         ROOT / "artifacts" / "lightfm_adapted.pt",
         ROOT / "artifacts" / "icsrec_inspired.pt",
+        ROOT / "data" / "processed" / "users.csv",
+        ROOT / "data" / "processed" / "movies.csv",
+        ROOT / "data" / "processed" / "ratings_split.csv.gz",
+        ROOT / "data" / "processed" / "dataset_comparison.csv",
+        ROOT / "results" / "metrics.csv",
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
     if missing:
         raise FileNotFoundError(
-            "Missing trained artifacts: "
+            "Missing project files: "
             + ", ".join(missing)
             + ". Run `python scripts/prepare_data.py --download` and "
             "`python scripts/train_models.py` first."
@@ -145,7 +150,7 @@ def user_index_for(user_id: int, bundle: dict) -> int:
 def score_all(algorithm: str, user_index: int, bundle: dict) -> np.ndarray:
     if algorithm == "ItemKNN":
         return bundle["item_knn"].score_users(np.asarray([user_index]))[0]
-    if algorithm == "LightFM-adapted":
+    if algorithm == "LightFM-BPR":
         user_t = torch.tensor([user_index], dtype=torch.long)
         user_features = torch.as_tensor(bundle["user_features"], dtype=torch.float32)
         item_features = torch.as_tensor(bundle["item_features"], dtype=torch.float32)
@@ -156,11 +161,35 @@ def score_all(algorithm: str, user_index: int, bundle: dict) -> np.ndarray:
                 .cpu()
                 .numpy()
             )
+    if algorithm != "ICSRec (GRU)":
+        raise ValueError(f"Unknown recommendation algorithm: {algorithm}")
     return ics_all_item_scores(
         bundle["icsrec"],
         bundle["sequences"],
         np.asarray([user_index]),
     )[0]
+
+
+def genre_options(movies: pd.DataFrame) -> list[str]:
+    """Read actual genre labels, independent of CSV integer dtypes."""
+    genres = movies["genres"].dropna().str.split("|", regex=False).explode()
+    return ["All genres", *sorted(set(genres) - {""})]
+
+
+def recommendation_notice(result_count: int, requested_count: int) -> str | None:
+    if result_count == 0:
+        return "No unseen movies satisfy the filters. Try another genre or an earlier year."
+    if result_count < 5:
+        return (
+            f"Only {result_count} unseen movies satisfy the filters. "
+            "Choose another genre or an earlier year to see at least five."
+        )
+    if result_count < requested_count:
+        return (
+            f"Showing all {result_count} matching unseen movies. "
+            "Broaden the filters for more recommendations."
+        )
+    return None
 
 
 def recommendations(
@@ -185,13 +214,15 @@ def recommendations(
     mask = ~movies["movie_id"].isin(observed).to_numpy()
     mask &= movies["release_year"].to_numpy() >= minimum_year
     if genre != "All genres":
-        mask &= movies[genre].to_numpy() == 1
+        mask &= movies["genres"].fillna("").str.split("|", regex=False).map(
+            lambda genres: genre in genres
+        ).to_numpy()
     candidate_idx = np.flatnonzero(mask)
-    if len(candidate_idx) == 0:
-        return pd.DataFrame(), scores
     candidate_scores = scores[candidate_idx]
-    order = candidate_idx[np.argsort(-candidate_scores)[:top_n]]
-    result = movies.loc[order, ["movie_id", "title", "genres", "release_year"]].copy()
+    # Break score ties by movie ID, independently of relevance labels.
+    candidate_ids = movies.iloc[candidate_idx]["movie_id"].to_numpy()
+    order = candidate_idx[np.lexsort((candidate_ids, -candidate_scores))[:top_n]]
+    result = movies.iloc[order][["movie_id", "title", "genres", "release_year"]].copy()
     result.insert(0, "rank", np.arange(1, len(result) + 1))
     result.insert(len(result.columns), "model_score", scores[order])
     result = result.reset_index(drop=True)
@@ -214,6 +245,9 @@ def history_for(user_id: int, bundle: dict) -> pd.DataFrame:
 
 def metric_cards(metrics: pd.DataFrame) -> None:
     test = metrics[(metrics["split"] == "test") & (metrics["selected"] == True)]
+    if test.empty:
+        st.info("No selected test results are available. Train and evaluate the models first.")
+        return
     best = test.loc[test["NDCG@10"].idxmax()]
     columns = st.columns(3)
     columns[0].metric("Best algorithm", best["algorithm"])
@@ -274,6 +308,9 @@ def main() -> None:
         st.stop()
 
     metrics = pd.read_csv(ROOT / "results" / "metrics.csv")
+    if "MRR@10" not in metrics.columns:
+        st.error("The saved metrics use an older format. Run python scripts/train_models.py again.")
+        st.stop()
     metric_cards(metrics)
     users = bundle["users"]
     movies = bundle["movies"]
@@ -289,15 +326,14 @@ def main() -> None:
         top_n = st.slider("Number of movies", 5, 20, 10)
         genre = st.selectbox(
             "Genre filter",
-            ["All genres"]
-            + [c for c in movies.columns if movies[c].dtype == np.int64 and c not in {"movie_id", "release_year"}],
+            genre_options(movies),
         )
         minimum_year = st.slider(
             "Released on or after",
             min_value=int(movies["release_year"].min()),
             max_value=int(movies["release_year"].max()),
-            value=1980,
-            step=5,
+            value=max(int(movies["release_year"].min()), min(1980, int(movies["release_year"].max()))),
+            step=1,
         )
         st.caption(f"Random seed: {bundle['metadata']['seed']} · Positive threshold: 4★")
 
@@ -321,9 +357,10 @@ def main() -> None:
                 f"{selected_user['gender']} · {AGE_GROUPS.get(int(selected_user['age']), 'Unknown age group')} · "
                 f"{algorithm} · movies already observed are excluded"
             )
-            if rec.empty:
-                st.warning("No unseen movies satisfy the filters. Try another genre or year.")
-            else:
+            notice = recommendation_notice(len(rec), top_n)
+            if notice:
+                st.warning(notice)
+            if not rec.empty:
                 st.dataframe(
                     rec[["rank", "title", "genres", "release_year", "model_score"]],
                     hide_index=True,
@@ -389,11 +426,15 @@ def main() -> None:
             )
             with column:
                 st.markdown(f"**{name}**")
-                st.dataframe(
-                    rec.head(5)[["title", "genres", "release_year"]],
-                    hide_index=True,
-                    width="stretch",
-                )
+                notice = recommendation_notice(len(rec.head(5)), 5)
+                if notice:
+                    st.warning(notice)
+                if not rec.empty:
+                    st.dataframe(
+                        rec.head(5)[["title", "genres", "release_year"]],
+                        hide_index=True,
+                        width="stretch",
+                    )
 
     with tab_metrics:
         test = metrics[(metrics["split"] == "test") & (metrics["selected"] == True)]
@@ -401,18 +442,19 @@ def main() -> None:
         with left:
             st.subheader("Held-out test metrics")
             st.dataframe(
-                test[["algorithm", "HR@10", "NDCG@10", "MRR", "test_users"]],
+                test[["algorithm", "HR@10", "NDCG@10", "MRR@10", "test_users"]],
                 hide_index=True,
                 width="stretch",
                 column_config={
                     "HR@10": st.column_config.NumberColumn(format="%.4f"),
                     "NDCG@10": st.column_config.NumberColumn(format="%.4f"),
-                    "MRR": st.column_config.NumberColumn(format="%.4f"),
+                    "MRR@10": st.column_config.NumberColumn(format="%.4f"),
                 },
             )
             st.info(
-                "There is one held-out relevant item per user, so Precision@10 and "
-                "Recall@10 coincide with HR@10. NDCG and MRR capture ranking position."
+                "Each user has one held-out relevant item among 100 candidates. "
+                "Recall@10 equals HR@10; Precision@10 equals HR@10 / 10. "
+                "NDCG@10 and MRR@10 reward higher ranks within the first ten results."
             )
         with right:
             figure = ROOT / "figures" / "model_comparison.png"
@@ -421,7 +463,7 @@ def main() -> None:
         st.subheader("Validation selection")
         validation = metrics[metrics["split"] == "validation"]
         st.dataframe(
-            validation[["algorithm", "config", "HR@10", "NDCG@10", "MRR"]],
+            validation[["algorithm", "config", "HR@10", "NDCG@10", "MRR@10"]],
             hide_index=True,
             width="stretch",
         )
