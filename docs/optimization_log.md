@@ -40,3 +40,8 @@ Pin the CPU NumPy/PyTorch/PyArrow compatibility range. Replace unsupported Strea
 ## Step 8 — Re-run MovieLens and refresh deliverables
 
 Rebuilt official MovieLens-1M statistics (SHA256 a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20), trained all configurations and selected by validation NDCG@10. Test NDCG@10: ItemKNN 0.369578, LightFM-BPR 0.331063, ICSRec 0.301354. Re-exported 600 full-catalog examples; all 60 user/model groups contain 10 unseen items, verified against complete rating history. Updated report, column-evidence appendix, figures and six-slide deck. Deck package/geometry validators passed with zero findings; the wrapper could not spawn its child process, so both validators were executed directly. PDF pages and slide previews visually checked. GitHub push is pending repository write permission for the logged-in account.
+
+## Step 9 — Preserve binary deliverables in Git
+
+Declare PDF, PPTX and image assets binary so Windows autocrlf cannot alter their bytes or PDF offsets. Verify committed PDF bytes match the rendered working file.
+
