@@ -6,23 +6,19 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from app import ALGORITHMS, load_bundle, recommendations
+from app import ALGORITHMS, load_bundle, score_all, user_index_for
+from src.recommendation import example_user_ids, recommendation_examples
 
 
 def main():
     bundle = load_bundle()
-    user_ids = bundle["users"]["user_id"].to_numpy()
-    chosen = np.sort(np.random.default_rng(42).choice(user_ids, min(20, len(user_ids)), replace=False))
-    frames = []
-    for uid in chosen:
-        seen = set(bundle["ratings"].loc[bundle["ratings"]["user_id"] == uid, "movie_id"])
-        for algorithm in ALGORITHMS:
-            rec, _ = recommendations(int(uid), algorithm, 10, "All genres", 0, bundle)
-            assert len(rec) >= 5 and not seen.intersection(rec.movie_id)
-            rec.insert(0, "user_id", int(uid))
-            rec.insert(1, "algorithm", algorithm)
-            frames.append(rec)
-    pd.concat(frames, ignore_index=True).to_csv(ROOT / "results/sample_user_recommendations.csv", index=False)
+    chosen = example_user_ids(bundle["users"]["user_id"].to_numpy())
+    scores = {algorithm: np.stack([score_all(algorithm, user_index_for(int(uid), bundle), bundle) for uid in chosen]) for algorithm in ALGORITHMS}
+    observed = bundle["ratings"].groupby("user_id")["movie_id"].agg(set).to_dict()
+    result = recommendation_examples(bundle["users"], bundle["movies"], chosen, scores, observed)
+    for row in result.itertuples():
+        assert row.movie_id not in observed[row.user_id]
+    result.to_csv(ROOT / "results/sample_user_recommendations.csv", index=False)
 
 
 if __name__ == "__main__":

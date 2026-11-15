@@ -13,6 +13,7 @@ import torch
 from scipy import sparse
 
 from src.data import POSITIVE_THRESHOLD, sequences_from_frame
+from src.recommendation import rank_unseen
 from src.models.icsrec import ICSRecInspired, all_item_scores as ics_all_item_scores
 from src.models.item_knn import ItemKNNRecommender, ItemKNNResult
 from src.models.lightfm_adapted import LightFMAdapted
@@ -211,21 +212,7 @@ def recommendations(
         (ratings["user_id"] == user_id) & (ratings["split"] == "train")
     ]
     train_seen = user_train["movie_id"].astype(int).tolist()
-    mask = ~movies["movie_id"].isin(observed).to_numpy()
-    mask &= movies["release_year"].to_numpy() >= minimum_year
-    if genre != "All genres":
-        mask &= movies["genres"].fillna("").str.split("|", regex=False).map(
-            lambda genres: genre in genres
-        ).to_numpy()
-    candidate_idx = np.flatnonzero(mask)
-    candidate_scores = scores[candidate_idx]
-    # Break score ties by movie ID, independently of relevance labels.
-    candidate_ids = movies.iloc[candidate_idx]["movie_id"].to_numpy()
-    order = candidate_idx[np.lexsort((candidate_ids, -candidate_scores))[:top_n]]
-    result = movies.iloc[order][["movie_id", "title", "genres", "release_year"]].copy()
-    result.insert(0, "rank", np.arange(1, len(result) + 1))
-    result.insert(len(result.columns), "model_score", scores[order])
-    result = result.reset_index(drop=True)
+    result = rank_unseen(movies, scores, observed, top_n, genre, minimum_year)
     result.attrs["train_seen"] = train_seen
     return result, scores
 

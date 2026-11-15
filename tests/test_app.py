@@ -1,5 +1,6 @@
 """Filter regression checks without starting a Streamlit server."""
 import ast
+from src.recommendation import rank_unseen
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -9,7 +10,7 @@ def test_empty_filters_keep_schema_and_all_observed_ratings_are_excluded():
     tree = ast.parse((Path(__file__).resolve().parents[1] / "app.py").read_text(encoding="utf-8"))
     names = {"recommendations", "recommendation_notice", "genre_options"}
     nodes = [n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name in names]
-    ns = {"np": np, "pd": pd, "user_index_for": lambda uid,b: 0,
+    ns = {"rank_unseen": rank_unseen, "np": np, "pd": pd, "user_index_for": lambda uid,b: 0,
           "score_all": lambda a,u,b: np.arange(len(b["movies"]), dtype=float)}
     exec(compile(ast.Module(body=nodes, type_ignores=[]), "app.py", "exec"), ns)
     movies = pd.DataFrame({"movie_id": [1,2,3], "title": ["A","B","C"],

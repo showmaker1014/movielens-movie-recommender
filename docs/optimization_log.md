@@ -48,3 +48,7 @@ Declare PDF, PPTX and image assets binary so Windows autocrlf cannot alter their
 ## Step 10 — Correct report wording and metadata generation
 
 Escape Markdown pipes/newlines, correct duration locations, remove unsupported cold-start/drift claims and distinguish training positives from low-rated negative candidates. Make selected training durations part of regenerated metadata. Add a Markdown column regression test.
+
+## Step 11 — Unify product examples with the interface
+
+Use one full-history filter, deterministic movie-ID tie rule and sampled user set in training, re-export and UI. Exported profiles and score fields now have the same schema. Add ranking/export parity and user-selection regression checks.
