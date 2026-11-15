@@ -45,10 +45,13 @@ def markdown_table(frame: pd.DataFrame, floatfmt: str = ".4f") -> str:
     for column in display.columns:
         if pd.api.types.is_float_dtype(display[column]):
             display[column] = display[column].map(lambda value: f"{value:{floatfmt}}")
-    headers = "| " + " | ".join(display.columns) + " |"
+    def cell(value: object) -> str:
+        return str(value).replace("\\", "\\\\").replace("|", "\\|").replace("\r\n", "<br>").replace("\n", "<br>")
+
+    headers = "| " + " | ".join(cell(column) for column in display.columns) + " |"
     divider = "| " + " | ".join(["---"] * len(display.columns)) + " |"
     rows = [
-        "| " + " | ".join(str(value) for value in row) + " |"
+        "| " + " | ".join(cell(value) for value in row) + " |"
         for row in display.itertuples(index=False, name=None)
     ]
     return "\n".join([headers, divider, *rows])
@@ -280,9 +283,9 @@ def build_markdown(
         "",
         "ItemKNN is transparent and learns local co-consumption patterns, but its dense "
         "movie-to-movie neighborhoods can over-reward mainstream films with many co-raters. "
-        "The LightFM-style model uses genre and user metadata, which helps generalize when "
-        "direct interaction data is sparse. The intent model conditions on sequence order; "
-        "it can capture changing preferences, but its small CPU budget and short history "
+        "The LightFM-style model shares genre and user metadata representations, which may help when "
+        "direct interaction data is sparse; this has not been measured in a cold-start subgroup experiment. The intent model conditions on sequence order; "
+        "its ability to capture preference drift needs a temporal ablation, and its CPU budget and short window "
         "limit temporal depth.",
         "",
         "Concrete error modes are:",
@@ -295,12 +298,12 @@ def build_markdown(
         "neighbors but can still receive metadata scores.",
         "- **Taste drift:** one static user representation cannot fully separate genres "
         "watched in different periods.",
-        "- **Ratings below 4:** the current implicit formulation discards future low "
-        "ratings during fitting. A future version should model graded negative feedback.",
+        "- **Ratings below 4:** the current implicit formulation excludes training ratings below 4 from positive interactions. Held-out low "
+        "ratings are not used for fitting. Training negatives exclude training positives, not all low-rated items. A future version should model graded feedback.",
         "",
         "## 8. Recommendation examples",
         "",
-        "The following is a sample from `results/sample_user_recommendations.csv`. The full "
+        "These full-catalog examples exclude every movie in each user's complete observed history. The following is a sample from `results/sample_user_recommendations.csv`. The full "
         "file contains 20 users and top-10 recommendations from all three algorithms.",
         "",
         markdown_table(
@@ -664,7 +667,7 @@ def build_pdf(
 
     h1("8. Recommendation examples")
     body(
-        "The table below shows representative outputs from the exported top-10 sample. The "
+        "These product examples rank the full catalog and exclude all movies in the complete observed history. The table below shows representative top-10 outputs. The "
         "full file contains 20 users and all three algorithms."
     )
     sample_rows = [["User", "Model", "#", "Movie", "Genres", "Year"]]

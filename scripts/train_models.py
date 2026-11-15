@@ -517,6 +517,7 @@ def main() -> None:
         (metrics_frame["split"] == "test") & (metrics_frame["selected"] == True)
     ]
     selected_test.to_csv(results_dir / "final_test_metrics.csv", index=False)
+    training_info["training_seconds"] = dict(zip(selected_test["algorithm"], selected_test["training_seconds"]))
     (results_dir / "training_info.json").write_text(
         json.dumps(training_info, indent=2),
         encoding="utf-8",

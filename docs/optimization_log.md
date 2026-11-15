@@ -45,3 +45,6 @@ Rebuilt official MovieLens-1M statistics (SHA256 a6898adb50b9ca05aa231689da44c21
 
 Declare PDF, PPTX and image assets binary so Windows autocrlf cannot alter their bytes or PDF offsets. Verify committed PDF bytes match the rendered working file.
 
+## Step 10 — Correct report wording and metadata generation
+
+Escape Markdown pipes/newlines, correct duration locations, remove unsupported cold-start/drift claims and distinguish training positives from low-rated negative candidates. Make selected training durations part of regenerated metadata. Add a Markdown column regression test.

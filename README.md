@@ -89,8 +89,7 @@ from Git; only code, reports, figures, and result tables are committed.
 - Maximum training sequence length: 50
 - Interaction features and popularity use training data only; static metadata normalization uses the known catalog
 
-Exact software versions and training times are written to
-`requirements-lock.txt`; selected configurations and seed are in `results/training_info.json`.
+Direct dependency versions are in `requirements-lock.txt`. Training and test-scoring durations are separate columns in `results/metrics.csv`; selected training durations, configurations, software and seed are recorded in `results/training_info.json`.
 
 ## Outputs
 
