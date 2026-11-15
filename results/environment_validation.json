@@ -3,8 +3,9 @@
   "install": "requirements-lock.txt installed from scratch",
   "dependency_check": "pip check passed",
   "unit_tests": {
-    "passed": 30,
-    "warnings": 2
+    "passed": 32,
+    "warnings": 20,
+    "warning_scope": "Dependency deprecations and sparse-matrix efficiency warnings; no failed tests."
   },
   "saved_models": {
     "python": "3.11.0",

@@ -80,7 +80,12 @@
     },
     "seed": 42,
     "quick": false,
-    "pretrained_checkpoints": false
+    "pretrained_checkpoints": false,
+    "training_seconds": {
+      "ItemKNN": 1.97,
+      "LightFM-BPR": 25.75,
+      "ICSRec (GRU)": 481.81
+    }
   },
   "final_metrics": [
     {

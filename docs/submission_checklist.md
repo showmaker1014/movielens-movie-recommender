@@ -23,5 +23,5 @@ Requirements source: *Group Project Tutorial Recommender Systems*, general instr
 - Rehearse with a timer. Use the six-slide deck for the five-minute slot; the reviewed 24-page PDF contains outdated content and should not be presented unchanged.
 - Run verification in the documented environment and retain the output. Do not report quick-run performance.
 - Upload technical report, source code, README and permitted demonstration materials via Canvas. GitHub push alone is not Canvas submission.
-- Exclude raw MovieLens data, local virtual environments, processed user records and model checkpoints from the submission archive unless the instructor explicitly permits them. The repository downloads data locally and does not redistribute raw files.
+- Do not redistribute raw MovieLens data, as required by the brief. This project also omits virtual environments, processed records and checkpoints from the source archive because they are rebuildable; omitting checkpoints is a packaging choice, not a separate course prohibition.
 - Confirm the marker can reproduce the project from the source archive. Point them to the runbook and output paths; an external deployed app is not required.

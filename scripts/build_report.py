@@ -602,7 +602,7 @@ def build_pdf(
         'ICSRec (WSDM 2024) is reimplemented with sliding training subsequences and a supported GRU backbone. Prefixes sharing the next target form CICL pairs; same-target false negatives are masked. FICL queries actual refreshed KMeans centers, while full-catalog softmax CE trains recommendation. Windows contain at most 50 items. CPU adaptations: scikit-learn KMeans, 30000 sampled training prefixes and 10000 clustering prefixes per epoch; singleton target groups skip CICL. No pretrained checkpoint is used. This reproduces the core objectives, not the original benchmark setup.'
     )
     story.append(scaled_image(ROOT / "figures/genre_distribution.png", 5.2 * inch, 3.5 * inch))
-    story.append(Paragraph("Figure 4. Drama and comedy dominate the catalog, increasing popularity bias risk.", styles["Captionx"]))
+    story.append(Paragraph("Figure 4. Genre coverage is imbalanced; popularity bias requires a separate evaluation.", styles["Captionx"]))
 
     h1("5. Evaluation protocol")
     body(
@@ -652,8 +652,8 @@ def build_pdf(
     body(
         "ItemKNN is transparent and captures co-consumption, but mainstream titles gather "
         "more co-ratings and can receive overly broad neighborhoods. Metadata embeddings "
-        "may help sparse items and users; this requires subgroup experiments, while the sequence model can adapt "
-        "to order and changing preferences. The sequence model is limited by a short "
+        "may help sparse items and users; this requires subgroup experiments. The sequence model uses "
+        "ordered inputs, but drift benefits remain untested. It is limited by a short "
         "CPU training budget and a 50-item history."
     )
     for text in [
@@ -661,7 +661,7 @@ def build_pdf(
         "<b>Sparse users:</b> a small positive history weakens both collaborative and sequence estimates.",
         "<b>Cold items:</b> item-item neighborhoods are unstable, although metadata still supplies signal.",
         "<b>Taste drift:</b> a static embedding may blur preferences from different time periods.",
-        "<b>Implicit labels:</b> ratings below 4 are excluded from fitting, losing negative preference detail.",
+        "<b>Implicit labels:</b> only training ratings of at least 4 are explicit positives. Negative sampling may include low-rated items, but does not model graded dislikes.",
     ]:
         bullet(text)
 

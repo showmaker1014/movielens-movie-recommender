@@ -104,7 +104,7 @@ Validation selection table:
 
 The best test NDCG@10 is 0.3696. The result should be read as performance on a controlled 100-candidate task rather than full-catalog quality. A score below one is expected because the positive is one item among 99 plausible alternatives and many users have broad tastes.
 
-ItemKNN is transparent and learns local co-consumption patterns, but its dense movie-to-movie neighborhoods can over-reward mainstream films with many co-raters. The LightFM-style model uses genre and user metadata, which helps generalize when direct interaction data is sparse. The intent model conditions on sequence order; it can capture changing preferences, but its small CPU budget and short history limit temporal depth.
+ItemKNN is transparent and learns local co-consumption patterns, but its dense movie-to-movie neighborhoods can over-reward mainstream films with many co-raters. The LightFM-style model shares genre and user metadata representations, which may help when direct interaction data is sparse; this has not been measured in a cold-start subgroup experiment. The intent model conditions on sequence order; its ability to capture preference drift needs a temporal ablation, and its CPU budget and short window limit temporal depth.
 
 Concrete error modes are:
 
@@ -112,29 +112,29 @@ Concrete error modes are:
 - **Sparse users:** users with few positives provide weak collaborative and sequence evidence.
 - **Cold items:** movies with few training ratings have unstable item-item neighbors but can still receive metadata scores.
 - **Taste drift:** one static user representation cannot fully separate genres watched in different periods.
-- **Ratings below 4:** the current implicit formulation discards future low ratings during fitting. A future version should model graded negative feedback.
+- **Ratings below 4:** the current implicit formulation excludes training ratings below 4 from positive interactions. Held-out low ratings are not used for fitting. Training negatives exclude training positives, not all low-rated items. A future version should model graded feedback.
 
 ## 8. Recommendation examples
 
-The following is a sample from `results/sample_user_recommendations.csv`. The full file contains 20 users and top-10 recommendations from all three algorithms.
+These full-catalog examples exclude every movie in each user's complete observed history. The following is a sample from `results/sample_user_recommendations.csv`. The full file contains 20 users and top-10 recommendations from all three algorithms.
 
 | user_id | algorithm | rank | title | genres | release_year |
 | --- | --- | --- | --- | --- | --- |
 | 518 | ItemKNN | 1 | One Flew Over the Cuckoo's Nest (1975) | Drama | 1975 |
-| 518 | ItemKNN | 2 | Emma (1996) | Comedy|Drama|Romance | 1996 |
-| 518 | ItemKNN | 3 | Wizard of Oz, The (1939) | Adventure|Children's|Drama|Musical | 1939 |
-| 518 | ItemKNN | 4 | Dead Again (1991) | Mystery|Romance|Thriller | 1991 |
-| 518 | ItemKNN | 5 | Sleepless in Seattle (1993) | Comedy|Romance | 1993 |
-| 518 | LightFM-BPR | 1 | Out of Africa (1985) | Drama|Romance | 1985 |
-| 518 | LightFM-BPR | 2 | Witness (1985) | Drama|Romance|Thriller | 1985 |
-| 518 | LightFM-BPR | 3 | Godfather, The (1972) | Action|Crime|Drama | 1972 |
-| 518 | LightFM-BPR | 4 | Braveheart (1995) | Action|Drama|War | 1995 |
-| 518 | LightFM-BPR | 5 | African Queen, The (1951) | Action|Adventure|Romance|War | 1951 |
-| 518 | ICSRec (GRU) | 1 | Bug's Life, A (1998) | Animation|Children's|Comedy | 1998 |
+| 518 | ItemKNN | 2 | Emma (1996) | Comedy\|Drama\|Romance | 1996 |
+| 518 | ItemKNN | 3 | Wizard of Oz, The (1939) | Adventure\|Children's\|Drama\|Musical | 1939 |
+| 518 | ItemKNN | 4 | Dead Again (1991) | Mystery\|Romance\|Thriller | 1991 |
+| 518 | ItemKNN | 5 | Sleepless in Seattle (1993) | Comedy\|Romance | 1993 |
+| 518 | LightFM-BPR | 1 | Out of Africa (1985) | Drama\|Romance | 1985 |
+| 518 | LightFM-BPR | 2 | Witness (1985) | Drama\|Romance\|Thriller | 1985 |
+| 518 | LightFM-BPR | 3 | Godfather, The (1972) | Action\|Crime\|Drama | 1972 |
+| 518 | LightFM-BPR | 4 | Braveheart (1995) | Action\|Drama\|War | 1995 |
+| 518 | LightFM-BPR | 5 | African Queen, The (1951) | Action\|Adventure\|Romance\|War | 1951 |
+| 518 | ICSRec (GRU) | 1 | Bug's Life, A (1998) | Animation\|Children's\|Comedy | 1998 |
 | 518 | ICSRec (GRU) | 2 | Clerks (1994) | Comedy | 1994 |
 | 518 | ICSRec (GRU) | 3 | American Pie (1999) | Comedy | 1999 |
-| 518 | ICSRec (GRU) | 4 | Toy Story (1995) | Animation|Children's|Comedy | 1995 |
-| 518 | ICSRec (GRU) | 5 | Lion King, The (1994) | Animation|Children's|Musical | 1994 |
+| 518 | ICSRec (GRU) | 4 | Toy Story (1995) | Animation\|Children's\|Comedy | 1995 |
+| 518 | ICSRec (GRU) | 5 | Lion King, The (1994) | Animation\|Children's\|Musical | 1994 |
 
 ## 9. Application
 

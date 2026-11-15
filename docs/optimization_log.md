@@ -64,3 +64,7 @@ Install all direct dependencies in a new Windows/Python 3.11 venv without system
 ## Step 14 — Respect custom preprocessing paths
 
 Downloaded archives now extract the expected dataset files directly into --raw-dir. Reprocessing retains the cached archive checksum. Required members are checked before writes and unrelated ZIP paths are ignored. Add custom-path/rerun and incomplete-archive regression tests.
+
+## Step 15 — Refresh generated evidence after code fixes
+
+Regenerate the report with escaped metadata, qualified interpretation and correct product-example protocol. Refresh the presentation data JSON without editing the slide deck. Final clean-environment suite: 32 passed; dependency warnings are recorded, not test failures. The supplied 24-page PDF was reviewed only, as requested.
