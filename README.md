@@ -5,15 +5,9 @@ algorithms and exposes them through an interactive Streamlit application.
 
 ![CineMatch recommendation interface](figures/app_interface.png)
 
-## Measured result
+## Updated implementation
 
-On the shared 100-candidate held-out test set (5,730 users):
-
-| Algorithm | HR@10 | NDCG@10 | MRR |
-|---|---:|---:|---:|
-| ItemKNN (120 neighbors) | 0.6415 | 0.3696 | 0.2863 |
-| LightFM-adapted (32d) | 0.5640 | 0.3117 | 0.2348 |
-| ICSRec-inspired (64d, 16 intents) | 0.4806 | 0.2562 | 0.1883 |
+The old reported numbers predate corrected precision and tie handling. Rebuild the experiment before interpreting results. Full MRR and MRR@10 are now separate; Precision@10 = HR@10 / 10 and Recall@10 = HR@10.
 
 ## Project scope
 
@@ -24,8 +18,8 @@ users, candidates, positives, and ranking metrics.
 | Role in brief | Algorithm | Main idea |
 |---|---|---|
 | Lecture algorithm | ItemKNN | Cosine item-item collaborative filtering over positive training interactions |
-| Reference algorithm | LightFM-adapted | LightFM-style additive user/item and metadata embeddings trained with BPR/WARP-like pairwise ranking |
-| Recent algorithm | ICSRec-inspired | GRU sequence encoder with latent-intent clustering and InfoNCE alignment, trained with BPR |
+| Reference algorithm | LightFM-BPR | LightFM-style additive user/item and metadata embeddings trained with BPR pairwise ranking |
+| Recent algorithm | ICSRec (GRU) | Sliding subsequences, same-target CICL pairs, false-negative masking, centroid FICL, and full-catalog CE with a GRU encoder |
 
 The LightFM and ICSRec implementations are transparent coursework adaptations.
 The report states the simplifications and does not claim an exact
@@ -33,7 +27,7 @@ state-of-the-art reproduction.
 
 ## Quick start
 
-Python 3.10+ is recommended; the reference run used Python 3.12.
+Python 3.11 CPU is supported.
 
 ```bash
 python -m venv .venv
@@ -59,7 +53,7 @@ Do not report quick-run metrics; the command reduces epochs and model variants.
 
 MovieLens 1M contains approximately:
 
-- 1,000,209 ratings from 6,040 users on 3,882 movies
+- 1,000,209 ratings from 6,040 users on 3,882 rated movies (3,883 catalog metadata rows)
 - ratings on a 1-5 scale
 - anonymized gender, age, occupation, and ZIP metadata for users
 - title and pipe-separated genre metadata for movies
@@ -85,7 +79,7 @@ from Git; only code, reports, figures, and result tables are committed.
 - Candidate set: identical and paired across all three algorithms
 - Model selection: validation `NDCG@10`, then one final test evaluation
 - Maximum training sequence length: 50
-- All data-derived features and popularity counts use training data only
+- Interaction features and popularity use training data only; static metadata normalization uses the known catalog
 
 Exact software versions and training times are written to
 `results/training_info.json` and the technical report.
@@ -140,3 +134,7 @@ content, mood, or context outside MovieLens.
 Project code is released under the MIT License. MovieLens data retains its own
 terms and is not covered by this license.
 
+
+## Optimized algorithm setup
+
+No pretrained checkpoint is used. LightFM includes weighted feature biases and uses BPR+Adam rather than the original logistic/Adagrad experiment. ICSRec retains all training transitions before windowing each prefix to 50 items; CPU budgets are 30000 training prefixes and 10000 clustering prefixes per epoch, sampled anew. GRU, CPU KMeans, singleton-pair handling and these caps are disclosed adaptations. Old checkpoints must be regenerated. Product examples rank the full catalog and exclude all observed ratings.

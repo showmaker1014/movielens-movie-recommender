@@ -39,10 +39,16 @@ def downloadable_archive(raw_dir: Path) -> Path:
     if archive.exists():
         return archive
     raw_dir.mkdir(parents=True, exist_ok=True)
-    import urllib.request
+    import requests
 
     print(f"Downloading {DATASET_URL}")
-    urllib.request.urlretrieve(DATASET_URL, archive)
+    temporary = archive.with_suffix(".download")
+    with requests.get(DATASET_URL, stream=True, timeout=(15, 120)) as response:
+        response.raise_for_status()
+        with temporary.open("wb") as stream:
+            for chunk in response.iter_content(1024 * 1024):
+                stream.write(chunk)
+    temporary.replace(archive)
     return archive
 
 

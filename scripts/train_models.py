@@ -542,14 +542,19 @@ def main() -> None:
         "LightFM-BPR": lightfm_scores,
         "ICSRec (GRU)": ics_scores,
     }
-    sample_recommendations(
-        users,
-        movies,
-        candidates["test"]["user_ids"],
-        score_by_algorithm,
-        candidates["test"]["candidate_items"],
-        top_k=10,
-    ).to_csv(results_dir / "sample_user_recommendations.csv", index=False)
+    # Product examples use the full catalog and exclude all observed ratings.
+    chosen_ids = np.sort(np.random.default_rng(SEED).choice(candidates["test"]["user_ids"], size=min(20, len(candidates["test"]["user_ids"])), replace=False))
+    chosen_indices = candidate_indices(chosen_ids, user_to_idx)
+    catalog = np.tile(movie_ids, (len(chosen_ids), 1))
+    with torch.inference_mode():
+        lfm_full = best_lfm_model.all_item_scores(torch.as_tensor(chosen_indices), torch.as_tensor(user_features), torch.as_tensor(item_features)).numpy()
+    full_scores = {"ItemKNN": item_knn_model.score_users(chosen_indices), "LightFM-BPR": lfm_full, "ICSRec (GRU)": ics_all_item_scores(best_ics_model, sequences, chosen_indices)}
+    observed = split.groupby("user_id")["movie_id"].agg(set).to_dict()
+    for row, uid in enumerate(chosen_ids):
+        mask = np.isin(movie_ids, list(observed[int(uid)]))
+        for scores in full_scores.values():
+            scores[row, mask] = -np.inf
+    sample_recommendations(users, movies, chosen_ids, full_scores, catalog, top_k=10).to_csv(results_dir / "sample_user_recommendations.csv", index=False)
 
     (results_dir / "icsrec_training_history.json").write_text(json.dumps(ics_histories[best_ics_key], indent=2), encoding="utf-8")
     best_ics_history = ics_histories[best_ics_key]

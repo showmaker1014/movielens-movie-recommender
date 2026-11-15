@@ -60,6 +60,7 @@ def pdf_table(
     font_size: float = 8.3,
     header: bool = True,
 ) -> Table:
+    data = [[Paragraph(escape(str(cell)), ParagraphStyle("Cell", fontName="Helvetica", fontSize=font_size, leading=font_size+2, wordWrap="CJK")) for cell in row] for row in data]
     table = Table(data, colWidths=widths, repeatRows=1 if header else 0, hAlign="LEFT")
     style = [
         ("FONTNAME", (0, 0), (-1, -1), "Helvetica"),
@@ -131,7 +132,7 @@ def build_markdown(
             "This project builds and evaluates a movie recommendation system on the "
             "MovieLens 1M dataset. The system uses three distinct models: item-based "
             "collaborative filtering, a LightFM-style hybrid metadata factorizer, and "
-            "an ICSRec-inspired sequential recommender with latent intents. All models "
+            "an ICSRec (GRU) sequential recommender with latent intents. All models "
             "share a per-user chronological split and identical sampled candidates. "
             f"The strongest held-out test model by NDCG@10 is **{winner['algorithm']}** "
             f"at {winner['NDCG@10']:.4f}, with HR@10 of {winner['HR@10']:.4f}."
@@ -234,14 +235,9 @@ def build_markdown(
         "between an observed positive and a uniformly sampled unobserved negative. "
         "Embedding dimensions 32 and 64 are compared on validation NDCG@10.",
         "",
-        "### 4.3 ICSRec-inspired latent-intent sequence model (recent algorithm)",
+        "### 4.3 ICSRec (GRU) latent-intent sequence model (recent algorithm)",
         "",
-        "This is a compact coursework adaptation of ICSRec (WSDM 2024). A GRU encodes up "
-        "to the last 50 positive training items. KMeans refreshes 8 or 16 intent clusters "
-        "from the current sequence representations. An InfoNCE objective aligns each "
-        "sequence with its assigned latent-intent prototype, while a BPR next-item loss "
-        "trains item ranking. The simplification avoids multi-view augmentation and full "
-        "paper-scale training; it retains intent clustering and contrastive alignment.",
+        'ICSRec (WSDM 2024) is reimplemented with sliding training subsequences and a supported GRU backbone. Prefixes sharing the next target form CICL pairs; same-target false negatives are masked. FICL queries actual refreshed KMeans centers, while full-catalog softmax CE trains recommendation. Windows contain at most 50 items. CPU adaptations: scikit-learn KMeans, 30000 sampled training prefixes and 10000 clustering prefixes per epoch; singleton target groups skip CICL. No pretrained checkpoint is used. This reproduces the core objectives, not the original benchmark setup.',
         "",
         "![Genre distribution](../figures/genre_distribution.png)",
         "",
@@ -252,8 +248,8 @@ def build_markdown(
         "",
         "- **HR@10:** whether the positive appears in the top 10.",
         "- **NDCG@10:** position-sensitive ranking quality.",
-        "- **MRR:** reciprocal rank of the positive.",
-        "- **Precision@10 / Recall@10:** both equal HR@10 in this one-positive protocol.",
+        "- **MRR@10:** reciprocal rank, zero outside the first 10 candidates.",
+        "- **Precision@10 / Recall@10:** Recall@10 equals HR@10; Precision@10 equals HR@10 / 10.",
         "",
         "Hyperparameters are selected using validation data only. The selected "
         "configuration is evaluated once on the test partition. No test metric is used "
@@ -262,7 +258,7 @@ def build_markdown(
         "## 6. Results",
         "",
         markdown_table(
-            final[["algorithm", "HR@10", "NDCG@10", "MRR", "test_users"]],
+            final[["algorithm", "HR@10", "NDCG@10", "MRR@10", "test_users"]],
             floatfmt=".4f",
         ),
         "",
@@ -271,7 +267,7 @@ def build_markdown(
         "Validation selection table:",
         "",
         markdown_table(
-            validation[["algorithm", "config", "HR@10", "NDCG@10", "MRR"]],
+            validation[["algorithm", "config", "HR@10", "NDCG@10", "MRR@10"]],
             floatfmt=".4f",
         ),
         "",
@@ -310,7 +306,7 @@ def build_markdown(
         "file contains 20 users and top-10 recommendations from all three algorithms.",
         "",
         markdown_table(
-            sample.head(18)[
+            sample[sample["user_id"] == sample["user_id"].min()].groupby("algorithm", sort=False).head(5)[
                 ["user_id", "algorithm", "rank", "title", "genres", "release_year"]
             ]
         ),
@@ -479,7 +475,7 @@ def build_pdf(
             [
                 ["Dataset", "MovieLens 1M"],
                 ["Evaluation", "Chronological 80/10/10, shared 100-candidate ranking"],
-                ["Algorithms", "ItemKNN, LightFM-style BPR, ICSRec-inspired sequence model"],
+                ["Algorithms", "ItemKNN, LightFM-style BPR, ICSRec (GRU) sequence model"],
                 ["Date", "13 November 2026"],
             ],
             widths=[1.3 * inch, 5.6 * inch],
@@ -508,7 +504,7 @@ def build_pdf(
     body(
         "This project builds and evaluates a movie recommendation system on MovieLens 1M. "
         "The system uses item-based collaborative filtering, a LightFM-style hybrid "
-        "metadata factorizer, and an ICSRec-inspired latent-intent sequence recommender. "
+        "metadata factorizer, and an ICSRec (GRU) latent-intent sequence recommender. "
         "All models share a per-user chronological split and identical sampled candidates. "
         f"The strongest held-out model by NDCG@10 is <b>{escape(winner['algorithm'])}</b> "
         f"at <b>{winner['NDCG@10']:.4f}</b>, with HR@10 of <b>{winner['HR@10']:.4f}</b>."
@@ -600,13 +596,9 @@ def build_pdf(
         "year. Bayesian Personalized Ranking trains each observed positive above a sampled "
         "unobserved negative. Dimensions 32 and 64 are compared."
     )
-    h2("4.3 ICSRec-inspired sequential model")
+    h2("4.3 ICSRec (GRU) sequential model")
     body(
-        "A GRU encodes up to 50 positive training items. KMeans refreshes 8 or 16 latent "
-        "intent clusters from sequence representations. An InfoNCE loss aligns sequences "
-        "with intent prototypes, and a BPR next-item loss trains ranking. This is a compact "
-        "adaptation of ICSRec, not an exact reproduction of every augmentation and training "
-        "detail in the paper."
+        'ICSRec (WSDM 2024) is reimplemented with sliding training subsequences and a supported GRU backbone. Prefixes sharing the next target form CICL pairs; same-target false negatives are masked. FICL queries actual refreshed KMeans centers, while full-catalog softmax CE trains recommendation. Windows contain at most 50 items. CPU adaptations: scikit-learn KMeans, 30000 sampled training prefixes and 10000 clustering prefixes per epoch; singleton target groups skip CICL. No pretrained checkpoint is used. This reproduces the core objectives, not the original benchmark setup.'
     )
     story.append(scaled_image(ROOT / "figures/genre_distribution.png", 5.2 * inch, 3.5 * inch))
     story.append(Paragraph("Figure 4. Drama and comedy dominate the catalog, increasing popularity bias risk.", styles["Captionx"]))
@@ -614,20 +606,20 @@ def build_pdf(
     h1("5. Evaluation protocol")
     body(
         "All models score the same 100-item candidate set per user. Metrics are HR@10, "
-        "NDCG@10, and MRR. With one relevant item per user, Precision@10 and Recall@10 "
-        "equal HR@10. Validation NDCG@10 selects one configuration per algorithm, then the "
+        "NDCG@10, and MRR@10. With one relevant item per user, Recall@10 equals HR@10 "
+        "and Precision@10 equals HR@10 / 10. Validation NDCG@10 selects one configuration per algorithm, then the "
         "selected configuration receives a single final test evaluation."
     )
 
     h1("6. Results")
-    result_rows = [["Algorithm", "HR@10", "NDCG@10", "MRR", "Users"]]
+    result_rows = [["Algorithm", "HR@10", "NDCG@10", "MRR@10", "Users"]]
     for _, row in final.iterrows():
         result_rows.append(
             [
                 str(row["algorithm"]),
                 f"{row['HR@10']:.4f}",
                 f"{row['NDCG@10']:.4f}",
-                f"{row['MRR']:.4f}",
+                f"{row['MRR@10']:.4f}",
                 f"{row['test_users']:.0f}",
             ]
         )
@@ -642,15 +634,15 @@ def build_pdf(
     story.append(Paragraph("Figure 5. Held-out HR@10 and NDCG@10 for the selected models.", styles["Captionx"]))
 
     h2("Validation selection")
-    validation_rows = [["Algorithm", "HR@10", "NDCG@10", "MRR", "Configuration"]]
+    validation_rows = [["Algorithm", "HR@10", "NDCG@10", "MRR@10", "Configuration"]]
     for _, row in validation.iterrows():
         validation_rows.append(
             [
                 str(row["algorithm"]),
                 f"{row['HR@10']:.4f}",
                 f"{row['NDCG@10']:.4f}",
-                f"{row['MRR']:.4f}",
-                str(row["config"]).replace('"', "").replace("{", "").replace("}", "")[:48],
+                f"{row['MRR@10']:.4f}",
+                str(row["config"]).replace('"', "").replace("{", "").replace("}", ""),
             ]
         )
     story.append(pdf_table(validation_rows, [1.45 * inch, 0.8 * inch, 1.0 * inch, 0.8 * inch, 2.55 * inch], font_size=7.5))
@@ -678,14 +670,14 @@ def build_pdf(
         "full file contains 20 users and all three algorithms."
     )
     sample_rows = [["User", "Model", "#", "Movie", "Genres", "Year"]]
-    for row in sample.head(16).itertuples():
+    for row in sample[sample["user_id"] == sample["user_id"].min()].groupby("algorithm", sort=False).head(5).itertuples():
         sample_rows.append(
             [
                 str(row.user_id),
                 row.algorithm,
                 str(row.rank),
-                str(row.title)[:43],
-                str(row.genres)[:26],
+                str(row.title),
+                str(row.genres),
                 str(row.release_year),
             ]
         )
@@ -725,6 +717,12 @@ def build_pdf(
     ]:
         body(text)
 
+    h1("Appendix: column inspection")
+    rows = [["Table", "Column", "Type", "Unique", "Null"]]
+    for name, columns in summary["dtypes"].items():
+        for col, dtype in columns.items():
+            rows.append([name, col, dtype, summary["unique_values"][name][col], summary["null_counts"][name][col]])
+    story.append(pdf_table(rows, [60, 135, 85, 65, 55]))
     doc.build(story, onFirstPage=page_decor, onLaterPages=page_decor)
 
 
@@ -739,7 +737,12 @@ def main() -> None:
     )
     docs = ROOT / "docs"
     docs.mkdir(parents=True, exist_ok=True)
+    if "MRR@10" not in metrics or training_info.get("quick", True):
+        raise ValueError("Rebuild full experiment results before producing the report")
     markdown = build_markdown(summary, metrics, validation, sample, training_info)
+    evidence = pd.DataFrame([{ "table": name, "column": col, "dtype": dtype, "unique_values": summary["unique_values"][name][col], "null_values": summary["null_counts"][name][col]} for name, columns in summary["dtypes"].items() for col, dtype in columns.items()])
+    evidence.to_csv(ROOT / "results" / "dataset_column_evidence.csv", index=False)
+    markdown += "\n\n## Appendix: column inspection\n\n" + markdown_table(evidence) + "\n"
     (docs / "technical_report.md").write_text(markdown, encoding="utf-8")
     build_pdf(
         summary,

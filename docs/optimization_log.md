@@ -28,3 +28,7 @@ Implement sliding subsequences, same-target CICL pairs with false-negative maski
 ## Step 5 — Robust recommendation interface
 
 Preserve columns for empty candidates, explain fewer-than-five results, use actual genre labels, check all required inputs, and show corrected metric definitions. Full-history exclusion is retained.
+
+## Step 6 — Report evidence and reproducibility
+
+Correct metric and algorithm descriptions; show the same user Top5 from all models; wrap PDF cells; add column evidence and full-catalog unseen examples. Declare verified-TLS requests download. Add empty-filter and complete-history exclusion regression coverage.
