@@ -11,8 +11,8 @@ def example_user_ids(user_ids: np.ndarray, seed: int = 42) -> np.ndarray:
 
 def rank_unseen(movies, scores, observed, top_n=10, genre="All genres", minimum_year=0):
     scores = np.asarray(scores)
-    if scores.shape != (len(movies),) or not np.isfinite(scores).all():
-        raise ValueError("One finite score is required per catalog movie")
+    if scores.shape != (len(movies),):
+        raise ValueError("One score is required per catalog movie")
     if top_n < 1:
         raise ValueError("top_n must be positive")
     mask = ~movies["movie_id"].isin(observed).to_numpy()
@@ -20,6 +20,10 @@ def rank_unseen(movies, scores, observed, top_n=10, genre="All genres", minimum_
     if genre != "All genres":
         mask &= movies["genres"].fillna("").str.split("|", regex=False).map(lambda labels: genre in labels).to_numpy()
     candidates = np.flatnonzero(mask)
+    # ItemKNN intentionally marks training items -inf; those are already
+    # excluded. Require finite utilities only for actual eligible candidates.
+    if not np.isfinite(scores[candidates]).all():
+        raise ValueError("Eligible candidate scores must be finite")
     ids = movies.iloc[candidates]["movie_id"].to_numpy()
     order = candidates[np.lexsort((ids, -scores[candidates]))[:top_n]]
     result = movies.iloc[order][["movie_id", "title", "genres", "release_year"]].copy()

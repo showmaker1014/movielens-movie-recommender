@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import pytest
 from src.recommendation import rank_unseen, example_user_ids, recommendation_examples
 
 
@@ -19,3 +20,10 @@ def test_shared_export_and_ranking_agree_with_ties_and_observed_movies():
 def test_example_selection_is_independent_of_input_order():
     ids = np.arange(1,101)
     np.testing.assert_array_equal(example_user_ids(ids), example_user_ids(ids[::-1]))
+
+
+def test_pre_masked_seen_scores_are_allowed_but_invalid_candidates_rejected():
+    movies = pd.DataFrame({"movie_id":[1,2], "title":["A","B"], "genres":["Drama"]*2, "release_year":[2000]*2})
+    assert rank_unseen(movies, np.array([-np.inf, 1.0]), {1}).movie_id.tolist() == [2]
+    with pytest.raises(ValueError, match="Eligible"):
+        rank_unseen(movies, np.array([0.0, np.nan]), {1})
