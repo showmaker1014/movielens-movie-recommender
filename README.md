@@ -5,9 +5,17 @@ algorithms and exposes them through an interactive Streamlit application.
 
 ![CineMatch recommendation interface](figures/app_interface.png)
 
-## Updated implementation
+## Corrected MovieLens-1M experiment
 
-The old reported numbers predate corrected precision and tie handling. Rebuild the experiment before interpreting results. Full MRR and MRR@10 are now separate; Precision@10 = HR@10 / 10 and Recall@10 = HR@10.
+Shared test protocol: 5730 users, one held-out positive and 99 negatives each.
+
+| Model | HR@10 | Precision@10 | NDCG@10 | MRR@10 |
+|---|---:|---:|---:|---:|
+| ItemKNN | 0.6414 | 0.0641 | 0.3696 | 0.2863 |
+| LightFM-BPR | 0.5993 | 0.0599 | 0.3311 | 0.2492 |
+| ICSRec (GRU) | 0.5375 | 0.0538 | 0.3014 | 0.2291 |
+
+Precision@10 = HR@10 / 10; Recall@10 = HR@10. Full MRR and MRR@10 are separate columns. Equal scores follow the fixed shuffled candidate order.
 
 ## Project scope
 
@@ -43,7 +51,7 @@ streamlit run app.py
 
 The Streamlit app opens at `http://localhost:8501`.
 
-The exact versions used for the reported results are listed in
+The corrected CPU run versions are listed in
 `requirements-lock.txt`.
 
 For a fast implementation smoke test, use `python scripts/train_models.py --quick`.
@@ -53,7 +61,7 @@ Do not report quick-run metrics; the command reduces epochs and model variants.
 
 MovieLens 1M contains approximately:
 
-- 1,000,209 ratings from 6,040 users on 3,882 rated movies (3,883 catalog metadata rows)
+- 1,000,209 ratings from 6,040 users on 3,706 rated movies (3,883 catalog metadata rows)
 - ratings on a 1-5 scale
 - anonymized gender, age, occupation, and ZIP metadata for users
 - title and pipe-separated genre metadata for movies
@@ -82,7 +90,7 @@ from Git; only code, reports, figures, and result tables are committed.
 - Interaction features and popularity use training data only; static metadata normalization uses the known catalog
 
 Exact software versions and training times are written to
-`results/training_info.json` and the technical report.
+`requirements-lock.txt`; selected configurations and seed are in `results/training_info.json`.
 
 ## Outputs
 

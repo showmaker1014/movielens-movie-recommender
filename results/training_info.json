@@ -4,20 +4,25 @@
       "neighbors": 120,
       "popularity_weight": 0.02
     },
-    "LightFM-adapted": {
+    "LightFM-BPR": {
       "batch_size": 4096,
       "embedding_dim": 32,
       "epochs": 10,
       "learning_rate": 0.01,
       "loss": "BPR"
     },
-    "ICSRec-inspired": {
+    "ICSRec (GRU)": {
       "batch_size": 256,
+      "cluster_sample_size": 10000,
       "embedding_dim": 64,
       "epochs": 6,
       "learning_rate": 0.003,
-      "loss": "BPR + intent InfoNCE",
-      "n_intents": 16
+      "loss": "CE + CICL + FICL",
+      "max_examples_per_epoch": 30000,
+      "max_length": 50,
+      "n_intents": 16,
+      "pretrained": false,
+      "seed": 42
     }
   },
   "candidate_generation": {
@@ -31,5 +36,19 @@
       "candidates_per_user": 100,
       "positive_items": 5730
     }
+  },
+  "software": {
+    "python": "3.11.0",
+    "numpy": "1.23.4",
+    "pandas": "1.5.1",
+    "torch": "2.0.1+cpu"
+  },
+  "seed": 42,
+  "quick": false,
+  "pretrained_checkpoints": false,
+  "training_seconds": {
+    "ItemKNN": 1.97,
+    "LightFM-BPR": 25.75,
+    "ICSRec (GRU)": 481.81
   }
 }

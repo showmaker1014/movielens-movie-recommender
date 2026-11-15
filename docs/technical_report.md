@@ -2,11 +2,11 @@
 
 **Technical report - Group Project, Project 1**
 
-Date: 13 November 2026
+Date: 15 November 2026
 
 ## Abstract
 
-This project builds and evaluates a movie recommendation system on the MovieLens 1M dataset. The system uses three distinct models: item-based collaborative filtering, a LightFM-style hybrid metadata factorizer, and an ICSRec-inspired sequential recommender with latent intents. All models share a per-user chronological split and identical sampled candidates. The strongest held-out test model by NDCG@10 is **ItemKNN** at 0.3696, with HR@10 of 0.6415.
+This project builds and evaluates a movie recommendation system on the MovieLens 1M dataset. The system uses three distinct models: item-based collaborative filtering, a LightFM-style hybrid metadata factorizer, and an ICSRec (GRU) sequential recommender with latent intents. All models share a per-user chronological split and identical sampled candidates. The strongest held-out test model by NDCG@10 is **ItemKNN** at 0.3696, with HR@10 of 0.6414.
 
 The project also includes a Streamlit interface that accepts an anonymized user and displays unseen movie titles and genres.
 
@@ -41,7 +41,7 @@ The requested inspection evidence is reproduced by `scripts/prepare_data.py` in 
 
 ## 3. Preprocessing and split
 
-The processed split contains 802,553 training, 100,273 validation, and 97,383 test ratings. Interactions are ordered by timestamp inside each user, then divided into 80/10/10 partitions. This prevents a future interaction from becoming a training feature. User and movie feature statistics, item popularity, sequence histories, and item-item similarities are fitted from the training partition only.
+The processed split contains 802,553 training, 100,273 validation, and 97,383 test ratings. Interactions are ordered by timestamp inside each user, then divided into 80/10/10 partitions. This prevents a future interaction from becoming a training feature. Item popularity, sequence histories and item-item similarities use training ratings only. Static metadata statistics use the known user/item catalog.
 
 A rating of 4 or 5 is converted to a positive relevance label. For evaluation, each user contributes the latest positive rating from the relevant split plus 99 movies that the user never rated in any period. A fixed seed shuffles the 100 candidates. Hiding the future label from model fitting prevents leakage, while using the complete observed set for candidate exclusion matches the product requirement that recommendations be unseen.
 
@@ -57,13 +57,13 @@ A binary user-item matrix is built from training ratings of 4 or higher. Each mo
 
 The LightFM paper represents users and items as additive sums of identity and metadata embeddings. This implementation follows that decomposition:
 
-`score(u,i) = b_u + b_i + <e_u + F_u w_u, e_i + F_i w_i>`
+`score(u,i) = b_u + b_i + F_u c_u + F_i c_i + <e_u + F_u w_u, e_i + F_i w_i>`
 
 User metadata includes standardized age plus gender and occupation indicators. Item metadata includes genre indicators and standardized release year. The model is trained with Bayesian Personalized Ranking (BPR), which increases the margin between an observed positive and a uniformly sampled unobserved negative. Embedding dimensions 32 and 64 are compared on validation NDCG@10.
 
-### 4.3 ICSRec-inspired latent-intent sequence model (recent algorithm)
+### 4.3 ICSRec (GRU) latent-intent sequence model (recent algorithm)
 
-This is a compact coursework adaptation of ICSRec (WSDM 2024). A GRU encodes up to the last 50 positive training items. KMeans refreshes 8 or 16 intent clusters from the current sequence representations. An InfoNCE objective aligns each sequence with its assigned latent-intent prototype, while a BPR next-item loss trains item ranking. The simplification avoids multi-view augmentation and full paper-scale training; it retains intent clustering and contrastive alignment.
+ICSRec (WSDM 2024) is reimplemented with sliding training subsequences and a supported GRU backbone. Prefixes sharing the next target form CICL pairs; same-target false negatives are masked. FICL queries actual refreshed KMeans centers, while full-catalog softmax CE trains recommendation. Windows contain at most 50 items. CPU adaptations: scikit-learn KMeans, 30000 sampled training prefixes and 10000 clustering prefixes per epoch; singleton target groups skip CICL. No pretrained checkpoint is used. This reproduces the core objectives, not the original benchmark setup.
 
 ![Genre distribution](../figures/genre_distribution.png)
 
@@ -73,32 +73,32 @@ Every algorithm receives the same users, positive items, 99 negatives, and rando
 
 - **HR@10:** whether the positive appears in the top 10.
 - **NDCG@10:** position-sensitive ranking quality.
-- **MRR:** reciprocal rank of the positive.
-- **Precision@10 / Recall@10:** both equal HR@10 in this one-positive protocol.
+- **MRR@10:** reciprocal rank, zero outside the first 10 candidates.
+- **Precision@10 / Recall@10:** Recall@10 equals HR@10; Precision@10 equals HR@10 / 10.
 
 Hyperparameters are selected using validation data only. The selected configuration is evaluated once on the test partition. No test metric is used for model selection.
 
 ## 6. Results
 
-| algorithm | HR@10 | NDCG@10 | MRR | test_users |
+| algorithm | HR@10 | NDCG@10 | MRR@10 | test_users |
 | --- | --- | --- | --- | --- |
-| ItemKNN | 0.6415 | 0.3696 | 0.2863 | 5730 |
-| LightFM-adapted | 0.5640 | 0.3117 | 0.2348 | 5730 |
-| ICSRec-inspired | 0.4806 | 0.2562 | 0.1883 | 5730 |
+| ItemKNN | 0.6414 | 0.3696 | 0.2863 | 5730 |
+| LightFM-BPR | 0.5993 | 0.3311 | 0.2492 | 5730 |
+| ICSRec (GRU) | 0.5375 | 0.3014 | 0.2291 | 5730 |
 
 ![Model comparison](../figures/model_comparison.png)
 
 Validation selection table:
 
-| algorithm | config | HR@10 | NDCG@10 | MRR |
+| algorithm | config | HR@10 | NDCG@10 | MRR@10 |
 | --- | --- | --- | --- | --- |
 | ItemKNN | {"neighbors": 30, "popularity_weight": 0.02} | 0.6999 | 0.4204 | 0.3344 |
 | ItemKNN | {"neighbors": 60, "popularity_weight": 0.02} | 0.7132 | 0.4300 | 0.3428 |
-| ItemKNN | {"neighbors": 120, "popularity_weight": 0.02} | 0.7106 | 0.4314 | 0.3455 |
-| LightFM-adapted | {"batch_size": 4096, "embedding_dim": 32, "epochs": 10, "learning_rate": 0.01, "loss": "BPR"} | 0.6186 | 0.3520 | 0.2706 |
-| LightFM-adapted | {"batch_size": 4096, "embedding_dim": 64, "epochs": 10, "learning_rate": 0.01, "loss": "BPR"} | 0.6113 | 0.3449 | 0.2634 |
-| ICSRec-inspired | {"batch_size": 256, "embedding_dim": 32, "epochs": 6, "learning_rate": 0.003, "loss": "BPR + intent InfoNCE", "n_intents": 8} | 0.5079 | 0.2730 | 0.2018 |
-| ICSRec-inspired | {"batch_size": 256, "embedding_dim": 64, "epochs": 6, "learning_rate": 0.003, "loss": "BPR + intent InfoNCE", "n_intents": 16} | 0.5059 | 0.2745 | 0.2042 |
+| ItemKNN | {"neighbors": 120, "popularity_weight": 0.02} | 0.7106 | 0.4313 | 0.3454 |
+| LightFM-BPR | {"batch_size": 4096, "embedding_dim": 32, "epochs": 10, "learning_rate": 0.01, "loss": "BPR"} | 0.6541 | 0.3764 | 0.2914 |
+| LightFM-BPR | {"batch_size": 4096, "embedding_dim": 64, "epochs": 10, "learning_rate": 0.01, "loss": "BPR"} | 0.6553 | 0.3750 | 0.2891 |
+| ICSRec (GRU) | {"batch_size": 256, "cluster_sample_size": 10000, "embedding_dim": 32, "epochs": 6, "learning_rate": 0.003, "loss": "CE + CICL + FICL", "max_examples_per_epoch": 30000, "max_length": 50, "n_intents": 8, "pretrained": false, "seed": 42} | 0.5893 | 0.3360 | 0.2588 |
+| ICSRec (GRU) | {"batch_size": 256, "cluster_sample_size": 10000, "embedding_dim": 64, "epochs": 6, "learning_rate": 0.003, "loss": "CE + CICL + FICL", "max_examples_per_epoch": 30000, "max_length": 50, "n_intents": 16, "pretrained": false, "seed": 42} | 0.6293 | 0.3794 | 0.3025 |
 
 ## 7. Interpretation and error analysis
 
@@ -120,24 +120,21 @@ The following is a sample from `results/sample_user_recommendations.csv`. The fu
 
 | user_id | algorithm | rank | title | genres | release_year |
 | --- | --- | --- | --- | --- | --- |
-| 521 | ItemKNN | 1 | Deliverance (1972) | Adventure|Thriller | 1972 |
-| 521 | ItemKNN | 2 | Taxi Driver (1976) | Drama|Thriller | 1976 |
-| 521 | ItemKNN | 3 | Boogie Nights (1997) | Drama | 1997 |
-| 521 | ItemKNN | 4 | Where Eagles Dare (1969) | Action|Adventure|War | 1969 |
-| 521 | ItemKNN | 5 | Jerry Maguire (1996) | Drama|Romance | 1996 |
-| 521 | ItemKNN | 6 | Breakfast Club, The (1985) | Comedy|Drama | 1985 |
-| 521 | ItemKNN | 7 | Get Shorty (1995) | Action|Comedy|Drama | 1995 |
-| 521 | ItemKNN | 8 | Atlantic City (1980) | Crime|Drama|Romance | 1980 |
-| 521 | ItemKNN | 9 | Westworld (1973) | Action|Sci-Fi|Thriller|Western | 1973 |
-| 521 | ItemKNN | 10 | What's Eating Gilbert Grape (1993) | Drama | 1993 |
-| 521 | LightFM-adapted | 1 | Atlantic City (1980) | Crime|Drama|Romance | 1980 |
-| 521 | LightFM-adapted | 2 | Dangerous Liaisons (1988) | Drama|Romance | 1988 |
-| 521 | LightFM-adapted | 3 | Taxi Driver (1976) | Drama|Thriller | 1976 |
-| 521 | LightFM-adapted | 4 | Breaking Away (1979) | Drama | 1979 |
-| 521 | LightFM-adapted | 5 | Westworld (1973) | Action|Sci-Fi|Thriller|Western | 1973 |
-| 521 | LightFM-adapted | 6 | Boogie Nights (1997) | Drama | 1997 |
-| 521 | LightFM-adapted | 7 | My Life as a Dog (Mitt liv som hund) (1985) | Drama | 1985 |
-| 521 | LightFM-adapted | 8 | Cat Ballou (1965) | Comedy|Western | 1965 |
+| 518 | ItemKNN | 1 | One Flew Over the Cuckoo's Nest (1975) | Drama | 1975 |
+| 518 | ItemKNN | 2 | Emma (1996) | Comedy|Drama|Romance | 1996 |
+| 518 | ItemKNN | 3 | Wizard of Oz, The (1939) | Adventure|Children's|Drama|Musical | 1939 |
+| 518 | ItemKNN | 4 | Dead Again (1991) | Mystery|Romance|Thriller | 1991 |
+| 518 | ItemKNN | 5 | Sleepless in Seattle (1993) | Comedy|Romance | 1993 |
+| 518 | LightFM-BPR | 1 | Out of Africa (1985) | Drama|Romance | 1985 |
+| 518 | LightFM-BPR | 2 | Witness (1985) | Drama|Romance|Thriller | 1985 |
+| 518 | LightFM-BPR | 3 | Godfather, The (1972) | Action|Crime|Drama | 1972 |
+| 518 | LightFM-BPR | 4 | Braveheart (1995) | Action|Drama|War | 1995 |
+| 518 | LightFM-BPR | 5 | African Queen, The (1951) | Action|Adventure|Romance|War | 1951 |
+| 518 | ICSRec (GRU) | 1 | Bug's Life, A (1998) | Animation|Children's|Comedy | 1998 |
+| 518 | ICSRec (GRU) | 2 | Clerks (1994) | Comedy | 1994 |
+| 518 | ICSRec (GRU) | 3 | American Pie (1999) | Comedy | 1999 |
+| 518 | ICSRec (GRU) | 4 | Toy Story (1995) | Animation|Children's|Comedy | 1995 |
+| 518 | ICSRec (GRU) | 5 | Lion King, The (1994) | Animation|Children's|Musical | 1994 |
 
 ## 9. Application
 
@@ -149,9 +146,9 @@ The main limitation is sampled evaluation. A production system should rank the f
 
 ## 11. Reproducibility
 
-Random seed: `42`. Positive threshold: `4`. Selected configurations: `{"ICSRec-inspired": {"batch_size": 256, "embedding_dim": 64, "epochs": 6, "learning_rate": 0.003, "loss": "BPR + intent InfoNCE", "n_intents": 16}, "ItemKNN": {"neighbors": 120, "popularity_weight": 0.02}, "LightFM-adapted": {"batch_size": 4096, "embedding_dim": 32, "epochs": 10, "learning_rate": 0.01, "loss": "BPR"}}`.
+Random seed: `42`. Positive threshold: `4`. Selected configurations: `{"ICSRec (GRU)": {"batch_size": 256, "cluster_sample_size": 10000, "embedding_dim": 64, "epochs": 6, "learning_rate": 0.003, "loss": "CE + CICL + FICL", "max_examples_per_epoch": 30000, "max_length": 50, "n_intents": 16, "pretrained": false, "seed": 42}, "ItemKNN": {"neighbors": 120, "popularity_weight": 0.02}, "LightFM-BPR": {"batch_size": 4096, "embedding_dim": 32, "epochs": 10, "learning_rate": 0.01, "loss": "BPR"}}`.
 
-Reference environment: Python 3.12, pandas 3.1.1, NumPy 2.2.6, PyTorch, Streamlit, matplotlib, SciPy, and PyArrow. Run instructions, dependencies, seeds, data citation, and output locations are in `README.md`.
+Reference environment: Python 3.11, pandas 1.5.1, NumPy 1.23.4, PyTorch, Streamlit, matplotlib, SciPy, and PyArrow. Run instructions, dependencies, seeds, data citation, and output locations are in `README.md`.
 
 Data files are intentionally excluded from Git. Rebuild with:
 
@@ -167,3 +164,21 @@ streamlit run app.py
 1. F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context. ACM TiiS 5(4), Article 19. https://doi.org/10.1145/2827872
 2. Maciej Kula. 2015. Metadata Embeddings for User and Item Cold-start Recommendations (LightFM). arXiv:1507.08439.
 3. Xiuyuan Qin et al. 2024. Intent Contrastive Learning with Cross Subsequences for Sequential Recommendation (ICSRec). WSDM 2024. https://doi.org/10.1145/3616855.3635773
+
+
+## Appendix: column inspection
+
+| table | column | dtype | unique_values | null_values |
+| --- | --- | --- | --- | --- |
+| users | user_id | int64 | 6040 | 0 |
+| users | gender | object | 2 | 0 |
+| users | age | int64 | 7 | 0 |
+| users | occupation | int64 | 21 | 0 |
+| users | zip | object | 3439 | 0 |
+| movies | movie_id | int64 | 3883 | 0 |
+| movies | title | object | 3883 | 0 |
+| movies | genres | object | 301 | 0 |
+| ratings | user_id | int64 | 6040 | 0 |
+| ratings | movie_id | int64 | 3706 | 0 |
+| ratings | rating | int64 | 5 | 0 |
+| ratings | timestamp | int64 | 458455 | 0 |

@@ -1,0 +1,68 @@
+[
+  {
+    "epoch": 1.0,
+    "rec_loss": 7.631252416992187,
+    "cicl_loss": 6.8632293195088705,
+    "ficl_loss": 7.47355771484375,
+    "total_loss": 9.064931131490072,
+    "training_subsequences": 466110.0,
+    "epoch_examples": 30000.0,
+    "cluster_examples": 10000.0,
+    "paired_examples": 29992.0
+  },
+  {
+    "epoch": 2.0,
+    "rec_loss": 7.2699779034932455,
+    "cicl_loss": 6.285774853515625,
+    "ficl_loss": 11.45090942586263,
+    "total_loss": 9.043646308898925,
+    "training_subsequences": 466110.0,
+    "epoch_examples": 30000.0,
+    "cluster_examples": 10000.0,
+    "paired_examples": 29984.0
+  },
+  {
+    "epoch": 3.0,
+    "rec_loss": 7.072968576304118,
+    "cicl_loss": 6.289614732106527,
+    "ficl_loss": 10.561251134490966,
+    "total_loss": 8.758055152893066,
+    "training_subsequences": 466110.0,
+    "epoch_examples": 30000.0,
+    "cluster_examples": 10000.0,
+    "paired_examples": 29992.0
+  },
+  {
+    "epoch": 4.0,
+    "rec_loss": 6.939738925170898,
+    "cicl_loss": 6.376028646341959,
+    "ficl_loss": 9.907483141835531,
+    "total_loss": 8.568090092976888,
+    "training_subsequences": 466110.0,
+    "epoch_examples": 30000.0,
+    "cluster_examples": 10000.0,
+    "paired_examples": 29989.0
+  },
+  {
+    "epoch": 5.0,
+    "rec_loss": 6.798507647959391,
+    "cicl_loss": 6.443470112864176,
+    "ficl_loss": 9.331654660797119,
+    "total_loss": 8.376020119730631,
+    "training_subsequences": 466110.0,
+    "epoch_examples": 30000.0,
+    "cluster_examples": 10000.0,
+    "paired_examples": 29991.0
+  },
+  {
+    "epoch": 6.0,
+    "rec_loss": 6.684178023529053,
+    "cicl_loss": 6.523067069753011,
+    "ficl_loss": 8.823018847147624,
+    "total_loss": 8.218786624908446,
+    "training_subsequences": 466110.0,
+    "epoch_examples": 30000.0,
+    "cluster_examples": 10000.0,
+    "paired_examples": 29988.0
+  }
+]
