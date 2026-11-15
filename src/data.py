@@ -61,7 +61,7 @@ def temporal_user_split(ratings: pd.DataFrame) -> pd.DataFrame:
     """Build a per-user chronological 80/10/10 split without leakage.
 
     Sorting happens independently inside each user's history. The earliest
-    90% is visible for model fitting and validation tuning; the final 10%
+    80% is used for fitting, the next 10% for validation tuning; the final 10%
     is reserved for the once-only test evaluation.
     """
     out = ratings.sort_values(["user_id", "timestamp", "movie_id"]).copy()

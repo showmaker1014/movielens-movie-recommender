@@ -32,3 +32,7 @@ Preserve columns for empty candidates, explain fewer-than-five results, use actu
 ## Step 6 — Report evidence and reproducibility
 
 Correct metric and algorithm descriptions; show the same user Top5 from all models; wrap PDF cells; add column evidence and full-catalog unseen examples. Declare verified-TLS requests download. Add empty-filter and complete-history exclusion regression coverage.
+
+## Step 7 — Validate the real application and runtime
+
+Pin the CPU NumPy/PyTorch/PyArrow compatibility range. Replace unsupported Streamlit width strings. Preserve training duration and record test scoring duration separately. Fix PDF header contrast and metadata-statistics wording. Actual Streamlit AppTest loads all tabs and switches models; 26 unit/regression tests pass.

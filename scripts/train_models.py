@@ -503,6 +503,11 @@ def main() -> None:
     )
 
     metrics_frame = pd.DataFrame(metric_rows)
+    metrics_frame["evaluation_seconds"] = np.nan
+    for idx, row in metrics_frame[metrics_frame["split"] == "test"].iterrows():
+        fitted = metrics_frame[(metrics_frame["split"] == "validation") & (metrics_frame["algorithm"] == row["algorithm"]) & (metrics_frame["config"] == row["config"])]
+        metrics_frame.loc[idx, "evaluation_seconds"] = row["training_seconds"]
+        metrics_frame.loc[idx, "training_seconds"] = fitted.iloc[0]["training_seconds"]
     metrics_frame.to_csv(results_dir / "metrics.csv", index=False)
     pd.DataFrame(hyperparameter_rows).to_csv(
         results_dir / "hyperparameter_tuning.csv",

@@ -60,7 +60,7 @@ def pdf_table(
     font_size: float = 8.3,
     header: bool = True,
 ) -> Table:
-    data = [[Paragraph(escape(str(cell)), ParagraphStyle("Cell", fontName="Helvetica", fontSize=font_size, leading=font_size+2, wordWrap="CJK")) for cell in row] for row in data]
+    data = [[Paragraph(escape(str(cell)).replace("|", " | "), ParagraphStyle("Cell", fontName="Helvetica-Bold" if header and i == 0 else "Helvetica", textColor=colors.white if header and i == 0 else NAVY, fontSize=font_size, leading=font_size+2, splitLongWords=True)) for cell in row] for i, row in enumerate(data)]
     table = Table(data, colWidths=widths, repeatRows=1 if header else 0, hAlign="LEFT")
     style = [
         ("FONTNAME", (0, 0), (-1, -1), "Helvetica"),
@@ -124,7 +124,7 @@ def build_markdown(
         "",
         "**Technical report - Group Project, Project 1**",
         "",
-        "Date: 13 November 2026",
+        "Date: 15 November 2026",
         "",
         "## Abstract",
         "",
@@ -196,9 +196,7 @@ def build_markdown(
             f"{summary['split_rows']['validation']:,} validation, and "
             f"{summary['split_rows']['test']:,} test ratings. Interactions are ordered by "
             "timestamp inside each user, then divided into 80/10/10 partitions. This "
-            "prevents a future interaction from becoming a training feature. User and "
-            "movie feature statistics, item popularity, sequence histories, and item-item "
-            "similarities are fitted from the training partition only."
+            "prevents a future interaction from becoming a training feature. Item popularity, sequence histories and item-item similarities use training ratings only. Static metadata statistics use the known user/item catalog."
         ),
         "",
         (
@@ -227,7 +225,7 @@ def build_markdown(
         "The LightFM paper represents users and items as additive sums of identity and "
         "metadata embeddings. This implementation follows that decomposition:",
         "",
-        "`score(u,i) = b_u + b_i + <e_u + F_u w_u, e_i + F_i w_i>`",
+        "`score(u,i) = b_u + b_i + F_u c_u + F_i c_i + <e_u + F_u w_u, e_i + F_i w_i>`",
         "",
         "User metadata includes standardized age plus gender and occupation indicators. "
         "Item metadata includes genre indicators and standardized release year. The model "
@@ -333,7 +331,7 @@ def build_markdown(
         f"Random seed: `42`. Positive threshold: `4`. Selected configurations: "
         f"`{json.dumps(training_info['models'], sort_keys=True)}`.",
         "",
-        "Reference environment: Python 3.12, pandas 3.1.1, NumPy 2.2.6, PyTorch, Streamlit, "
+        "Reference environment: Python 3.11, pandas 1.5.1, NumPy 1.23.4, PyTorch, Streamlit, "
         "matplotlib, SciPy, and PyArrow. Run instructions, dependencies, seeds, data "
         "citation, and output locations are in `README.md`.",
         "",
@@ -476,7 +474,7 @@ def build_pdf(
                 ["Dataset", "MovieLens 1M"],
                 ["Evaluation", "Chronological 80/10/10, shared 100-candidate ranking"],
                 ["Algorithms", "ItemKNN, LightFM-style BPR, ICSRec (GRU) sequence model"],
-                ["Date", "13 November 2026"],
+                ["Date", "15 November 2026"],
             ],
             widths=[1.3 * inch, 5.6 * inch],
             font_size=9,
@@ -534,7 +532,7 @@ def build_pdf(
         "The official MovieLens 1M archive contains users, movies, and ratings tables. The "
         "tables have no missing cells. Release year is parsed from titles, genres are "
         "multi-hot encoded, age is standardized, and gender and occupation are one-hot "
-        "encoded. All later data-derived statistics use training rows only."
+        "encoded. Interaction statistics use training ratings; static metadata normalization uses the known catalog."
     )
     table_rows = [["Table", "Rows", "Columns", "Null cells", "Null columns"]]
     for name in ["users", "movies", "ratings"]:
@@ -591,7 +589,7 @@ def build_pdf(
     h2("4.2 LightFM-style metadata embeddings")
     body(
         "The LightFM paper uses additive identity and metadata embeddings. This project "
-        "implements score(u,i) = b_u + b_i + &lt;e_u + F_u w_u, e_i + F_i w_i&gt;. User "
+        "implements score(u,i) = b_u + b_i + F_u c_u + F_i c_i + &lt;e_u + F_u w_u, e_i + F_i w_i&gt;. User "
         "features are age, gender, and occupation. Item features are genre and release "
         "year. Bayesian Personalized Ranking trains each observed positive above a sampled "
         "unobserved negative. Dimensions 32 and 64 are compared."
@@ -651,7 +649,7 @@ def build_pdf(
     body(
         "ItemKNN is transparent and captures co-consumption, but mainstream titles gather "
         "more co-ratings and can receive overly broad neighborhoods. Metadata embeddings "
-        "generalize better for sparse items and users, while the sequence model can adapt "
+        "may help sparse items and users; this requires subgroup experiments, while the sequence model can adapt "
         "to order and changing preferences. The sequence model is limited by a short "
         "CPU training budget and a 50-item history."
     )

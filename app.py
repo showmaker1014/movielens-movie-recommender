@@ -364,7 +364,7 @@ def main() -> None:
                 st.dataframe(
                     rec[["rank", "title", "genres", "release_year", "model_score"]],
                     hide_index=True,
-                    width="stretch",
+                    use_container_width=True,
                     column_config={
                         "rank": st.column_config.NumberColumn("#", width="small"),
                         "model_score": st.column_config.NumberColumn(
@@ -406,7 +406,7 @@ def main() -> None:
             st.write("**Favourite genres**")
             st.bar_chart(genre_counts, horizontal=True, color="#16A6A1")
         st.write("**Recent training history**")
-        st.dataframe(history_for(user_id, bundle), hide_index=True, width="stretch")
+        st.dataframe(history_for(user_id, bundle), hide_index=True, use_container_width=True)
 
     with tab_compare:
         st.subheader("Same-user, three-algorithm comparison")
@@ -433,7 +433,7 @@ def main() -> None:
                     st.dataframe(
                         rec.head(5)[["title", "genres", "release_year"]],
                         hide_index=True,
-                        width="stretch",
+                        use_container_width=True,
                     )
 
     with tab_metrics:
@@ -444,7 +444,7 @@ def main() -> None:
             st.dataframe(
                 test[["algorithm", "HR@10", "NDCG@10", "MRR@10", "test_users"]],
                 hide_index=True,
-                width="stretch",
+                use_container_width=True,
                 column_config={
                     "HR@10": st.column_config.NumberColumn(format="%.4f"),
                     "NDCG@10": st.column_config.NumberColumn(format="%.4f"),
@@ -459,13 +459,13 @@ def main() -> None:
         with right:
             figure = ROOT / "figures" / "model_comparison.png"
             if figure.exists():
-                st.image(str(figure), width="stretch")
+                st.image(str(figure), use_container_width=True)
         st.subheader("Validation selection")
         validation = metrics[metrics["split"] == "validation"]
         st.dataframe(
             validation[["algorithm", "config", "HR@10", "NDCG@10", "MRR@10"]],
             hide_index=True,
-            width="stretch",
+            use_container_width=True,
         )
 
     with tab_data:
@@ -483,7 +483,7 @@ def main() -> None:
             comparison = pd.read_csv(
                 ROOT / "data" / "processed" / "dataset_comparison.csv"
             )
-            st.dataframe(comparison, hide_index=True, width="stretch")
+            st.dataframe(comparison, hide_index=True, use_container_width=True)
         st.subheader("Exploratory figures")
         figure_names = [
             ("Rating distribution", "rating_distribution.png"),
@@ -495,7 +495,7 @@ def main() -> None:
             path = ROOT / "figures" / filename
             if path.exists():
                 st.markdown(f"**{title}**")
-                st.image(str(path), width="stretch")
+                st.image(str(path), use_container_width=True)
 
 
 if __name__ == "__main__":

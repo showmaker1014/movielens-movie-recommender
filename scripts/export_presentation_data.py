@@ -45,10 +45,10 @@ def main() -> None:
         },
         "training": training,
         "final_metrics": final[
-            ["algorithm", "HR@10", "NDCG@10", "MRR", "test_users"]
+            ["algorithm", "HR@10", "NDCG@10", "MRR@10", "test_users"]
         ].to_dict(orient="records"),
         "validation_metrics": validation[
-            ["algorithm", "config", "HR@10", "NDCG@10", "MRR"]
+            ["algorithm", "config", "HR@10", "NDCG@10", "MRR@10"]
         ].to_dict(orient="records"),
         "sample_user": sample_user,
         "sample_recommendations": sample_rows[
