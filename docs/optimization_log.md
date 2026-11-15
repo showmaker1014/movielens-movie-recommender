@@ -15,3 +15,8 @@ Existing result tables and presentation numbers predate these fixes; they will b
 ## Step 2 — Metadata and dependencies
 
 Remove duplicate year features, handle constant ages, retain complete sequences and declare reportlab. Validate unique feature names and finite standardized features.
+
+## Step 3 — LightFM core model
+
+Complete metadata feature biases, refresh reproducible negative samples per epoch, and reject users without available negatives. Six mechanism and training tests pass. Old checkpoints require retraining; BPR+Adam is a disclosed ranking adaptation.
+
