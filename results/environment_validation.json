@@ -1,0 +1,54 @@
+{
+  "environment": "Windows x64 / Python 3.11.0, venv without system site packages",
+  "install": "requirements-lock.txt installed from scratch",
+  "dependency_check": "pip check passed",
+  "unit_tests": {
+    "passed": 30,
+    "warnings": 2
+  },
+  "saved_models": {
+    "python": "3.11.0",
+    "models": {
+      "ItemKNN": {
+        "test_users": 5730,
+        "max_metric_difference": 5.551115123125783e-17
+      },
+      "LightFM-BPR": {
+        "test_users": 5730,
+        "max_metric_difference": 9.020562075079397e-17
+      },
+      "ICSRec (GRU)": {
+        "test_users": 5730,
+        "max_metric_difference": 9.71445146547012e-17
+      }
+    },
+    "examples": {
+      "rows": 600,
+      "groups": 60,
+      "minimum_movies": 10,
+      "observed_overlap": 0
+    },
+    "status": "pass"
+  },
+  "application": {
+    "status": "pass",
+    "normal_page": true,
+    "learned_models": [
+      "LightFM-BPR",
+      "ICSRec (GRU)"
+    ],
+    "empty_filter_warning": true
+  },
+  "training_smoke": {
+    "status": "pass",
+    "synthetic_users": 20,
+    "synthetic_movies": 140,
+    "synthetic_ratings": 400,
+    "algorithms": 3,
+    "full_results_overwritten": false
+  },
+  "limitations": [
+    "Full optimization was not rerun in the clean environment; saved-model metrics were independently recomputed.",
+    "Lecture provenance and group/submission records require actual course evidence."
+  ]
+}

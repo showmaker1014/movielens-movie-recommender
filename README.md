@@ -41,7 +41,7 @@ Python 3.11 CPU is supported.
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install -r requirements-resolved.txt
 
 python scripts/prepare_data.py --download
 python scripts/train_models.py
@@ -53,7 +53,7 @@ streamlit run app.py
 The Streamlit app opens at `http://localhost:8501`.
 
 The corrected CPU run versions are listed in
-`requirements-lock.txt`.
+`requirements-lock.txt`; the independently validated Windows/Python 3.11 environment, including transitive packages, is in `requirements-resolved.txt`.
 
 For a fast implementation smoke test, use `python scripts/train_models.py --quick`.
 Do not report quick-run metrics; the command reduces epochs and model variants.
@@ -90,7 +90,7 @@ from Git; only code, reports, figures, and result tables are committed.
 - Maximum training sequence length: 50
 - Interaction features and popularity use training data only; static metadata normalization uses the known catalog
 
-Direct dependency versions are in `requirements-lock.txt`. Training and test-scoring durations are separate columns in `results/metrics.csv`; selected training durations, configurations, software and seed are recorded in `results/training_info.json`.
+Direct dependency versions are in `requirements-lock.txt`; the independently validated Windows/Python 3.11 environment, including transitive packages, is in `requirements-resolved.txt`. Training and test-scoring durations are separate columns in `results/metrics.csv`; selected training durations, configurations, software and seed are recorded in `results/training_info.json`.
 
 ## Outputs
 

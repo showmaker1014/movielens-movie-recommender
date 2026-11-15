@@ -5,7 +5,7 @@ Use 64-bit Python 3.11 on Windows for the tested CPU setup. A virtual environmen
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements-lock.txt
+python -m pip install -r requirements-resolved.txt
 python -m pip check
 python -m pytest -q
 python scripts/prepare_data.py --download

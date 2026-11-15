@@ -56,3 +56,7 @@ Use one full-history filter, deterministic movie-ID tie rule and sampled user se
 ## Step 12 — Add reproduction, submission and presentation documentation
 
 Add core-method/difference mapping, a runbook, course checklist, five-minute script and a page-specific review of the supplied 24-page PDF. Reproduce saved metrics and example rankings with a reusable verification script. Keep absent lecture provenance and administrative records explicit rather than inventing evidence.
+
+## Step 13 — Independently validate a clean environment
+
+Install all direct dependencies in a new Windows/Python 3.11 venv without system packages. pip check passes; 30 tests pass. Recompute saved-model metrics/examples, run live AppTest including empty filters, and train all three models on isolated synthetic data without replacing MovieLens results. Record all resolved packages and validation evidence. Full clean-environment optimization was not rerun.
