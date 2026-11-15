@@ -1,0 +1,24 @@
+{
+  "python": "3.11.0",
+  "models": {
+    "ItemKNN": {
+      "test_users": 5730,
+      "max_metric_difference": 5.551115123125783e-17
+    },
+    "LightFM-BPR": {
+      "test_users": 5730,
+      "max_metric_difference": 9.020562075079397e-17
+    },
+    "ICSRec (GRU)": {
+      "test_users": 5730,
+      "max_metric_difference": 9.71445146547012e-17
+    }
+  },
+  "examples": {
+    "rows": 600,
+    "groups": 60,
+    "minimum_movies": 10,
+    "observed_overlap": 0
+  },
+  "status": "pass"
+}

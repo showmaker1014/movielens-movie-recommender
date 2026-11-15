@@ -52,3 +52,7 @@ Escape Markdown pipes/newlines, correct duration locations, remove unsupported c
 ## Step 11 — Unify product examples with the interface
 
 Use one full-history filter, deterministic movie-ID tie rule and sampled user set in training, re-export and UI. Exported profiles and score fields now have the same schema. Add ranking/export parity and user-selection regression checks.
+
+## Step 12 — Add reproduction, submission and presentation documentation
+
+Add core-method/difference mapping, a runbook, course checklist, five-minute script and a page-specific review of the supplied 24-page PDF. Reproduce saved metrics and example rankings with a reusable verification script. Keep absent lecture provenance and administrative records explicit rather than inventing evidence.

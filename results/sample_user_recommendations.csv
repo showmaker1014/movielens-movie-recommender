@@ -1,601 +1,601 @@
-user_id,algorithm,rank,movie_id,title,genres,release_year,model_score
-518,ItemKNN,1,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,10.629548
-518,ItemKNN,2,838,Emma (1996),Comedy|Drama|Romance,1996,10.622388
-518,ItemKNN,3,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,10.613137
-518,ItemKNN,4,3044,Dead Again (1991),Mystery|Romance|Thriller,1991,10.520919
-518,ItemKNN,5,539,Sleepless in Seattle (1993),Comedy|Romance,1993,10.3915615
-518,ItemKNN,6,1947,West Side Story (1961),Musical|Romance,1961,10.389315
-518,ItemKNN,7,858,"Godfather, The (1972)",Action|Crime|Drama,1972,10.371175
-518,ItemKNN,8,1393,Jerry Maguire (1996),Drama|Romance,1996,10.301174
-518,ItemKNN,9,1674,Witness (1985),Drama|Romance|Thriller,1985,10.157315
-518,ItemKNN,10,923,Citizen Kane (1941),Drama,1941,9.931325
-518,LightFM-BPR,1,1959,Out of Africa (1985),Drama|Romance,1985,6.4340625
-518,LightFM-BPR,2,1674,Witness (1985),Drama|Romance|Thriller,1985,6.2548456
-518,LightFM-BPR,3,858,"Godfather, The (1972)",Action|Crime|Drama,1972,6.0377293
-518,LightFM-BPR,4,110,Braveheart (1995),Action|Drama|War,1995,5.900949
-518,LightFM-BPR,5,969,"African Queen, The (1951)",Action|Adventure|Romance|War,1951,5.8211827
-518,LightFM-BPR,6,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,5.7254815
-518,LightFM-BPR,7,2692,Run Lola Run (Lola rennt) (1998),Action|Crime|Romance,1998,5.7067165
-518,LightFM-BPR,8,899,Singin' in the Rain (1952),Musical|Romance,1952,5.6176896
-518,LightFM-BPR,9,1230,Annie Hall (1977),Comedy|Romance,1977,5.536726
-518,LightFM-BPR,10,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,5.4441853
-518,ICSRec (GRU),1,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.3332176
-518,ICSRec (GRU),2,223,Clerks (1994),Comedy,1994,2.1103082
-518,ICSRec (GRU),3,2706,American Pie (1999),Comedy,1999,1.8203658
-518,ICSRec (GRU),4,1,Toy Story (1995),Animation|Children's|Comedy,1995,1.8178782
-518,ICSRec (GRU),5,364,"Lion King, The (1994)",Animation|Children's|Musical,1994,1.7932081
-518,ICSRec (GRU),6,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,1.7615063
-518,ICSRec (GRU),7,34,Babe (1995),Children's|Comedy|Drama,1995,1.7147992
-518,ICSRec (GRU),8,588,Aladdin (1992),Animation|Children's|Comedy|Musical,1992,1.698942
-518,ICSRec (GRU),9,595,Beauty and the Beast (1991),Animation|Children's|Musical,1991,1.6792175
-518,ICSRec (GRU),10,1393,Jerry Maguire (1996),Drama|Romance,1996,1.6309394
-538,ItemKNN,1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,8.356752
-538,ItemKNN,2,2028,Saving Private Ryan (1998),Action|Drama|War,1998,8.087345
-538,ItemKNN,3,858,"Godfather, The (1972)",Action|Crime|Drama,1972,7.922956
-538,ItemKNN,4,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,7.5490456
-538,ItemKNN,5,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,7.520234
-538,ItemKNN,6,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.1316867
-538,ItemKNN,7,1,Toy Story (1995),Animation|Children's|Comedy,1995,7.0611124
-538,ItemKNN,8,2762,"Sixth Sense, The (1999)",Thriller,1999,6.9815316
-538,ItemKNN,9,110,Braveheart (1995),Action|Drama|War,1995,6.973617
-538,ItemKNN,10,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,6.9339037
-538,LightFM-BPR,1,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,8.25294
-538,LightFM-BPR,2,1278,Young Frankenstein (1974),Comedy|Horror,1974,7.8281536
-538,LightFM-BPR,3,1294,M*A*S*H (1970),Comedy|War,1970,7.72178
-538,LightFM-BPR,4,2366,King Kong (1933),Action|Adventure|Horror,1933,7.3674507
-538,LightFM-BPR,5,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,7.2465205
-538,LightFM-BPR,6,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,7.207756
-538,LightFM-BPR,7,750,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963),Sci-Fi|War,1963,7.1235905
-538,LightFM-BPR,8,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,7.070213
-538,LightFM-BPR,9,1219,Psycho (1960),Horror|Thriller,1960,7.052198
-538,LightFM-BPR,10,3671,Blazing Saddles (1974),Comedy|Western,1974,7.0239096
-538,ICSRec (GRU),1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,3.8794317
-538,ICSRec (GRU),2,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,3.6605625
-538,ICSRec (GRU),3,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,3.6551907
-538,ICSRec (GRU),4,2858,American Beauty (1999),Comedy|Drama,1999,3.4323883
-538,ICSRec (GRU),5,2028,Saving Private Ryan (1998),Action|Drama|War,1998,3.421867
-538,ICSRec (GRU),6,858,"Godfather, The (1972)",Action|Crime|Drama,1972,3.3695822
-538,ICSRec (GRU),7,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,3.3271317
-538,ICSRec (GRU),8,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,3.2591405
-538,ICSRec (GRU),9,1200,Aliens (1986),Action|Sci-Fi|Thriller|War,1986,3.254462
-538,ICSRec (GRU),10,110,Braveheart (1995),Action|Drama|War,1995,3.254175
-568,ItemKNN,1,608,Fargo (1996),Crime|Drama|Thriller,1996,5.5990477
-568,ItemKNN,2,457,"Fugitive, The (1993)",Action|Thriller,1993,5.2725267
-568,ItemKNN,3,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,5.218105
-568,ItemKNN,4,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,5.125687
-568,ItemKNN,5,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,5.1095233
-568,ItemKNN,6,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,4.954896
-568,ItemKNN,7,2858,American Beauty (1999),Comedy|Drama,1999,4.9538975
-568,ItemKNN,8,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,4.8299923
-568,ItemKNN,9,296,Pulp Fiction (1994),Crime|Drama,1994,4.824894
-568,ItemKNN,10,2762,"Sixth Sense, The (1999)",Thriller,1999,4.496686
-568,LightFM-BPR,1,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.779519
-568,LightFM-BPR,2,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,6.7772994
-568,LightFM-BPR,3,2396,Shakespeare in Love (1998),Comedy|Romance,1998,6.694208
-568,LightFM-BPR,4,2762,"Sixth Sense, The (1999)",Thriller,1999,6.6879253
-568,LightFM-BPR,5,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,6.6741915
-568,LightFM-BPR,6,924,2001: A Space Odyssey (1968),Drama|Mystery|Sci-Fi|Thriller,1968,6.3650403
-568,LightFM-BPR,7,2858,American Beauty (1999),Comedy|Drama,1999,6.352182
-568,LightFM-BPR,8,1269,Arsenic and Old Lace (1944),Comedy|Mystery|Thriller,1944,6.28893
-568,LightFM-BPR,9,34,Babe (1995),Children's|Comedy|Drama,1995,6.191449
-568,LightFM-BPR,10,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,6.083458
-568,ICSRec (GRU),1,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,3.859981
-568,ICSRec (GRU),2,2916,Total Recall (1990),Action|Adventure|Sci-Fi|Thriller,1990,3.730448
-568,ICSRec (GRU),3,1356,Star Trek: First Contact (1996),Action|Adventure|Sci-Fi,1996,3.2705064
-568,ICSRec (GRU),4,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,3.1471133
-568,ICSRec (GRU),5,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,2.9281797
-568,ICSRec (GRU),6,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,2.8896003
-568,ICSRec (GRU),7,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,2.873754
-568,ICSRec (GRU),8,1573,Face/Off (1997),Action|Sci-Fi|Thriller,1997,2.8531742
-568,ICSRec (GRU),9,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,2.8283095
-568,ICSRec (GRU),10,2985,Robocop (1987),Action|Crime|Sci-Fi,1987,2.7966628
-774,ItemKNN,1,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,14.638155
-774,ItemKNN,2,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,14.56331
-774,ItemKNN,3,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,13.315363
-774,ItemKNN,4,293,"Professional, The (a.k.a. Leon: The Professional) (1994)",Crime|Drama|Romance|Thriller,1994,12.353864
-774,ItemKNN,5,356,Forrest Gump (1994),Comedy|Romance|War,1994,11.997081
-774,ItemKNN,6,1358,Sling Blade (1996),Drama|Thriller,1996,11.766638
-774,ItemKNN,7,1259,Stand by Me (1986),Adventure|Comedy|Drama,1986,11.734895
-774,ItemKNN,8,1222,Full Metal Jacket (1987),Action|Drama|War,1987,11.288994
-774,ItemKNN,9,2716,Ghostbusters (1984),Comedy|Horror,1984,10.958862
-774,ItemKNN,10,590,Dances with Wolves (1990),Adventure|Drama|Western,1990,10.80641
-774,LightFM-BPR,1,293,"Professional, The (a.k.a. Leon: The Professional) (1994)",Crime|Drama|Romance|Thriller,1994,6.8131976
-774,LightFM-BPR,2,356,Forrest Gump (1994),Comedy|Romance|War,1994,6.762605
-774,LightFM-BPR,3,1358,Sling Blade (1996),Drama|Thriller,1996,6.723151
-774,LightFM-BPR,4,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,6.719124
-774,LightFM-BPR,5,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,6.5951085
-774,LightFM-BPR,6,2706,American Pie (1999),Comedy,1999,6.3431945
-774,LightFM-BPR,7,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,6.236795
-774,LightFM-BPR,8,1222,Full Metal Jacket (1987),Action|Drama|War,1987,6.2213964
-774,LightFM-BPR,9,1517,Austin Powers: International Man of Mystery (1997),Comedy,1997,6.083082
-774,LightFM-BPR,10,1961,Rain Man (1988),Drama,1988,6.0498714
-774,ICSRec (GRU),1,2716,Ghostbusters (1984),Comedy|Horror,1984,2.7434335
-774,ICSRec (GRU),2,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.663995
-774,ICSRec (GRU),3,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.6054974
-774,ICSRec (GRU),4,1784,As Good As It Gets (1997),Comedy|Drama,1997,2.1665127
-774,ICSRec (GRU),5,590,Dances with Wolves (1990),Adventure|Drama|Western,1990,2.1604354
-774,ICSRec (GRU),6,2000,Lethal Weapon (1987),Action|Comedy|Crime|Drama,1987,2.1290202
-774,ICSRec (GRU),7,2797,Big (1988),Comedy|Fantasy,1988,2.1232526
-774,ICSRec (GRU),8,2302,My Cousin Vinny (1992),Comedy,1992,2.080233
-774,ICSRec (GRU),9,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,2.028091
-774,ICSRec (GRU),10,2406,Romancing the Stone (1984),Action|Adventure|Comedy|Romance,1984,2.0090663
-1215,ItemKNN,1,1127,"Abyss, The (1989)",Action|Adventure|Sci-Fi|Thriller,1989,11.741805
-1215,ItemKNN,2,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,10.572924
-1215,ItemKNN,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,10.56738
-1215,ItemKNN,4,3070,"Adventures of Buckaroo Bonzai Across the 8th Dimension, The (1984)",Adventure|Comedy|Sci-Fi,1984,10.220447
-1215,ItemKNN,5,2407,Cocoon (1985),Comedy|Sci-Fi,1985,10.132748
-1215,ItemKNN,6,780,Independence Day (ID4) (1996),Action|Sci-Fi|War,1996,9.968061
-1215,ItemKNN,7,316,Stargate (1994),Action|Adventure|Sci-Fi,1994,9.835478
-1215,ItemKNN,8,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,9.784941
-1215,ItemKNN,9,608,Fargo (1996),Crime|Drama|Thriller,1996,9.71435
-1215,ItemKNN,10,318,"Shawshank Redemption, The (1994)",Drama,1994,9.65083
-1215,LightFM-BPR,1,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,7.501877
-1215,LightFM-BPR,2,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.2820115
-1215,LightFM-BPR,3,1965,Repo Man (1984),Comedy|Sci-Fi,1984,7.244081
-1215,LightFM-BPR,4,1127,"Abyss, The (1989)",Action|Adventure|Sci-Fi|Thriller,1989,7.0795593
-1215,LightFM-BPR,5,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.078108
-1215,LightFM-BPR,6,2407,Cocoon (1985),Comedy|Sci-Fi,1985,7.053606
-1215,LightFM-BPR,7,671,Mystery Science Theater 3000: The Movie (1996),Comedy|Sci-Fi,1996,7.0207167
-1215,LightFM-BPR,8,2716,Ghostbusters (1984),Comedy|Horror,1984,6.8586593
-1215,LightFM-BPR,9,2762,"Sixth Sense, The (1999)",Thriller,1999,6.837804
-1215,LightFM-BPR,10,2987,Who Framed Roger Rabbit? (1988),Adventure|Animation|Film-Noir,1988,6.6517386
-1215,ICSRec (GRU),1,780,Independence Day (ID4) (1996),Action|Sci-Fi|War,1996,3.5388463
-1215,ICSRec (GRU),2,316,Stargate (1994),Action|Adventure|Sci-Fi,1994,3.4737067
-1215,ICSRec (GRU),3,736,Twister (1996),Action|Adventure|Romance|Thriller,1996,2.8101363
-1215,ICSRec (GRU),4,1573,Face/Off (1997),Action|Sci-Fi|Thriller,1997,2.7981389
-1215,ICSRec (GRU),5,1917,Armageddon (1998),Action|Adventure|Sci-Fi|Thriller,1998,2.7457504
-1215,ICSRec (GRU),6,648,Mission: Impossible (1996),Action|Adventure|Mystery,1996,2.6633322
-1215,ICSRec (GRU),7,2393,Star Trek: Insurrection (1998),Action|Sci-Fi,1998,2.6593277
-1215,ICSRec (GRU),8,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,2.6380534
-1215,ICSRec (GRU),9,1544,"Lost World: Jurassic Park, The (1997)",Action|Adventure|Sci-Fi|Thriller,1997,2.635496
-1215,ICSRec (GRU),10,2617,"Mummy, The (1999)",Action|Adventure|Horror|Thriller,1999,2.615858
-2609,ItemKNN,1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,13.380039
-2609,ItemKNN,2,1213,GoodFellas (1990),Crime|Drama,1990,12.992661
-2609,ItemKNN,3,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,12.557841
-2609,ItemKNN,4,111,Taxi Driver (1976),Drama|Thriller,1976,12.411967
-2609,ItemKNN,5,1208,Apocalypse Now (1979),Drama|War,1979,12.164758
-2609,ItemKNN,6,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,11.708001
-2609,ItemKNN,7,1225,Amadeus (1984),Drama,1984,11.479442
-2609,ItemKNN,8,1247,"Graduate, The (1967)",Drama|Romance,1967,11.244979
-2609,ItemKNN,9,1265,Groundhog Day (1993),Comedy|Romance,1993,10.755438
-2609,ItemKNN,10,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,10.699662
-2609,LightFM-BPR,1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,6.739667
-2609,LightFM-BPR,2,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,6.679467
-2609,LightFM-BPR,3,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,6.583776
-2609,LightFM-BPR,4,474,In the Line of Fire (1993),Action|Thriller,1993,6.5612364
-2609,LightFM-BPR,5,924,2001: A Space Odyssey (1968),Drama|Mystery|Sci-Fi|Thriller,1968,6.522578
-2609,LightFM-BPR,6,1036,Die Hard (1988),Action|Thriller,1988,6.512577
-2609,LightFM-BPR,7,3256,Patriot Games (1992),Action|Thriller,1992,6.318025
-2609,LightFM-BPR,8,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.2784605
-2609,LightFM-BPR,9,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,6.2350135
-2609,LightFM-BPR,10,356,Forrest Gump (1994),Comedy|Romance|War,1994,6.220473
-2609,ICSRec (GRU),1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,2.7826533
-2609,ICSRec (GRU),2,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,2.6859412
-2609,ICSRec (GRU),3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,2.6548152
-2609,ICSRec (GRU),4,1247,"Graduate, The (1967)",Drama|Romance,1967,2.6169415
-2609,ICSRec (GRU),5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.6089065
-2609,ICSRec (GRU),6,912,Casablanca (1942),Drama|Romance|War,1942,2.5990396
-2609,ICSRec (GRU),7,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,2.5560753
-2609,ICSRec (GRU),8,1208,Apocalypse Now (1979),Drama|War,1979,2.5548232
-2609,ICSRec (GRU),9,924,2001: A Space Odyssey (1968),Drama|Mystery|Sci-Fi|Thriller,1968,2.5444765
-2609,ICSRec (GRU),10,1230,Annie Hall (1977),Comedy|Romance,1977,2.5406022
-2644,ItemKNN,1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,3.4886775
-2644,ItemKNN,2,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,3.3447793
-2644,ItemKNN,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,3.315968
-2644,ItemKNN,4,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,3.2250454
-2644,ItemKNN,5,1200,Aliens (1986),Action|Sci-Fi|Thriller|War,1986,3.1443143
-2644,ItemKNN,6,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,3.0634456
-2644,ItemKNN,7,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,3.062917
-2644,ItemKNN,8,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,3.032236
-2644,ItemKNN,9,527,Schindler's List (1993),Drama|War,1993,3.0248246
-2644,ItemKNN,10,2028,Saving Private Ryan (1998),Action|Drama|War,1998,3.0214446
-2644,LightFM-BPR,1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,8.360038
-2644,LightFM-BPR,2,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,7.7325907
-2644,LightFM-BPR,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,7.658864
-2644,LightFM-BPR,4,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,7.657349
-2644,LightFM-BPR,5,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.4920254
-2644,LightFM-BPR,6,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.4449077
-2644,LightFM-BPR,7,318,"Shawshank Redemption, The (1994)",Drama,1994,7.4318933
-2644,LightFM-BPR,8,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,7.4124246
-2644,LightFM-BPR,9,2028,Saving Private Ryan (1998),Action|Drama|War,1998,7.358839
-2644,LightFM-BPR,10,356,Forrest Gump (1994),Comedy|Romance|War,1994,7.286774
-2644,ICSRec (GRU),1,2716,Ghostbusters (1984),Comedy|Horror,1984,2.9436834
-2644,ICSRec (GRU),2,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.8091018
-2644,ICSRec (GRU),3,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,2.7832923
-2644,ICSRec (GRU),4,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.712009
-2644,ICSRec (GRU),5,2997,Being John Malkovich (1999),Comedy,1999,2.6878445
-2644,ICSRec (GRU),6,2762,"Sixth Sense, The (1999)",Thriller,1999,2.6781743
-2644,ICSRec (GRU),7,2396,Shakespeare in Love (1998),Comedy|Romance,1998,2.6663766
-2644,ICSRec (GRU),8,1265,Groundhog Day (1993),Comedy|Romance,1993,2.647936
-2644,ICSRec (GRU),9,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,2.6466503
-2644,ICSRec (GRU),10,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.5132046
-2721,ItemKNN,1,11,"American President, The (1995)",Comedy|Drama|Romance,1995,3.7877793
-2721,ItemKNN,2,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,3.7433302
-2721,ItemKNN,3,527,Schindler's List (1993),Drama|War,1993,3.4451938
-2721,ItemKNN,4,1393,Jerry Maguire (1996),Drama|Romance,1996,3.406964
-2721,ItemKNN,5,597,Pretty Woman (1990),Comedy|Romance,1990,3.3955202
-2721,ItemKNN,6,356,Forrest Gump (1994),Comedy|Romance|War,1994,3.2968383
-2721,ItemKNN,7,2858,American Beauty (1999),Comedy|Drama,1999,3.2933474
-2721,ItemKNN,8,17,Sense and Sensibility (1995),Drama|Romance,1995,3.25849
-2721,ItemKNN,9,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,3.2083538
-2721,ItemKNN,10,1784,As Good As It Gets (1997),Comedy|Drama,1997,3.1838548
-2721,LightFM-BPR,1,356,Forrest Gump (1994),Comedy|Romance|War,1994,8.1637745
-2721,LightFM-BPR,2,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,7.195871
-2721,LightFM-BPR,3,2858,American Beauty (1999),Comedy|Drama,1999,6.9402184
-2721,LightFM-BPR,4,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,6.9012265
-2721,LightFM-BPR,5,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,6.7499943
-2721,LightFM-BPR,6,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.648037
-2721,LightFM-BPR,7,11,"American President, The (1995)",Comedy|Drama|Romance,1995,6.6263213
-2721,LightFM-BPR,8,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,6.5185966
-2721,LightFM-BPR,9,1094,"Crying Game, The (1992)",Drama|Romance|War,1992,6.3611417
-2721,LightFM-BPR,10,2762,"Sixth Sense, The (1999)",Thriller,1999,6.3380423
-2721,ICSRec (GRU),1,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.7950082
-2721,ICSRec (GRU),2,2797,Big (1988),Comedy|Fantasy,1988,2.6107101
-2721,ICSRec (GRU),3,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,2.495391
-2721,ICSRec (GRU),4,1923,There's Something About Mary (1998),Comedy,1998,2.4887695
-2721,ICSRec (GRU),5,1784,As Good As It Gets (1997),Comedy|Drama,1997,2.409366
-2721,ICSRec (GRU),6,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.3765042
-2721,ICSRec (GRU),7,2918,Ferris Bueller's Day Off (1986),Comedy,1986,2.3601143
-2721,ICSRec (GRU),8,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,2.34559
-2721,ICSRec (GRU),9,2302,My Cousin Vinny (1992),Comedy,1992,2.3108954
-2721,ICSRec (GRU),10,1393,Jerry Maguire (1996),Drama|Romance,1996,2.2961159
-3099,ItemKNN,1,1,Toy Story (1995),Animation|Children's|Comedy,1995,12.407871
-3099,ItemKNN,2,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,11.899729
-3099,ItemKNN,3,2791,Airplane! (1980),Comedy,1980,11.342944
-3099,ItemKNN,4,356,Forrest Gump (1994),Comedy|Romance|War,1994,10.970844
-3099,ItemKNN,5,457,"Fugitive, The (1993)",Action|Thriller,1993,10.895739
-3099,ItemKNN,6,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,10.876789
-3099,ItemKNN,7,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,10.472295
-3099,ItemKNN,8,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,10.390363
-3099,ItemKNN,9,1291,Indiana Jones and the Last Crusade (1989),Action|Adventure,1989,10.380623
-3099,ItemKNN,10,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,10.172199
-3099,LightFM-BPR,1,356,Forrest Gump (1994),Comedy|Romance|War,1994,8.586792
-3099,LightFM-BPR,2,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,7.529303
-3099,LightFM-BPR,3,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.449451
-3099,LightFM-BPR,4,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,7.437941
-3099,LightFM-BPR,5,1036,Die Hard (1988),Action|Thriller,1988,7.412471
-3099,LightFM-BPR,6,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,7.3340535
-3099,LightFM-BPR,7,368,Maverick (1994),Action|Comedy|Western,1994,7.3330626
-3099,LightFM-BPR,8,2706,American Pie (1999),Comedy,1999,7.3329115
-3099,LightFM-BPR,9,733,"Rock, The (1996)",Action|Adventure|Thriller,1996,7.322613
-3099,LightFM-BPR,10,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,7.294123
-3099,ICSRec (GRU),1,733,"Rock, The (1996)",Action|Adventure|Thriller,1996,3.4242935
-3099,ICSRec (GRU),2,3256,Patriot Games (1992),Action|Thriller,1992,3.0848746
-3099,ICSRec (GRU),3,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,3.0343082
-3099,ICSRec (GRU),4,349,Clear and Present Danger (1994),Action|Adventure|Thriller,1994,3.0107894
-3099,ICSRec (GRU),5,2115,Indiana Jones and the Temple of Doom (1984),Action|Adventure,1984,2.893911
-3099,ICSRec (GRU),6,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,2.8932047
-3099,ICSRec (GRU),7,1370,Die Hard 2 (1990),Action|Thriller,1990,2.819014
-3099,ICSRec (GRU),8,1676,Starship Troopers (1997),Action|Adventure|Sci-Fi|War,1997,2.8152695
-3099,ICSRec (GRU),9,377,Speed (1994),Action|Romance|Thriller,1994,2.7921925
-3099,ICSRec (GRU),10,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,2.7290387
-3176,ItemKNN,1,318,"Shawshank Redemption, The (1994)",Drama,1994,2.2107832
-3176,ItemKNN,2,3408,Erin Brockovich (2000),Drama,2000,2.1443772
-3176,ItemKNN,3,110,Braveheart (1995),Action|Drama|War,1995,2.0017235
-3176,ItemKNN,4,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.0009685
-3176,ItemKNN,5,2762,"Sixth Sense, The (1999)",Thriller,1999,1.9780713
-3176,ItemKNN,6,457,"Fugitive, The (1993)",Action|Thriller,1993,1.9121147
-3176,ItemKNN,7,1704,Good Will Hunting (1997),Drama,1997,1.8889346
-3176,ItemKNN,8,377,Speed (1994),Action|Romance|Thriller,1994,1.8853581
-3176,ItemKNN,9,3793,X-Men (2000),Action|Sci-Fi,2000,1.8733102
-3176,ItemKNN,10,3147,"Green Mile, The (1999)",Drama|Thriller,1999,1.8484937
-3176,LightFM-BPR,1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.952669
-3176,LightFM-BPR,2,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,7.765544
-3176,LightFM-BPR,3,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.6105385
-3176,LightFM-BPR,4,2762,"Sixth Sense, The (1999)",Thriller,1999,7.426071
-3176,LightFM-BPR,5,2858,American Beauty (1999),Comedy|Drama,1999,7.2678914
-3176,LightFM-BPR,6,110,Braveheart (1995),Action|Drama|War,1995,7.19674
-3176,LightFM-BPR,7,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,7.1424804
-3176,LightFM-BPR,8,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,7.135434
-3176,LightFM-BPR,9,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,6.9925766
-3176,LightFM-BPR,10,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,6.9234266
-3176,ICSRec (GRU),1,2858,American Beauty (1999),Comedy|Drama,1999,3.5891135
-3176,ICSRec (GRU),2,2997,Being John Malkovich (1999),Comedy,1999,3.1019137
-3176,ICSRec (GRU),3,2762,"Sixth Sense, The (1999)",Thriller,1999,3.0004787
-3176,ICSRec (GRU),4,3793,X-Men (2000),Action|Sci-Fi,2000,2.8843508
-3176,ICSRec (GRU),5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.862173
-3176,ICSRec (GRU),6,858,"Godfather, The (1972)",Action|Crime|Drama,1972,2.8437395
-3176,ICSRec (GRU),7,3408,Erin Brockovich (2000),Drama,2000,2.8163784
-3176,ICSRec (GRU),8,318,"Shawshank Redemption, The (1994)",Drama,1994,2.6908588
-3176,ICSRec (GRU),9,3510,Frequency (2000),Drama|Thriller,2000,2.6738508
-3176,ICSRec (GRU),10,2683,Austin Powers: The Spy Who Shagged Me (1999),Comedy,1999,2.6703813
-3943,ItemKNN,1,608,Fargo (1996),Crime|Drama|Thriller,1996,8.316082
-3943,ItemKNN,2,1641,"Full Monty, The (1997)",Comedy,1997,8.281045
-3943,ItemKNN,3,39,Clueless (1995),Comedy|Romance,1995,7.9235163
-3943,ItemKNN,4,1704,Good Will Hunting (1997),Drama,1997,7.8783526
-3943,ItemKNN,5,3255,"League of Their Own, A (1992)",Comedy|Drama,1992,7.148421
-3943,ItemKNN,6,2302,My Cousin Vinny (1992),Comedy,1992,7.0974026
-3943,ItemKNN,7,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.0832334
-3943,ItemKNN,8,2997,Being John Malkovich (1999),Comedy,1999,7.042211
-3943,ItemKNN,9,527,Schindler's List (1993),Drama|War,1993,6.9820185
-3943,ItemKNN,10,2321,Pleasantville (1998),Comedy,1998,6.9484186
-3943,LightFM-BPR,1,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.652434
-3943,LightFM-BPR,2,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,7.639011
-3943,LightFM-BPR,3,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,7.498443
-3943,LightFM-BPR,4,2762,"Sixth Sense, The (1999)",Thriller,1999,7.493894
-3943,LightFM-BPR,5,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,7.4863086
-3943,LightFM-BPR,6,440,Dave (1993),Comedy|Romance,1993,7.286235
-3943,LightFM-BPR,7,2997,Being John Malkovich (1999),Comedy,1999,7.0880113
-3943,LightFM-BPR,8,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,7.0445547
-3943,LightFM-BPR,9,1641,"Full Monty, The (1997)",Comedy,1997,6.973595
-3943,LightFM-BPR,10,3408,Erin Brockovich (2000),Drama,2000,6.924582
-3943,ICSRec (GRU),1,2918,Ferris Bueller's Day Off (1986),Comedy,1986,3.0044322
-3943,ICSRec (GRU),2,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,2.9126513
-3943,ICSRec (GRU),3,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.9044948
-3943,ICSRec (GRU),4,2716,Ghostbusters (1984),Comedy|Horror,1984,2.868449
-3943,ICSRec (GRU),5,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,2.8650436
-3943,ICSRec (GRU),6,2000,Lethal Weapon (1987),Action|Comedy|Crime|Drama,1987,2.7501683
-3943,ICSRec (GRU),7,2797,Big (1988),Comedy|Fantasy,1988,2.7460668
-3943,ICSRec (GRU),8,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,2.6997433
-3943,ICSRec (GRU),9,457,"Fugitive, The (1993)",Action|Thriller,1993,2.6989949
-3943,ICSRec (GRU),10,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.6918273
-4204,ItemKNN,1,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,24.313444
-4204,ItemKNN,2,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,23.638823
-4204,ItemKNN,3,1242,Glory (1989),Action|Drama|War,1989,23.29736
-4204,ItemKNN,4,1136,Monty Python and the Holy Grail (1974),Comedy,1974,22.733862
-4204,ItemKNN,5,2858,American Beauty (1999),Comedy|Drama,1999,20.022593
-4204,ItemKNN,6,2951,"Fistful of Dollars, A (1964)",Action|Western,1964,19.921555
-4204,ItemKNN,7,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,19.620712
-4204,ItemKNN,8,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,19.319332
-4204,ItemKNN,9,2791,Airplane! (1980),Comedy,1980,19.123276
-4204,ItemKNN,10,1079,"Fish Called Wanda, A (1988)",Comedy,1988,19.049414
-4204,LightFM-BPR,1,2455,"Fly, The (1986)",Horror|Sci-Fi,1986,7.4064903
-4204,LightFM-BPR,2,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,6.883812
-4204,LightFM-BPR,3,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,6.871247
-4204,LightFM-BPR,4,2791,Airplane! (1980),Comedy,1980,6.7752857
-4204,LightFM-BPR,5,2858,American Beauty (1999),Comedy|Drama,1999,6.773227
-4204,LightFM-BPR,6,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,6.7116694
-4204,LightFM-BPR,7,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,6.70846
-4204,LightFM-BPR,8,1136,Monty Python and the Holy Grail (1974),Comedy,1974,6.6492686
-4204,LightFM-BPR,9,912,Casablanca (1942),Drama|Romance|War,1942,6.57144
-4204,LightFM-BPR,10,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,6.437615
-4204,ICSRec (GRU),1,316,Stargate (1994),Action|Adventure|Sci-Fi,1994,2.6353807
-4204,ICSRec (GRU),2,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,2.3324537
-4204,ICSRec (GRU),3,2002,Lethal Weapon 3 (1992),Action|Comedy|Crime|Drama,1992,2.3269262
-4204,ICSRec (GRU),4,587,Ghost (1990),Comedy|Romance|Thriller,1990,2.320109
-4204,ICSRec (GRU),5,1544,"Lost World: Jurassic Park, The (1997)",Action|Adventure|Sci-Fi|Thriller,1997,2.3152218
-4204,ICSRec (GRU),6,1917,Armageddon (1998),Action|Adventure|Sci-Fi|Thriller,1998,2.2490551
-4204,ICSRec (GRU),7,2617,"Mummy, The (1999)",Action|Adventure|Horror|Thriller,1999,2.2385266
-4204,ICSRec (GRU),8,1876,Deep Impact (1998),Action|Drama|Sci-Fi|Thriller,1998,2.2103548
-4204,ICSRec (GRU),9,648,Mission: Impossible (1996),Action|Adventure|Mystery,1996,2.1705418
-4204,ICSRec (GRU),10,1552,Con Air (1997),Action|Adventure|Thriller,1997,2.1689496
-4330,ItemKNN,1,1952,Midnight Cowboy (1969),Drama,1969,2.3724437
-4330,ItemKNN,2,1228,Raging Bull (1980),Drama,1980,2.0900278
-4330,ItemKNN,3,1208,Apocalypse Now (1979),Drama|War,1979,2.0303888
-4330,ItemKNN,4,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,1.9738338
-4330,ItemKNN,5,1244,Manhattan (1979),Comedy|Drama|Romance,1979,1.951901
-4330,ItemKNN,6,3359,Breaking Away (1979),Drama,1979,1.8742812
-4330,ItemKNN,7,1247,"Graduate, The (1967)",Drama|Romance,1967,1.8472264
-4330,ItemKNN,8,1225,Amadeus (1984),Drama,1984,1.812159
-4330,ItemKNN,9,1945,On the Waterfront (1954),Crime|Drama,1954,1.800031
-4330,ItemKNN,10,3504,Network (1976),Comedy|Drama,1976,1.7798756
-4330,LightFM-BPR,1,920,Gone with the Wind (1939),Drama|Romance|War,1939,7.3948197
-4330,LightFM-BPR,2,1247,"Graduate, The (1967)",Drama|Romance,1967,7.2531385
-4330,LightFM-BPR,3,902,Breakfast at Tiffany's (1961),Drama|Romance,1961,7.1841354
-4330,LightFM-BPR,4,1674,Witness (1985),Drama|Romance|Thriller,1985,7.0499773
-4330,LightFM-BPR,5,2396,Shakespeare in Love (1998),Comedy|Romance,1998,6.935813
-4330,LightFM-BPR,6,17,Sense and Sensibility (1995),Drama|Romance,1995,6.754871
-4330,LightFM-BPR,7,2858,American Beauty (1999),Comedy|Drama,1999,6.697342
-4330,LightFM-BPR,8,1230,Annie Hall (1977),Comedy|Romance,1977,6.68777
-4330,LightFM-BPR,9,2243,Broadcast News (1987),Comedy|Drama|Romance,1987,6.6612296
-4330,LightFM-BPR,10,2291,Edward Scissorhands (1990),Drama|Romance,1990,6.5281205
-4330,ICSRec (GRU),1,608,Fargo (1996),Crime|Drama|Thriller,1996,3.866055
-4330,ICSRec (GRU),2,527,Schindler's List (1993),Drama|War,1993,3.7549162
-4330,ICSRec (GRU),3,2858,American Beauty (1999),Comedy|Drama,1999,3.609333
-4330,ICSRec (GRU),4,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,3.5266154
-4330,ICSRec (GRU),5,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,3.4987438
-4330,ICSRec (GRU),6,296,Pulp Fiction (1994),Crime|Drama,1994,3.410768
-4330,ICSRec (GRU),7,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,3.361918
-4330,ICSRec (GRU),8,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,3.3585703
-4330,ICSRec (GRU),9,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,3.3511367
-4330,ICSRec (GRU),10,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,3.1623065
-4439,ItemKNN,1,2683,Austin Powers: The Spy Who Shagged Me (1999),Comedy,1999,2.1582403
-4439,ItemKNN,2,223,Clerks (1994),Comedy,1994,2.1142282
-4439,ItemKNN,3,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,2.0985308
-4439,ItemKNN,4,2987,Who Framed Roger Rabbit? (1988),Adventure|Animation|Film-Noir,1988,2.0914328
-4439,ItemKNN,5,1,Toy Story (1995),Animation|Children's|Comedy,1995,1.9928677
-4439,ItemKNN,6,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,1.9876312
-4439,ItemKNN,7,2706,American Pie (1999),Comedy,1999,1.9789371
-4439,ItemKNN,8,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,1.9533145
-4439,ItemKNN,9,2918,Ferris Bueller's Day Off (1986),Comedy,1986,1.9453509
-4439,ItemKNN,10,2797,Big (1988),Comedy|Fantasy,1988,1.9243019
-4439,LightFM-BPR,1,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,7.1815596
-4439,LightFM-BPR,2,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,7.1254597
-4439,LightFM-BPR,3,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.0539494
-4439,LightFM-BPR,4,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,6.992947
-4439,LightFM-BPR,5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,6.9280224
-4439,LightFM-BPR,6,356,Forrest Gump (1994),Comedy|Romance|War,1994,6.711884
-4439,LightFM-BPR,7,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,6.6773043
-4439,LightFM-BPR,8,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,6.647043
-4439,LightFM-BPR,9,858,"Godfather, The (1972)",Action|Crime|Drama,1972,6.5386705
-4439,LightFM-BPR,10,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.5088425
-4439,ICSRec (GRU),1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,3.3718781
-4439,ICSRec (GRU),2,527,Schindler's List (1993),Drama|War,1993,3.231142
-4439,ICSRec (GRU),3,608,Fargo (1996),Crime|Drama|Thriller,1996,3.1965277
-4439,ICSRec (GRU),4,318,"Shawshank Redemption, The (1994)",Drama,1994,3.1886866
-4439,ICSRec (GRU),5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,3.1459956
-4439,ICSRec (GRU),6,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,3.0053515
-4439,ICSRec (GRU),7,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,2.9600155
-4439,ICSRec (GRU),8,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,2.932764
-4439,ICSRec (GRU),9,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,2.8672705
-4439,ICSRec (GRU),10,912,Casablanca (1942),Drama|Romance|War,1942,2.821839
-4593,ItemKNN,1,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,7.015806
-4593,ItemKNN,2,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,6.9338036
-4593,ItemKNN,3,58,"Postino, Il (The Postman) (1994)",Drama|Romance,1994,6.8226037
-4593,ItemKNN,4,2289,"Player, The (1992)",Comedy|Drama,1992,6.5059476
-4593,ItemKNN,5,994,Big Night (1996),Drama,1996,6.3437448
-4593,ItemKNN,6,1041,Secrets & Lies (1996),Drama,1996,6.3096004
-4593,ItemKNN,7,2020,Dangerous Liaisons (1988),Drama|Romance,1988,6.1947865
-4593,ItemKNN,8,314,"Secret of Roan Inish, The (1994)",Drama,1994,6.056139
-4593,ItemKNN,9,1185,My Left Foot (1989),Drama,1989,6.0554833
-4593,ItemKNN,10,912,Casablanca (1942),Drama|Romance|War,1942,5.9858932
-4593,LightFM-BPR,1,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,5.9357266
-4593,LightFM-BPR,2,232,Eat Drink Man Woman (1994),Comedy|Drama,1994,5.827055
-4593,LightFM-BPR,3,3148,"Cider House Rules, The (1999)",Drama,1999,5.796649
-4593,LightFM-BPR,4,58,"Postino, Il (The Postman) (1994)",Drama|Romance,1994,5.750594
-4593,LightFM-BPR,5,314,"Secret of Roan Inish, The (1994)",Drama,1994,5.5955124
-4593,LightFM-BPR,6,1041,Secrets & Lies (1996),Drama,1996,5.5835915
-4593,LightFM-BPR,7,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,5.5093904
-4593,LightFM-BPR,8,1961,Rain Man (1988),Drama,1988,5.443012
-4593,LightFM-BPR,9,1959,Out of Africa (1985),Drama|Romance,1985,5.4314637
-4593,LightFM-BPR,10,1185,My Left Foot (1989),Drama,1989,5.389705
-4593,ICSRec (GRU),1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,2.4633641
-4593,ICSRec (GRU),2,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.4575248
-4593,ICSRec (GRU),3,1,Toy Story (1995),Animation|Children's|Comedy,1995,2.380352
-4593,ICSRec (GRU),4,2716,Ghostbusters (1984),Comedy|Horror,1984,2.2725072
-4593,ICSRec (GRU),5,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,2.169701
-4593,ICSRec (GRU),6,2959,Fight Club (1999),Drama,1999,2.0671604
-4593,ICSRec (GRU),7,1259,Stand by Me (1986),Adventure|Comedy|Drama,1986,2.059269
-4593,ICSRec (GRU),8,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,2.0305605
-4593,ICSRec (GRU),9,1136,Monty Python and the Holy Grail (1974),Comedy,1974,2.0234644
-4593,ICSRec (GRU),10,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,2.0118582
-4661,ItemKNN,1,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,23.3792
-4661,ItemKNN,2,1222,Full Metal Jacket (1987),Action|Drama|War,1987,22.542759
-4661,ItemKNN,3,527,Schindler's List (1993),Drama|War,1993,17.91268
-4661,ItemKNN,4,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,17.368912
-4661,ItemKNN,5,1220,"Blues Brothers, The (1980)",Action|Comedy|Musical,1980,16.861326
-4661,ItemKNN,6,296,Pulp Fiction (1994),Crime|Drama,1994,16.166634
-4661,ItemKNN,7,2871,Deliverance (1972),Adventure|Thriller,1972,15.676881
-4661,ItemKNN,8,1276,Cool Hand Luke (1967),Comedy|Drama,1967,15.57028
-4661,ItemKNN,9,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,15.511305
-4661,ItemKNN,10,1234,"Sting, The (1973)",Comedy|Crime,1973,15.285694
-4661,LightFM-BPR,1,1222,Full Metal Jacket (1987),Action|Drama|War,1987,8.181958
-4661,LightFM-BPR,2,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,8.014875
-4661,LightFM-BPR,3,1129,Escape from New York (1981),Action|Adventure|Sci-Fi|Thriller,1981,7.86983
-4661,LightFM-BPR,4,3671,Blazing Saddles (1974),Comedy|Western,1974,7.8032765
-4661,LightFM-BPR,5,1356,Star Trek: First Contact (1996),Action|Adventure|Sci-Fi,1996,7.390264
-4661,LightFM-BPR,6,1376,Star Trek IV: The Voyage Home (1986),Action|Adventure|Sci-Fi,1986,7.234122
-4661,LightFM-BPR,7,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,7.2310896
-4661,LightFM-BPR,8,2366,King Kong (1933),Action|Adventure|Horror,1933,7.1972404
-4661,LightFM-BPR,9,3494,True Grit (1969),Adventure|Western,1969,7.0481553
-4661,LightFM-BPR,10,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,7.0092483
-4661,ICSRec (GRU),1,1356,Star Trek: First Contact (1996),Action|Adventure|Sci-Fi,1996,3.4681146
-4661,ICSRec (GRU),2,1573,Face/Off (1997),Action|Sci-Fi|Thriller,1997,3.288957
-4661,ICSRec (GRU),3,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,3.2688193
-4661,ICSRec (GRU),4,1376,Star Trek IV: The Voyage Home (1986),Action|Adventure|Sci-Fi,1986,2.8775427
-4661,ICSRec (GRU),5,1275,Highlander (1986),Action|Adventure,1986,2.8356547
-4661,ICSRec (GRU),6,1653,Gattaca (1997),Drama|Sci-Fi|Thriller,1997,2.7941022
-4661,ICSRec (GRU),7,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,2.7838035
-4661,ICSRec (GRU),8,1129,Escape from New York (1981),Action|Adventure|Sci-Fi|Thriller,1981,2.7452137
-4661,ICSRec (GRU),9,1396,Sneakers (1992),Crime|Drama|Sci-Fi,1992,2.7352386
-4661,ICSRec (GRU),10,1372,Star Trek VI: The Undiscovered Country (1991),Action|Adventure|Sci-Fi,1991,2.6819506
-4745,ItemKNN,1,318,"Shawshank Redemption, The (1994)",Drama,1994,11.027426
-4745,ItemKNN,2,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,10.429963
-4745,ItemKNN,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,10.271516
-4745,ItemKNN,4,608,Fargo (1996),Crime|Drama|Thriller,1996,9.778952
-4745,ItemKNN,5,2028,Saving Private Ryan (1998),Action|Drama|War,1998,9.508404
-4745,ItemKNN,6,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,9.1237755
-4745,ItemKNN,7,1265,Groundhog Day (1993),Comedy|Romance,1993,9.064639
-4745,ItemKNN,8,858,"Godfather, The (1972)",Action|Crime|Drama,1972,9.001522
-4745,ItemKNN,9,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,8.98883
-4745,ItemKNN,10,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,8.912361
-4745,LightFM-BPR,1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,8.310594
-4745,LightFM-BPR,2,2762,"Sixth Sense, The (1999)",Thriller,1999,8.088538
-4745,LightFM-BPR,3,110,Braveheart (1995),Action|Drama|War,1995,7.6403756
-4745,LightFM-BPR,4,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,7.628198
-4745,LightFM-BPR,5,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,7.6022468
-4745,LightFM-BPR,6,356,Forrest Gump (1994),Comedy|Romance|War,1994,7.5884943
-4745,LightFM-BPR,7,318,"Shawshank Redemption, The (1994)",Drama,1994,7.5441537
-4745,LightFM-BPR,8,733,"Rock, The (1996)",Action|Adventure|Thriller,1996,7.3716555
-4745,LightFM-BPR,9,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,7.2779417
-4745,LightFM-BPR,10,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,7.1569557
-4745,ICSRec (GRU),1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,3.3503342
-4745,ICSRec (GRU),2,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,3.0469463
-4745,ICSRec (GRU),3,2028,Saving Private Ryan (1998),Action|Drama|War,1998,2.9070783
-4745,ICSRec (GRU),4,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.9061496
-4745,ICSRec (GRU),5,1265,Groundhog Day (1993),Comedy|Romance,1993,2.873822
-4745,ICSRec (GRU),6,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.8231263
-4745,ICSRec (GRU),7,457,"Fugitive, The (1993)",Action|Thriller,1993,2.8212001
-4745,ICSRec (GRU),8,110,Braveheart (1995),Action|Drama|War,1995,2.7895749
-4745,ICSRec (GRU),9,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,2.679996
-4745,ICSRec (GRU),10,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.66389
-5072,ItemKNN,1,1200,Aliens (1986),Action|Sci-Fi|Thriller|War,1986,9.447884
-5072,ItemKNN,2,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,8.725472
-5072,ItemKNN,3,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,8.611557
-5072,ItemKNN,4,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,8.466101
-5072,ItemKNN,5,1375,Star Trek III: The Search for Spock (1984),Action|Adventure|Sci-Fi,1984,8.376971
-5072,ItemKNN,6,329,Star Trek: Generations (1994),Action|Adventure|Sci-Fi,1994,8.156976
-5072,ItemKNN,7,1291,Indiana Jones and the Last Crusade (1989),Action|Adventure,1989,8.146098
-5072,ItemKNN,8,1036,Die Hard (1988),Action|Thriller,1988,8.124385
-5072,ItemKNN,9,1372,Star Trek VI: The Undiscovered Country (1991),Action|Adventure|Sci-Fi,1991,7.9839907
-5072,ItemKNN,10,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,7.982225
-5072,LightFM-BPR,1,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,8.593888
-5072,LightFM-BPR,2,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,7.815296
-5072,LightFM-BPR,3,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,7.5271926
-5072,LightFM-BPR,4,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.2736506
-5072,LightFM-BPR,5,1,Toy Story (1995),Animation|Children's|Comedy,1995,7.1085973
-5072,LightFM-BPR,6,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.100437
-5072,LightFM-BPR,7,1584,Contact (1997),Drama|Sci-Fi,1997,7.053225
-5072,LightFM-BPR,8,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,6.913642
-5072,LightFM-BPR,9,1077,Sleeper (1973),Comedy|Sci-Fi,1973,6.72778
-5072,LightFM-BPR,10,2396,Shakespeare in Love (1998),Comedy|Romance,1998,6.6828322
-5072,ICSRec (GRU),1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,3.5390508
-5072,ICSRec (GRU),2,1265,Groundhog Day (1993),Comedy|Romance,1993,3.3113635
-5072,ICSRec (GRU),3,2028,Saving Private Ryan (1998),Action|Drama|War,1998,3.2709284
-5072,ICSRec (GRU),4,1259,Stand by Me (1986),Adventure|Comedy|Drama,1986,3.1673946
-5072,ICSRec (GRU),5,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,3.1615458
-5072,ICSRec (GRU),6,457,"Fugitive, The (1993)",Action|Thriller,1993,3.1311173
-5072,ICSRec (GRU),7,110,Braveheart (1995),Action|Drama|War,1995,3.077931
-5072,ICSRec (GRU),8,2396,Shakespeare in Love (1998),Comedy|Romance,1998,3.0704048
-5072,ICSRec (GRU),9,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,3.0701551
-5072,ICSRec (GRU),10,1291,Indiana Jones and the Last Crusade (1989),Action|Adventure,1989,3.005178
-5174,ItemKNN,1,2966,"Straight Story, The (1999)",Drama,1999,1.4761645
-5174,ItemKNN,2,1719,"Sweet Hereafter, The (1997)",Drama,1997,1.3087115
-5174,ItemKNN,3,3083,All About My Mother (Todo Sobre Mi Madre) (1999),Comedy|Drama,1999,1.3077269
-5174,ItemKNN,4,162,Crumb (1994),Documentary,1994,1.2546082
-5174,ItemKNN,5,1916,Buffalo 66 (1998),Action|Comedy|Drama,1998,1.2532359
-5174,ItemKNN,6,562,Welcome to the Dollhouse (1995),Comedy|Drama,1995,1.2151836
-5174,ItemKNN,7,2442,Hilary and Jackie (1998),Drama,1998,1.2126077
-5174,ItemKNN,8,2858,American Beauty (1999),Comedy|Drama,1999,1.1996855
-5174,ItemKNN,9,2692,Run Lola Run (Lola rennt) (1998),Action|Crime|Romance,1998,1.1591048
-5174,ItemKNN,10,994,Big Night (1996),Drama,1996,1.1536934
-5174,LightFM-BPR,1,318,"Shawshank Redemption, The (1994)",Drama,1994,6.2706456
-5174,LightFM-BPR,2,2028,Saving Private Ryan (1998),Action|Drama|War,1998,6.2449117
-5174,LightFM-BPR,3,608,Fargo (1996),Crime|Drama|Thriller,1996,6.1247773
-5174,LightFM-BPR,4,527,Schindler's List (1993),Drama|War,1993,6.030598
-5174,LightFM-BPR,5,2858,American Beauty (1999),Comedy|Drama,1999,5.854688
-5174,LightFM-BPR,6,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,5.7683487
-5174,LightFM-BPR,7,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,5.669165
-5174,LightFM-BPR,8,1358,Sling Blade (1996),Drama|Thriller,1996,5.527041
-5174,LightFM-BPR,9,2762,"Sixth Sense, The (1999)",Thriller,1999,5.5226736
-5174,LightFM-BPR,10,590,Dances with Wolves (1990),Adventure|Drama|Western,1990,5.503058
-5174,ICSRec (GRU),1,2858,American Beauty (1999),Comedy|Drama,1999,2.5895617
-5174,ICSRec (GRU),2,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.1614954
-5174,ICSRec (GRU),3,3408,Erin Brockovich (2000),Drama,2000,2.1266747
-5174,ICSRec (GRU),4,3578,Gladiator (2000),Action|Drama,2000,2.0972114
-5174,ICSRec (GRU),5,2762,"Sixth Sense, The (1999)",Thriller,1999,2.0430307
-5174,ICSRec (GRU),6,2959,Fight Club (1999),Drama,1999,2.0381842
-5174,ICSRec (GRU),7,2716,Ghostbusters (1984),Comedy|Horror,1984,2.0372887
-5174,ICSRec (GRU),8,2396,Shakespeare in Love (1998),Comedy|Romance,1998,2.0125272
-5174,ICSRec (GRU),9,223,Clerks (1994),Comedy,1994,1.92853
-5174,ICSRec (GRU),10,2599,Election (1999),Comedy,1999,1.9266559
-5885,ItemKNN,1,527,Schindler's List (1993),Drama|War,1993,13.166784
-5885,ItemKNN,2,318,"Shawshank Redemption, The (1994)",Drama,1994,12.489797
-5885,ItemKNN,3,296,Pulp Fiction (1994),Crime|Drama,1994,12.166139
-5885,ItemKNN,4,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,11.089762
-5885,ItemKNN,5,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,11.050391
-5885,ItemKNN,6,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,9.942229
-5885,ItemKNN,7,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,9.88111
-5885,ItemKNN,8,1208,Apocalypse Now (1979),Drama|War,1979,9.799065
-5885,ItemKNN,9,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,9.763218
-5885,ItemKNN,10,32,Twelve Monkeys (1995),Drama|Sci-Fi,1995,9.6857395
-5885,LightFM-BPR,1,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,7.8590093
-5885,LightFM-BPR,2,296,Pulp Fiction (1994),Crime|Drama,1994,7.366875
-5885,LightFM-BPR,3,1732,"Big Lebowski, The (1998)",Comedy|Crime|Mystery|Thriller,1998,6.984039
-5885,LightFM-BPR,4,318,"Shawshank Redemption, The (1994)",Drama,1994,6.9567847
-5885,LightFM-BPR,5,3176,"Talented Mr. Ripley, The (1999)",Drama|Mystery|Thriller,1999,6.872534
-5885,LightFM-BPR,6,47,Seven (Se7en) (1995),Crime|Thriller,1995,6.8451276
-5885,LightFM-BPR,7,293,"Professional, The (a.k.a. Leon: The Professional) (1994)",Crime|Drama|Romance|Thriller,1994,6.794348
-5885,LightFM-BPR,8,866,Bound (1996),Crime|Drama|Romance|Thriller,1996,6.66203
-5885,LightFM-BPR,9,1625,"Game, The (1997)",Mystery|Thriller,1997,6.6443477
-5885,LightFM-BPR,10,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,6.5912585
-5885,ICSRec (GRU),1,3408,Erin Brockovich (2000),Drama,2000,2.5002851
-5885,ICSRec (GRU),2,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.4626374
-5885,ICSRec (GRU),3,3793,X-Men (2000),Action|Sci-Fi,2000,2.3712382
-5885,ICSRec (GRU),4,2683,Austin Powers: The Spy Who Shagged Me (1999),Comedy,1999,2.2952995
-5885,ICSRec (GRU),5,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.270688
-5885,ICSRec (GRU),6,318,"Shawshank Redemption, The (1994)",Drama,1994,2.213715
-5885,ICSRec (GRU),7,2706,American Pie (1999),Comedy,1999,2.169609
-5885,ICSRec (GRU),8,2716,Ghostbusters (1984),Comedy|Horror,1984,2.126739
-5885,ICSRec (GRU),9,3081,Sleepy Hollow (1999),Horror|Romance,1999,2.1007645
-5885,ICSRec (GRU),10,527,Schindler's List (1993),Drama|War,1993,2.093783
+user_id,gender,age,algorithm,rank,movie_id,title,genres,release_year,model_score
+518,F,35,ItemKNN,1,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,10.629548
+518,F,35,ItemKNN,2,838,Emma (1996),Comedy|Drama|Romance,1996,10.622388
+518,F,35,ItemKNN,3,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,10.613137
+518,F,35,ItemKNN,4,3044,Dead Again (1991),Mystery|Romance|Thriller,1991,10.520919
+518,F,35,ItemKNN,5,539,Sleepless in Seattle (1993),Comedy|Romance,1993,10.3915615
+518,F,35,ItemKNN,6,1947,West Side Story (1961),Musical|Romance,1961,10.389315
+518,F,35,ItemKNN,7,858,"Godfather, The (1972)",Action|Crime|Drama,1972,10.371175
+518,F,35,ItemKNN,8,1393,Jerry Maguire (1996),Drama|Romance,1996,10.301174
+518,F,35,ItemKNN,9,1674,Witness (1985),Drama|Romance|Thriller,1985,10.157315
+518,F,35,ItemKNN,10,923,Citizen Kane (1941),Drama,1941,9.931325
+518,F,35,LightFM-BPR,1,1959,Out of Africa (1985),Drama|Romance,1985,6.4340625
+518,F,35,LightFM-BPR,2,1674,Witness (1985),Drama|Romance|Thriller,1985,6.2548456
+518,F,35,LightFM-BPR,3,858,"Godfather, The (1972)",Action|Crime|Drama,1972,6.0377293
+518,F,35,LightFM-BPR,4,110,Braveheart (1995),Action|Drama|War,1995,5.900949
+518,F,35,LightFM-BPR,5,969,"African Queen, The (1951)",Action|Adventure|Romance|War,1951,5.8211827
+518,F,35,LightFM-BPR,6,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,5.7254815
+518,F,35,LightFM-BPR,7,2692,Run Lola Run (Lola rennt) (1998),Action|Crime|Romance,1998,5.7067165
+518,F,35,LightFM-BPR,8,899,Singin' in the Rain (1952),Musical|Romance,1952,5.6176896
+518,F,35,LightFM-BPR,9,1230,Annie Hall (1977),Comedy|Romance,1977,5.536726
+518,F,35,LightFM-BPR,10,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,5.4441853
+518,F,35,ICSRec (GRU),1,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.3332176
+518,F,35,ICSRec (GRU),2,223,Clerks (1994),Comedy,1994,2.1103082
+518,F,35,ICSRec (GRU),3,2706,American Pie (1999),Comedy,1999,1.8203658
+518,F,35,ICSRec (GRU),4,1,Toy Story (1995),Animation|Children's|Comedy,1995,1.8178782
+518,F,35,ICSRec (GRU),5,364,"Lion King, The (1994)",Animation|Children's|Musical,1994,1.7932081
+518,F,35,ICSRec (GRU),6,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,1.7615063
+518,F,35,ICSRec (GRU),7,34,Babe (1995),Children's|Comedy|Drama,1995,1.7147992
+518,F,35,ICSRec (GRU),8,588,Aladdin (1992),Animation|Children's|Comedy|Musical,1992,1.698942
+518,F,35,ICSRec (GRU),9,595,Beauty and the Beast (1991),Animation|Children's|Musical,1991,1.6792175
+518,F,35,ICSRec (GRU),10,1393,Jerry Maguire (1996),Drama|Romance,1996,1.6309394
+538,M,56,ItemKNN,1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,8.356752
+538,M,56,ItemKNN,2,2028,Saving Private Ryan (1998),Action|Drama|War,1998,8.087345
+538,M,56,ItemKNN,3,858,"Godfather, The (1972)",Action|Crime|Drama,1972,7.922956
+538,M,56,ItemKNN,4,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,7.5490456
+538,M,56,ItemKNN,5,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,7.520234
+538,M,56,ItemKNN,6,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.1316867
+538,M,56,ItemKNN,7,1,Toy Story (1995),Animation|Children's|Comedy,1995,7.0611124
+538,M,56,ItemKNN,8,2762,"Sixth Sense, The (1999)",Thriller,1999,6.9815316
+538,M,56,ItemKNN,9,110,Braveheart (1995),Action|Drama|War,1995,6.973617
+538,M,56,ItemKNN,10,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,6.9339037
+538,M,56,LightFM-BPR,1,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,8.25294
+538,M,56,LightFM-BPR,2,1278,Young Frankenstein (1974),Comedy|Horror,1974,7.8281536
+538,M,56,LightFM-BPR,3,1294,M*A*S*H (1970),Comedy|War,1970,7.72178
+538,M,56,LightFM-BPR,4,2366,King Kong (1933),Action|Adventure|Horror,1933,7.3674507
+538,M,56,LightFM-BPR,5,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,7.2465205
+538,M,56,LightFM-BPR,6,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,7.207756
+538,M,56,LightFM-BPR,7,750,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963),Sci-Fi|War,1963,7.1235905
+538,M,56,LightFM-BPR,8,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,7.070213
+538,M,56,LightFM-BPR,9,1219,Psycho (1960),Horror|Thriller,1960,7.052198
+538,M,56,LightFM-BPR,10,3671,Blazing Saddles (1974),Comedy|Western,1974,7.0239096
+538,M,56,ICSRec (GRU),1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,3.8794317
+538,M,56,ICSRec (GRU),2,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,3.6605625
+538,M,56,ICSRec (GRU),3,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,3.6551907
+538,M,56,ICSRec (GRU),4,2858,American Beauty (1999),Comedy|Drama,1999,3.4323883
+538,M,56,ICSRec (GRU),5,2028,Saving Private Ryan (1998),Action|Drama|War,1998,3.421867
+538,M,56,ICSRec (GRU),6,858,"Godfather, The (1972)",Action|Crime|Drama,1972,3.3695822
+538,M,56,ICSRec (GRU),7,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,3.3271317
+538,M,56,ICSRec (GRU),8,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,3.2591405
+538,M,56,ICSRec (GRU),9,1200,Aliens (1986),Action|Sci-Fi|Thriller|War,1986,3.254462
+538,M,56,ICSRec (GRU),10,110,Braveheart (1995),Action|Drama|War,1995,3.254175
+568,F,50,ItemKNN,1,608,Fargo (1996),Crime|Drama|Thriller,1996,5.5990477
+568,F,50,ItemKNN,2,457,"Fugitive, The (1993)",Action|Thriller,1993,5.2725267
+568,F,50,ItemKNN,3,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,5.218105
+568,F,50,ItemKNN,4,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,5.125687
+568,F,50,ItemKNN,5,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,5.1095233
+568,F,50,ItemKNN,6,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,4.954896
+568,F,50,ItemKNN,7,2858,American Beauty (1999),Comedy|Drama,1999,4.9538975
+568,F,50,ItemKNN,8,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,4.8299923
+568,F,50,ItemKNN,9,296,Pulp Fiction (1994),Crime|Drama,1994,4.824894
+568,F,50,ItemKNN,10,2762,"Sixth Sense, The (1999)",Thriller,1999,4.496686
+568,F,50,LightFM-BPR,1,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.779519
+568,F,50,LightFM-BPR,2,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,6.7772994
+568,F,50,LightFM-BPR,3,2396,Shakespeare in Love (1998),Comedy|Romance,1998,6.694208
+568,F,50,LightFM-BPR,4,2762,"Sixth Sense, The (1999)",Thriller,1999,6.6879253
+568,F,50,LightFM-BPR,5,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,6.6741915
+568,F,50,LightFM-BPR,6,924,2001: A Space Odyssey (1968),Drama|Mystery|Sci-Fi|Thriller,1968,6.3650403
+568,F,50,LightFM-BPR,7,2858,American Beauty (1999),Comedy|Drama,1999,6.352182
+568,F,50,LightFM-BPR,8,1269,Arsenic and Old Lace (1944),Comedy|Mystery|Thriller,1944,6.28893
+568,F,50,LightFM-BPR,9,34,Babe (1995),Children's|Comedy|Drama,1995,6.191449
+568,F,50,LightFM-BPR,10,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,6.083458
+568,F,50,ICSRec (GRU),1,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,3.859981
+568,F,50,ICSRec (GRU),2,2916,Total Recall (1990),Action|Adventure|Sci-Fi|Thriller,1990,3.730448
+568,F,50,ICSRec (GRU),3,1356,Star Trek: First Contact (1996),Action|Adventure|Sci-Fi,1996,3.2705064
+568,F,50,ICSRec (GRU),4,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,3.1471133
+568,F,50,ICSRec (GRU),5,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,2.9281797
+568,F,50,ICSRec (GRU),6,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,2.8896003
+568,F,50,ICSRec (GRU),7,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,2.873754
+568,F,50,ICSRec (GRU),8,1573,Face/Off (1997),Action|Sci-Fi|Thriller,1997,2.8531742
+568,F,50,ICSRec (GRU),9,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,2.8283095
+568,F,50,ICSRec (GRU),10,2985,Robocop (1987),Action|Crime|Sci-Fi,1987,2.7966628
+774,M,18,ItemKNN,1,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,14.638155
+774,M,18,ItemKNN,2,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,14.56331
+774,M,18,ItemKNN,3,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,13.315363
+774,M,18,ItemKNN,4,293,"Professional, The (a.k.a. Leon: The Professional) (1994)",Crime|Drama|Romance|Thriller,1994,12.353864
+774,M,18,ItemKNN,5,356,Forrest Gump (1994),Comedy|Romance|War,1994,11.997081
+774,M,18,ItemKNN,6,1358,Sling Blade (1996),Drama|Thriller,1996,11.766638
+774,M,18,ItemKNN,7,1259,Stand by Me (1986),Adventure|Comedy|Drama,1986,11.734895
+774,M,18,ItemKNN,8,1222,Full Metal Jacket (1987),Action|Drama|War,1987,11.288994
+774,M,18,ItemKNN,9,2716,Ghostbusters (1984),Comedy|Horror,1984,10.958862
+774,M,18,ItemKNN,10,590,Dances with Wolves (1990),Adventure|Drama|Western,1990,10.80641
+774,M,18,LightFM-BPR,1,293,"Professional, The (a.k.a. Leon: The Professional) (1994)",Crime|Drama|Romance|Thriller,1994,6.8131976
+774,M,18,LightFM-BPR,2,356,Forrest Gump (1994),Comedy|Romance|War,1994,6.762605
+774,M,18,LightFM-BPR,3,1358,Sling Blade (1996),Drama|Thriller,1996,6.723151
+774,M,18,LightFM-BPR,4,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,6.719124
+774,M,18,LightFM-BPR,5,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,6.5951085
+774,M,18,LightFM-BPR,6,2706,American Pie (1999),Comedy,1999,6.3431945
+774,M,18,LightFM-BPR,7,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,6.236795
+774,M,18,LightFM-BPR,8,1222,Full Metal Jacket (1987),Action|Drama|War,1987,6.2213964
+774,M,18,LightFM-BPR,9,1517,Austin Powers: International Man of Mystery (1997),Comedy,1997,6.083082
+774,M,18,LightFM-BPR,10,1961,Rain Man (1988),Drama,1988,6.0498714
+774,M,18,ICSRec (GRU),1,2716,Ghostbusters (1984),Comedy|Horror,1984,2.7434335
+774,M,18,ICSRec (GRU),2,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.663995
+774,M,18,ICSRec (GRU),3,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.6054974
+774,M,18,ICSRec (GRU),4,1784,As Good As It Gets (1997),Comedy|Drama,1997,2.1665127
+774,M,18,ICSRec (GRU),5,590,Dances with Wolves (1990),Adventure|Drama|Western,1990,2.1604354
+774,M,18,ICSRec (GRU),6,2000,Lethal Weapon (1987),Action|Comedy|Crime|Drama,1987,2.1290202
+774,M,18,ICSRec (GRU),7,2797,Big (1988),Comedy|Fantasy,1988,2.1232526
+774,M,18,ICSRec (GRU),8,2302,My Cousin Vinny (1992),Comedy,1992,2.080233
+774,M,18,ICSRec (GRU),9,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,2.028091
+774,M,18,ICSRec (GRU),10,2406,Romancing the Stone (1984),Action|Adventure|Comedy|Romance,1984,2.0090663
+1215,M,35,ItemKNN,1,1127,"Abyss, The (1989)",Action|Adventure|Sci-Fi|Thriller,1989,11.741805
+1215,M,35,ItemKNN,2,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,10.572924
+1215,M,35,ItemKNN,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,10.56738
+1215,M,35,ItemKNN,4,3070,"Adventures of Buckaroo Bonzai Across the 8th Dimension, The (1984)",Adventure|Comedy|Sci-Fi,1984,10.220447
+1215,M,35,ItemKNN,5,2407,Cocoon (1985),Comedy|Sci-Fi,1985,10.132748
+1215,M,35,ItemKNN,6,780,Independence Day (ID4) (1996),Action|Sci-Fi|War,1996,9.968061
+1215,M,35,ItemKNN,7,316,Stargate (1994),Action|Adventure|Sci-Fi,1994,9.835478
+1215,M,35,ItemKNN,8,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,9.784941
+1215,M,35,ItemKNN,9,608,Fargo (1996),Crime|Drama|Thriller,1996,9.71435
+1215,M,35,ItemKNN,10,318,"Shawshank Redemption, The (1994)",Drama,1994,9.65083
+1215,M,35,LightFM-BPR,1,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,7.501877
+1215,M,35,LightFM-BPR,2,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.2820115
+1215,M,35,LightFM-BPR,3,1965,Repo Man (1984),Comedy|Sci-Fi,1984,7.244081
+1215,M,35,LightFM-BPR,4,1127,"Abyss, The (1989)",Action|Adventure|Sci-Fi|Thriller,1989,7.0795593
+1215,M,35,LightFM-BPR,5,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.078108
+1215,M,35,LightFM-BPR,6,2407,Cocoon (1985),Comedy|Sci-Fi,1985,7.053606
+1215,M,35,LightFM-BPR,7,671,Mystery Science Theater 3000: The Movie (1996),Comedy|Sci-Fi,1996,7.0207167
+1215,M,35,LightFM-BPR,8,2716,Ghostbusters (1984),Comedy|Horror,1984,6.8586593
+1215,M,35,LightFM-BPR,9,2762,"Sixth Sense, The (1999)",Thriller,1999,6.837804
+1215,M,35,LightFM-BPR,10,2987,Who Framed Roger Rabbit? (1988),Adventure|Animation|Film-Noir,1988,6.6517386
+1215,M,35,ICSRec (GRU),1,780,Independence Day (ID4) (1996),Action|Sci-Fi|War,1996,3.5388463
+1215,M,35,ICSRec (GRU),2,316,Stargate (1994),Action|Adventure|Sci-Fi,1994,3.4737067
+1215,M,35,ICSRec (GRU),3,736,Twister (1996),Action|Adventure|Romance|Thriller,1996,2.8101363
+1215,M,35,ICSRec (GRU),4,1573,Face/Off (1997),Action|Sci-Fi|Thriller,1997,2.7981389
+1215,M,35,ICSRec (GRU),5,1917,Armageddon (1998),Action|Adventure|Sci-Fi|Thriller,1998,2.7457504
+1215,M,35,ICSRec (GRU),6,648,Mission: Impossible (1996),Action|Adventure|Mystery,1996,2.6633322
+1215,M,35,ICSRec (GRU),7,2393,Star Trek: Insurrection (1998),Action|Sci-Fi,1998,2.6593277
+1215,M,35,ICSRec (GRU),8,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,2.6380534
+1215,M,35,ICSRec (GRU),9,1544,"Lost World: Jurassic Park, The (1997)",Action|Adventure|Sci-Fi|Thriller,1997,2.635496
+1215,M,35,ICSRec (GRU),10,2617,"Mummy, The (1999)",Action|Adventure|Horror|Thriller,1999,2.615858
+2609,F,50,ItemKNN,1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,13.380039
+2609,F,50,ItemKNN,2,1213,GoodFellas (1990),Crime|Drama,1990,12.992661
+2609,F,50,ItemKNN,3,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,12.557841
+2609,F,50,ItemKNN,4,111,Taxi Driver (1976),Drama|Thriller,1976,12.411967
+2609,F,50,ItemKNN,5,1208,Apocalypse Now (1979),Drama|War,1979,12.164758
+2609,F,50,ItemKNN,6,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,11.708001
+2609,F,50,ItemKNN,7,1225,Amadeus (1984),Drama,1984,11.479442
+2609,F,50,ItemKNN,8,1247,"Graduate, The (1967)",Drama|Romance,1967,11.244979
+2609,F,50,ItemKNN,9,1265,Groundhog Day (1993),Comedy|Romance,1993,10.755438
+2609,F,50,ItemKNN,10,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,10.699662
+2609,F,50,LightFM-BPR,1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,6.739667
+2609,F,50,LightFM-BPR,2,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,6.679467
+2609,F,50,LightFM-BPR,3,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,6.583776
+2609,F,50,LightFM-BPR,4,474,In the Line of Fire (1993),Action|Thriller,1993,6.5612364
+2609,F,50,LightFM-BPR,5,924,2001: A Space Odyssey (1968),Drama|Mystery|Sci-Fi|Thriller,1968,6.522578
+2609,F,50,LightFM-BPR,6,1036,Die Hard (1988),Action|Thriller,1988,6.512577
+2609,F,50,LightFM-BPR,7,3256,Patriot Games (1992),Action|Thriller,1992,6.318025
+2609,F,50,LightFM-BPR,8,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.2784605
+2609,F,50,LightFM-BPR,9,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,6.2350135
+2609,F,50,LightFM-BPR,10,356,Forrest Gump (1994),Comedy|Romance|War,1994,6.220473
+2609,F,50,ICSRec (GRU),1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,2.7826533
+2609,F,50,ICSRec (GRU),2,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,2.6859412
+2609,F,50,ICSRec (GRU),3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,2.6548152
+2609,F,50,ICSRec (GRU),4,1247,"Graduate, The (1967)",Drama|Romance,1967,2.6169415
+2609,F,50,ICSRec (GRU),5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.6089065
+2609,F,50,ICSRec (GRU),6,912,Casablanca (1942),Drama|Romance|War,1942,2.5990396
+2609,F,50,ICSRec (GRU),7,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,2.5560753
+2609,F,50,ICSRec (GRU),8,1208,Apocalypse Now (1979),Drama|War,1979,2.5548232
+2609,F,50,ICSRec (GRU),9,924,2001: A Space Odyssey (1968),Drama|Mystery|Sci-Fi|Thriller,1968,2.5444765
+2609,F,50,ICSRec (GRU),10,1230,Annie Hall (1977),Comedy|Romance,1977,2.5406022
+2644,M,18,ItemKNN,1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,3.4886775
+2644,M,18,ItemKNN,2,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,3.3447793
+2644,M,18,ItemKNN,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,3.315968
+2644,M,18,ItemKNN,4,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,3.2250454
+2644,M,18,ItemKNN,5,1200,Aliens (1986),Action|Sci-Fi|Thriller|War,1986,3.1443143
+2644,M,18,ItemKNN,6,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,3.0634456
+2644,M,18,ItemKNN,7,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,3.062917
+2644,M,18,ItemKNN,8,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,3.032236
+2644,M,18,ItemKNN,9,527,Schindler's List (1993),Drama|War,1993,3.0248246
+2644,M,18,ItemKNN,10,2028,Saving Private Ryan (1998),Action|Drama|War,1998,3.0214446
+2644,M,18,LightFM-BPR,1,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,8.360038
+2644,M,18,LightFM-BPR,2,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,7.7325907
+2644,M,18,LightFM-BPR,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,7.658864
+2644,M,18,LightFM-BPR,4,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,7.657349
+2644,M,18,LightFM-BPR,5,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.4920254
+2644,M,18,LightFM-BPR,6,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.4449077
+2644,M,18,LightFM-BPR,7,318,"Shawshank Redemption, The (1994)",Drama,1994,7.4318933
+2644,M,18,LightFM-BPR,8,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,7.4124246
+2644,M,18,LightFM-BPR,9,2028,Saving Private Ryan (1998),Action|Drama|War,1998,7.358839
+2644,M,18,LightFM-BPR,10,356,Forrest Gump (1994),Comedy|Romance|War,1994,7.286774
+2644,M,18,ICSRec (GRU),1,2716,Ghostbusters (1984),Comedy|Horror,1984,2.9436834
+2644,M,18,ICSRec (GRU),2,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.8091018
+2644,M,18,ICSRec (GRU),3,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,2.7832923
+2644,M,18,ICSRec (GRU),4,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.712009
+2644,M,18,ICSRec (GRU),5,2997,Being John Malkovich (1999),Comedy,1999,2.6878445
+2644,M,18,ICSRec (GRU),6,2762,"Sixth Sense, The (1999)",Thriller,1999,2.6781743
+2644,M,18,ICSRec (GRU),7,2396,Shakespeare in Love (1998),Comedy|Romance,1998,2.6663766
+2644,M,18,ICSRec (GRU),8,1265,Groundhog Day (1993),Comedy|Romance,1993,2.647936
+2644,M,18,ICSRec (GRU),9,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,2.6466503
+2644,M,18,ICSRec (GRU),10,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.5132046
+2721,M,45,ItemKNN,1,11,"American President, The (1995)",Comedy|Drama|Romance,1995,3.7877793
+2721,M,45,ItemKNN,2,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,3.7433302
+2721,M,45,ItemKNN,3,527,Schindler's List (1993),Drama|War,1993,3.4451938
+2721,M,45,ItemKNN,4,1393,Jerry Maguire (1996),Drama|Romance,1996,3.406964
+2721,M,45,ItemKNN,5,597,Pretty Woman (1990),Comedy|Romance,1990,3.3955202
+2721,M,45,ItemKNN,6,356,Forrest Gump (1994),Comedy|Romance|War,1994,3.2968383
+2721,M,45,ItemKNN,7,2858,American Beauty (1999),Comedy|Drama,1999,3.2933474
+2721,M,45,ItemKNN,8,17,Sense and Sensibility (1995),Drama|Romance,1995,3.25849
+2721,M,45,ItemKNN,9,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,3.2083538
+2721,M,45,ItemKNN,10,1784,As Good As It Gets (1997),Comedy|Drama,1997,3.1838548
+2721,M,45,LightFM-BPR,1,356,Forrest Gump (1994),Comedy|Romance|War,1994,8.1637745
+2721,M,45,LightFM-BPR,2,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,7.195871
+2721,M,45,LightFM-BPR,3,2858,American Beauty (1999),Comedy|Drama,1999,6.9402184
+2721,M,45,LightFM-BPR,4,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,6.9012265
+2721,M,45,LightFM-BPR,5,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,6.7499943
+2721,M,45,LightFM-BPR,6,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.648037
+2721,M,45,LightFM-BPR,7,11,"American President, The (1995)",Comedy|Drama|Romance,1995,6.6263213
+2721,M,45,LightFM-BPR,8,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,6.5185966
+2721,M,45,LightFM-BPR,9,1094,"Crying Game, The (1992)",Drama|Romance|War,1992,6.3611417
+2721,M,45,LightFM-BPR,10,2762,"Sixth Sense, The (1999)",Thriller,1999,6.3380423
+2721,M,45,ICSRec (GRU),1,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.7950082
+2721,M,45,ICSRec (GRU),2,2797,Big (1988),Comedy|Fantasy,1988,2.6107101
+2721,M,45,ICSRec (GRU),3,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,2.495391
+2721,M,45,ICSRec (GRU),4,1923,There's Something About Mary (1998),Comedy,1998,2.4887695
+2721,M,45,ICSRec (GRU),5,1784,As Good As It Gets (1997),Comedy|Drama,1997,2.409366
+2721,M,45,ICSRec (GRU),6,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.3765042
+2721,M,45,ICSRec (GRU),7,2918,Ferris Bueller's Day Off (1986),Comedy,1986,2.3601143
+2721,M,45,ICSRec (GRU),8,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,2.34559
+2721,M,45,ICSRec (GRU),9,2302,My Cousin Vinny (1992),Comedy,1992,2.3108954
+2721,M,45,ICSRec (GRU),10,1393,Jerry Maguire (1996),Drama|Romance,1996,2.2961159
+3099,M,25,ItemKNN,1,1,Toy Story (1995),Animation|Children's|Comedy,1995,12.407871
+3099,M,25,ItemKNN,2,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,11.899729
+3099,M,25,ItemKNN,3,2791,Airplane! (1980),Comedy,1980,11.342944
+3099,M,25,ItemKNN,4,356,Forrest Gump (1994),Comedy|Romance|War,1994,10.970844
+3099,M,25,ItemKNN,5,457,"Fugitive, The (1993)",Action|Thriller,1993,10.895739
+3099,M,25,ItemKNN,6,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,10.876789
+3099,M,25,ItemKNN,7,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,10.472295
+3099,M,25,ItemKNN,8,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,10.390363
+3099,M,25,ItemKNN,9,1291,Indiana Jones and the Last Crusade (1989),Action|Adventure,1989,10.380623
+3099,M,25,ItemKNN,10,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,10.172199
+3099,M,25,LightFM-BPR,1,356,Forrest Gump (1994),Comedy|Romance|War,1994,8.586792
+3099,M,25,LightFM-BPR,2,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,7.529303
+3099,M,25,LightFM-BPR,3,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.449451
+3099,M,25,LightFM-BPR,4,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,7.437941
+3099,M,25,LightFM-BPR,5,1036,Die Hard (1988),Action|Thriller,1988,7.412471
+3099,M,25,LightFM-BPR,6,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,7.3340535
+3099,M,25,LightFM-BPR,7,368,Maverick (1994),Action|Comedy|Western,1994,7.3330626
+3099,M,25,LightFM-BPR,8,2706,American Pie (1999),Comedy,1999,7.3329115
+3099,M,25,LightFM-BPR,9,733,"Rock, The (1996)",Action|Adventure|Thriller,1996,7.322613
+3099,M,25,LightFM-BPR,10,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,7.294123
+3099,M,25,ICSRec (GRU),1,733,"Rock, The (1996)",Action|Adventure|Thriller,1996,3.4242935
+3099,M,25,ICSRec (GRU),2,3256,Patriot Games (1992),Action|Thriller,1992,3.0848746
+3099,M,25,ICSRec (GRU),3,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,3.0343082
+3099,M,25,ICSRec (GRU),4,349,Clear and Present Danger (1994),Action|Adventure|Thriller,1994,3.0107894
+3099,M,25,ICSRec (GRU),5,2115,Indiana Jones and the Temple of Doom (1984),Action|Adventure,1984,2.893911
+3099,M,25,ICSRec (GRU),6,1374,Star Trek: The Wrath of Khan (1982),Action|Adventure|Sci-Fi,1982,2.8932047
+3099,M,25,ICSRec (GRU),7,1370,Die Hard 2 (1990),Action|Thriller,1990,2.819014
+3099,M,25,ICSRec (GRU),8,1676,Starship Troopers (1997),Action|Adventure|Sci-Fi|War,1997,2.8152695
+3099,M,25,ICSRec (GRU),9,377,Speed (1994),Action|Romance|Thriller,1994,2.7921925
+3099,M,25,ICSRec (GRU),10,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,2.7290387
+3176,M,25,ItemKNN,1,318,"Shawshank Redemption, The (1994)",Drama,1994,2.2107832
+3176,M,25,ItemKNN,2,3408,Erin Brockovich (2000),Drama,2000,2.1443772
+3176,M,25,ItemKNN,3,110,Braveheart (1995),Action|Drama|War,1995,2.0017235
+3176,M,25,ItemKNN,4,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.0009685
+3176,M,25,ItemKNN,5,2762,"Sixth Sense, The (1999)",Thriller,1999,1.9780713
+3176,M,25,ItemKNN,6,457,"Fugitive, The (1993)",Action|Thriller,1993,1.9121147
+3176,M,25,ItemKNN,7,1704,Good Will Hunting (1997),Drama,1997,1.8889346
+3176,M,25,ItemKNN,8,377,Speed (1994),Action|Romance|Thriller,1994,1.8853581
+3176,M,25,ItemKNN,9,3793,X-Men (2000),Action|Sci-Fi,2000,1.8733102
+3176,M,25,ItemKNN,10,3147,"Green Mile, The (1999)",Drama|Thriller,1999,1.8484937
+3176,M,25,LightFM-BPR,1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.952669
+3176,M,25,LightFM-BPR,2,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,7.765544
+3176,M,25,LightFM-BPR,3,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.6105385
+3176,M,25,LightFM-BPR,4,2762,"Sixth Sense, The (1999)",Thriller,1999,7.426071
+3176,M,25,LightFM-BPR,5,2858,American Beauty (1999),Comedy|Drama,1999,7.2678914
+3176,M,25,LightFM-BPR,6,110,Braveheart (1995),Action|Drama|War,1995,7.19674
+3176,M,25,LightFM-BPR,7,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,7.1424804
+3176,M,25,LightFM-BPR,8,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,7.135434
+3176,M,25,LightFM-BPR,9,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,6.9925766
+3176,M,25,LightFM-BPR,10,1210,Star Wars: Episode VI - Return of the Jedi (1983),Action|Adventure|Romance|Sci-Fi|War,1983,6.9234266
+3176,M,25,ICSRec (GRU),1,2858,American Beauty (1999),Comedy|Drama,1999,3.5891135
+3176,M,25,ICSRec (GRU),2,2997,Being John Malkovich (1999),Comedy,1999,3.1019137
+3176,M,25,ICSRec (GRU),3,2762,"Sixth Sense, The (1999)",Thriller,1999,3.0004787
+3176,M,25,ICSRec (GRU),4,3793,X-Men (2000),Action|Sci-Fi,2000,2.8843508
+3176,M,25,ICSRec (GRU),5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.862173
+3176,M,25,ICSRec (GRU),6,858,"Godfather, The (1972)",Action|Crime|Drama,1972,2.8437395
+3176,M,25,ICSRec (GRU),7,3408,Erin Brockovich (2000),Drama,2000,2.8163784
+3176,M,25,ICSRec (GRU),8,318,"Shawshank Redemption, The (1994)",Drama,1994,2.6908588
+3176,M,25,ICSRec (GRU),9,3510,Frequency (2000),Drama|Thriller,2000,2.6738508
+3176,M,25,ICSRec (GRU),10,2683,Austin Powers: The Spy Who Shagged Me (1999),Comedy,1999,2.6703813
+3943,F,35,ItemKNN,1,608,Fargo (1996),Crime|Drama|Thriller,1996,8.316082
+3943,F,35,ItemKNN,2,1641,"Full Monty, The (1997)",Comedy,1997,8.281045
+3943,F,35,ItemKNN,3,39,Clueless (1995),Comedy|Romance,1995,7.9235163
+3943,F,35,ItemKNN,4,1704,Good Will Hunting (1997),Drama,1997,7.8783526
+3943,F,35,ItemKNN,5,3255,"League of Their Own, A (1992)",Comedy|Drama,1992,7.148421
+3943,F,35,ItemKNN,6,2302,My Cousin Vinny (1992),Comedy,1992,7.0974026
+3943,F,35,ItemKNN,7,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.0832334
+3943,F,35,ItemKNN,8,2997,Being John Malkovich (1999),Comedy,1999,7.042211
+3943,F,35,ItemKNN,9,527,Schindler's List (1993),Drama|War,1993,6.9820185
+3943,F,35,ItemKNN,10,2321,Pleasantville (1998),Comedy,1998,6.9484186
+3943,F,35,LightFM-BPR,1,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.652434
+3943,F,35,LightFM-BPR,2,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,7.639011
+3943,F,35,LightFM-BPR,3,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,7.498443
+3943,F,35,LightFM-BPR,4,2762,"Sixth Sense, The (1999)",Thriller,1999,7.493894
+3943,F,35,LightFM-BPR,5,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,7.4863086
+3943,F,35,LightFM-BPR,6,440,Dave (1993),Comedy|Romance,1993,7.286235
+3943,F,35,LightFM-BPR,7,2997,Being John Malkovich (1999),Comedy,1999,7.0880113
+3943,F,35,LightFM-BPR,8,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,7.0445547
+3943,F,35,LightFM-BPR,9,1641,"Full Monty, The (1997)",Comedy,1997,6.973595
+3943,F,35,LightFM-BPR,10,3408,Erin Brockovich (2000),Drama,2000,6.924582
+3943,F,35,ICSRec (GRU),1,2918,Ferris Bueller's Day Off (1986),Comedy,1986,3.0044322
+3943,F,35,ICSRec (GRU),2,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,2.9126513
+3943,F,35,ICSRec (GRU),3,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.9044948
+3943,F,35,ICSRec (GRU),4,2716,Ghostbusters (1984),Comedy|Horror,1984,2.868449
+3943,F,35,ICSRec (GRU),5,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,2.8650436
+3943,F,35,ICSRec (GRU),6,2000,Lethal Weapon (1987),Action|Comedy|Crime|Drama,1987,2.7501683
+3943,F,35,ICSRec (GRU),7,2797,Big (1988),Comedy|Fantasy,1988,2.7460668
+3943,F,35,ICSRec (GRU),8,1270,Back to the Future (1985),Comedy|Sci-Fi,1985,2.6997433
+3943,F,35,ICSRec (GRU),9,457,"Fugitive, The (1993)",Action|Thriller,1993,2.6989949
+3943,F,35,ICSRec (GRU),10,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.6918273
+4204,M,35,ItemKNN,1,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,24.313444
+4204,M,35,ItemKNN,2,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,23.638823
+4204,M,35,ItemKNN,3,1242,Glory (1989),Action|Drama|War,1989,23.29736
+4204,M,35,ItemKNN,4,1136,Monty Python and the Holy Grail (1974),Comedy,1974,22.733862
+4204,M,35,ItemKNN,5,2858,American Beauty (1999),Comedy|Drama,1999,20.022593
+4204,M,35,ItemKNN,6,2951,"Fistful of Dollars, A (1964)",Action|Western,1964,19.921555
+4204,M,35,ItemKNN,7,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,19.620712
+4204,M,35,ItemKNN,8,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,19.319332
+4204,M,35,ItemKNN,9,2791,Airplane! (1980),Comedy,1980,19.123276
+4204,M,35,ItemKNN,10,1079,"Fish Called Wanda, A (1988)",Comedy,1988,19.049414
+4204,M,35,LightFM-BPR,1,2455,"Fly, The (1986)",Horror|Sci-Fi,1986,7.4064903
+4204,M,35,LightFM-BPR,2,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,6.883812
+4204,M,35,LightFM-BPR,3,1215,Army of Darkness (1993),Action|Adventure|Comedy|Horror|Sci-Fi,1993,6.871247
+4204,M,35,LightFM-BPR,4,2791,Airplane! (1980),Comedy,1980,6.7752857
+4204,M,35,LightFM-BPR,5,2858,American Beauty (1999),Comedy|Drama,1999,6.773227
+4204,M,35,LightFM-BPR,6,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,6.7116694
+4204,M,35,LightFM-BPR,7,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,6.70846
+4204,M,35,LightFM-BPR,8,1136,Monty Python and the Holy Grail (1974),Comedy,1974,6.6492686
+4204,M,35,LightFM-BPR,9,912,Casablanca (1942),Drama|Romance|War,1942,6.57144
+4204,M,35,LightFM-BPR,10,2804,"Christmas Story, A (1983)",Comedy|Drama,1983,6.437615
+4204,M,35,ICSRec (GRU),1,316,Stargate (1994),Action|Adventure|Sci-Fi,1994,2.6353807
+4204,M,35,ICSRec (GRU),2,380,True Lies (1994),Action|Adventure|Comedy|Romance,1994,2.3324537
+4204,M,35,ICSRec (GRU),3,2002,Lethal Weapon 3 (1992),Action|Comedy|Crime|Drama,1992,2.3269262
+4204,M,35,ICSRec (GRU),4,587,Ghost (1990),Comedy|Romance|Thriller,1990,2.320109
+4204,M,35,ICSRec (GRU),5,1544,"Lost World: Jurassic Park, The (1997)",Action|Adventure|Sci-Fi|Thriller,1997,2.3152218
+4204,M,35,ICSRec (GRU),6,1917,Armageddon (1998),Action|Adventure|Sci-Fi|Thriller,1998,2.2490551
+4204,M,35,ICSRec (GRU),7,2617,"Mummy, The (1999)",Action|Adventure|Horror|Thriller,1999,2.2385266
+4204,M,35,ICSRec (GRU),8,1876,Deep Impact (1998),Action|Drama|Sci-Fi|Thriller,1998,2.2103548
+4204,M,35,ICSRec (GRU),9,648,Mission: Impossible (1996),Action|Adventure|Mystery,1996,2.1705418
+4204,M,35,ICSRec (GRU),10,1552,Con Air (1997),Action|Adventure|Thriller,1997,2.1689496
+4330,F,45,ItemKNN,1,1952,Midnight Cowboy (1969),Drama,1969,2.3724437
+4330,F,45,ItemKNN,2,1228,Raging Bull (1980),Drama,1980,2.0900278
+4330,F,45,ItemKNN,3,1208,Apocalypse Now (1979),Drama|War,1979,2.0303888
+4330,F,45,ItemKNN,4,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,1.9738338
+4330,F,45,ItemKNN,5,1244,Manhattan (1979),Comedy|Drama|Romance,1979,1.951901
+4330,F,45,ItemKNN,6,3359,Breaking Away (1979),Drama,1979,1.8742812
+4330,F,45,ItemKNN,7,1247,"Graduate, The (1967)",Drama|Romance,1967,1.8472264
+4330,F,45,ItemKNN,8,1225,Amadeus (1984),Drama,1984,1.812159
+4330,F,45,ItemKNN,9,1945,On the Waterfront (1954),Crime|Drama,1954,1.800031
+4330,F,45,ItemKNN,10,3504,Network (1976),Comedy|Drama,1976,1.7798756
+4330,F,45,LightFM-BPR,1,920,Gone with the Wind (1939),Drama|Romance|War,1939,7.3948197
+4330,F,45,LightFM-BPR,2,1247,"Graduate, The (1967)",Drama|Romance,1967,7.2531385
+4330,F,45,LightFM-BPR,3,902,Breakfast at Tiffany's (1961),Drama|Romance,1961,7.1841354
+4330,F,45,LightFM-BPR,4,1674,Witness (1985),Drama|Romance|Thriller,1985,7.0499773
+4330,F,45,LightFM-BPR,5,2396,Shakespeare in Love (1998),Comedy|Romance,1998,6.935813
+4330,F,45,LightFM-BPR,6,17,Sense and Sensibility (1995),Drama|Romance,1995,6.754871
+4330,F,45,LightFM-BPR,7,2858,American Beauty (1999),Comedy|Drama,1999,6.697342
+4330,F,45,LightFM-BPR,8,1230,Annie Hall (1977),Comedy|Romance,1977,6.68777
+4330,F,45,LightFM-BPR,9,2243,Broadcast News (1987),Comedy|Drama|Romance,1987,6.6612296
+4330,F,45,LightFM-BPR,10,2291,Edward Scissorhands (1990),Drama|Romance,1990,6.5281205
+4330,F,45,ICSRec (GRU),1,608,Fargo (1996),Crime|Drama|Thriller,1996,3.866055
+4330,F,45,ICSRec (GRU),2,527,Schindler's List (1993),Drama|War,1993,3.7549162
+4330,F,45,ICSRec (GRU),3,2858,American Beauty (1999),Comedy|Drama,1999,3.609333
+4330,F,45,ICSRec (GRU),4,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,3.5266154
+4330,F,45,ICSRec (GRU),5,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,3.4987438
+4330,F,45,ICSRec (GRU),6,296,Pulp Fiction (1994),Crime|Drama,1994,3.410768
+4330,F,45,ICSRec (GRU),7,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,3.361918
+4330,F,45,ICSRec (GRU),8,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,3.3585703
+4330,F,45,ICSRec (GRU),9,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,3.3511367
+4330,F,45,ICSRec (GRU),10,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,3.1623065
+4439,M,35,ItemKNN,1,2683,Austin Powers: The Spy Who Shagged Me (1999),Comedy,1999,2.1582403
+4439,M,35,ItemKNN,2,223,Clerks (1994),Comedy,1994,2.1142282
+4439,M,35,ItemKNN,3,1197,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,1987,2.0985308
+4439,M,35,ItemKNN,4,2987,Who Framed Roger Rabbit? (1988),Adventure|Animation|Film-Noir,1988,2.0914328
+4439,M,35,ItemKNN,5,1,Toy Story (1995),Animation|Children's|Comedy,1995,1.9928677
+4439,M,35,ItemKNN,6,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,1.9876312
+4439,M,35,ItemKNN,7,2706,American Pie (1999),Comedy,1999,1.9789371
+4439,M,35,ItemKNN,8,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,1.9533145
+4439,M,35,ItemKNN,9,2918,Ferris Bueller's Day Off (1986),Comedy,1986,1.9453509
+4439,M,35,ItemKNN,10,2797,Big (1988),Comedy|Fantasy,1988,1.9243019
+4439,M,35,LightFM-BPR,1,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,7.1815596
+4439,M,35,LightFM-BPR,2,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,7.1254597
+4439,M,35,LightFM-BPR,3,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,7.0539494
+4439,M,35,LightFM-BPR,4,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,6.992947
+4439,M,35,LightFM-BPR,5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,6.9280224
+4439,M,35,LightFM-BPR,6,356,Forrest Gump (1994),Comedy|Romance|War,1994,6.711884
+4439,M,35,LightFM-BPR,7,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,6.6773043
+4439,M,35,LightFM-BPR,8,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,6.647043
+4439,M,35,LightFM-BPR,9,858,"Godfather, The (1972)",Action|Crime|Drama,1972,6.5386705
+4439,M,35,LightFM-BPR,10,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,6.5088425
+4439,M,35,ICSRec (GRU),1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,3.3718781
+4439,M,35,ICSRec (GRU),2,527,Schindler's List (1993),Drama|War,1993,3.231142
+4439,M,35,ICSRec (GRU),3,608,Fargo (1996),Crime|Drama|Thriller,1996,3.1965277
+4439,M,35,ICSRec (GRU),4,318,"Shawshank Redemption, The (1994)",Drama,1994,3.1886866
+4439,M,35,ICSRec (GRU),5,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,3.1459956
+4439,M,35,ICSRec (GRU),6,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,3.0053515
+4439,M,35,ICSRec (GRU),7,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,2.9600155
+4439,M,35,ICSRec (GRU),8,50,"Usual Suspects, The (1995)",Crime|Thriller,1995,2.932764
+4439,M,35,ICSRec (GRU),9,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,2.8672705
+4439,M,35,ICSRec (GRU),10,912,Casablanca (1942),Drama|Romance|War,1942,2.821839
+4593,F,45,ItemKNN,1,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,7.015806
+4593,F,45,ItemKNN,2,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,6.9338036
+4593,F,45,ItemKNN,3,58,"Postino, Il (The Postman) (1994)",Drama|Romance,1994,6.8226037
+4593,F,45,ItemKNN,4,2289,"Player, The (1992)",Comedy|Drama,1992,6.5059476
+4593,F,45,ItemKNN,5,994,Big Night (1996),Drama,1996,6.3437448
+4593,F,45,ItemKNN,6,1041,Secrets & Lies (1996),Drama,1996,6.3096004
+4593,F,45,ItemKNN,7,2020,Dangerous Liaisons (1988),Drama|Romance,1988,6.1947865
+4593,F,45,ItemKNN,8,314,"Secret of Roan Inish, The (1994)",Drama,1994,6.056139
+4593,F,45,ItemKNN,9,1185,My Left Foot (1989),Drama,1989,6.0554833
+4593,F,45,ItemKNN,10,912,Casablanca (1942),Drama|Romance|War,1942,5.9858932
+4593,F,45,LightFM-BPR,1,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,5.9357266
+4593,F,45,LightFM-BPR,2,232,Eat Drink Man Woman (1994),Comedy|Drama,1994,5.827055
+4593,F,45,LightFM-BPR,3,3148,"Cider House Rules, The (1999)",Drama,1999,5.796649
+4593,F,45,LightFM-BPR,4,58,"Postino, Il (The Postman) (1994)",Drama|Romance,1994,5.750594
+4593,F,45,LightFM-BPR,5,314,"Secret of Roan Inish, The (1994)",Drama,1994,5.5955124
+4593,F,45,LightFM-BPR,6,1041,Secrets & Lies (1996),Drama,1996,5.5835915
+4593,F,45,LightFM-BPR,7,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,5.5093904
+4593,F,45,LightFM-BPR,8,1961,Rain Man (1988),Drama,1988,5.443012
+4593,F,45,LightFM-BPR,9,1959,Out of Africa (1985),Drama|Romance,1985,5.4314637
+4593,F,45,LightFM-BPR,10,1185,My Left Foot (1989),Drama,1989,5.389705
+4593,F,45,ICSRec (GRU),1,858,"Godfather, The (1972)",Action|Crime|Drama,1972,2.4633641
+4593,F,45,ICSRec (GRU),2,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.4575248
+4593,F,45,ICSRec (GRU),3,1,Toy Story (1995),Animation|Children's|Comedy,1995,2.380352
+4593,F,45,ICSRec (GRU),4,2716,Ghostbusters (1984),Comedy|Horror,1984,2.2725072
+4593,F,45,ICSRec (GRU),5,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,2.169701
+4593,F,45,ICSRec (GRU),6,2959,Fight Club (1999),Drama,1999,2.0671604
+4593,F,45,ICSRec (GRU),7,1259,Stand by Me (1986),Adventure|Comedy|Drama,1986,2.059269
+4593,F,45,ICSRec (GRU),8,1196,Star Wars: Episode V - The Empire Strikes Back (1980),Action|Adventure|Drama|Sci-Fi|War,1980,2.0305605
+4593,F,45,ICSRec (GRU),9,1136,Monty Python and the Holy Grail (1974),Comedy,1974,2.0234644
+4593,F,45,ICSRec (GRU),10,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,2.0118582
+4661,M,45,ItemKNN,1,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,23.3792
+4661,M,45,ItemKNN,2,1222,Full Metal Jacket (1987),Action|Drama|War,1987,22.542759
+4661,M,45,ItemKNN,3,527,Schindler's List (1993),Drama|War,1993,17.91268
+4661,M,45,ItemKNN,4,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,17.368912
+4661,M,45,ItemKNN,5,1220,"Blues Brothers, The (1980)",Action|Comedy|Musical,1980,16.861326
+4661,M,45,ItemKNN,6,296,Pulp Fiction (1994),Crime|Drama,1994,16.166634
+4661,M,45,ItemKNN,7,2871,Deliverance (1972),Adventure|Thriller,1972,15.676881
+4661,M,45,ItemKNN,8,1276,Cool Hand Luke (1967),Comedy|Drama,1967,15.57028
+4661,M,45,ItemKNN,9,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,15.511305
+4661,M,45,ItemKNN,10,1234,"Sting, The (1973)",Comedy|Crime,1973,15.285694
+4661,M,45,LightFM-BPR,1,1222,Full Metal Jacket (1987),Action|Drama|War,1987,8.181958
+4661,M,45,LightFM-BPR,2,1221,"Godfather: Part II, The (1974)",Action|Crime|Drama,1974,8.014875
+4661,M,45,LightFM-BPR,3,1129,Escape from New York (1981),Action|Adventure|Sci-Fi|Thriller,1981,7.86983
+4661,M,45,LightFM-BPR,4,3671,Blazing Saddles (1974),Comedy|Western,1974,7.8032765
+4661,M,45,LightFM-BPR,5,1356,Star Trek: First Contact (1996),Action|Adventure|Sci-Fi,1996,7.390264
+4661,M,45,LightFM-BPR,6,1376,Star Trek IV: The Voyage Home (1986),Action|Adventure|Sci-Fi,1986,7.234122
+4661,M,45,LightFM-BPR,7,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,7.2310896
+4661,M,45,LightFM-BPR,8,2366,King Kong (1933),Action|Adventure|Horror,1933,7.1972404
+4661,M,45,LightFM-BPR,9,3494,True Grit (1969),Adventure|Western,1969,7.0481553
+4661,M,45,LightFM-BPR,10,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,7.0092483
+4661,M,45,ICSRec (GRU),1,1356,Star Trek: First Contact (1996),Action|Adventure|Sci-Fi,1996,3.4681146
+4661,M,45,ICSRec (GRU),2,1573,Face/Off (1997),Action|Sci-Fi|Thriller,1997,3.288957
+4661,M,45,ICSRec (GRU),3,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,3.2688193
+4661,M,45,ICSRec (GRU),4,1376,Star Trek IV: The Voyage Home (1986),Action|Adventure|Sci-Fi,1986,2.8775427
+4661,M,45,ICSRec (GRU),5,1275,Highlander (1986),Action|Adventure,1986,2.8356547
+4661,M,45,ICSRec (GRU),6,1653,Gattaca (1997),Drama|Sci-Fi|Thriller,1997,2.7941022
+4661,M,45,ICSRec (GRU),7,2640,Superman (1978),Action|Adventure|Sci-Fi,1978,2.7838035
+4661,M,45,ICSRec (GRU),8,1129,Escape from New York (1981),Action|Adventure|Sci-Fi|Thriller,1981,2.7452137
+4661,M,45,ICSRec (GRU),9,1396,Sneakers (1992),Crime|Drama|Sci-Fi,1992,2.7352386
+4661,M,45,ICSRec (GRU),10,1372,Star Trek VI: The Undiscovered Country (1991),Action|Adventure|Sci-Fi,1991,2.6819506
+4745,F,18,ItemKNN,1,318,"Shawshank Redemption, The (1994)",Drama,1994,11.027426
+4745,F,18,ItemKNN,2,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,10.429963
+4745,F,18,ItemKNN,3,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,10.271516
+4745,F,18,ItemKNN,4,608,Fargo (1996),Crime|Drama|Thriller,1996,9.778952
+4745,F,18,ItemKNN,5,2028,Saving Private Ryan (1998),Action|Drama|War,1998,9.508404
+4745,F,18,ItemKNN,6,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,9.1237755
+4745,F,18,ItemKNN,7,1265,Groundhog Day (1993),Comedy|Romance,1993,9.064639
+4745,F,18,ItemKNN,8,858,"Godfather, The (1972)",Action|Crime|Drama,1972,9.001522
+4745,F,18,ItemKNN,9,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,8.98883
+4745,F,18,ItemKNN,10,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama,1997,8.912361
+4745,F,18,LightFM-BPR,1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,8.310594
+4745,F,18,LightFM-BPR,2,2762,"Sixth Sense, The (1999)",Thriller,1999,8.088538
+4745,F,18,LightFM-BPR,3,110,Braveheart (1995),Action|Drama|War,1995,7.6403756
+4745,F,18,LightFM-BPR,4,1580,Men in Black (1997),Action|Adventure|Comedy|Sci-Fi,1997,7.628198
+4745,F,18,LightFM-BPR,5,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,7.6022468
+4745,F,18,LightFM-BPR,6,356,Forrest Gump (1994),Comedy|Romance|War,1994,7.5884943
+4745,F,18,LightFM-BPR,7,318,"Shawshank Redemption, The (1994)",Drama,1994,7.5441537
+4745,F,18,LightFM-BPR,8,733,"Rock, The (1996)",Action|Adventure|Thriller,1996,7.3716555
+4745,F,18,LightFM-BPR,9,1097,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,1982,7.2779417
+4745,F,18,LightFM-BPR,10,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,7.1569557
+4745,F,18,ICSRec (GRU),1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,3.3503342
+4745,F,18,ICSRec (GRU),2,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi|Thriller,1991,3.0469463
+4745,F,18,ICSRec (GRU),3,2028,Saving Private Ryan (1998),Action|Drama|War,1998,2.9070783
+4745,F,18,ICSRec (GRU),4,1610,"Hunt for Red October, The (1990)",Action|Thriller,1990,2.9061496
+4745,F,18,ICSRec (GRU),5,1265,Groundhog Day (1993),Comedy|Romance,1993,2.873822
+4745,F,18,ICSRec (GRU),6,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,2.8231263
+4745,F,18,ICSRec (GRU),7,457,"Fugitive, The (1993)",Action|Thriller,1993,2.8212001
+4745,F,18,ICSRec (GRU),8,110,Braveheart (1995),Action|Drama|War,1995,2.7895749
+4745,F,18,ICSRec (GRU),9,1240,"Terminator, The (1984)",Action|Sci-Fi|Thriller,1984,2.679996
+4745,F,18,ICSRec (GRU),10,356,Forrest Gump (1994),Comedy|Romance|War,1994,2.66389
+5072,M,45,ItemKNN,1,1200,Aliens (1986),Action|Sci-Fi|Thriller|War,1986,9.447884
+5072,M,45,ItemKNN,2,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,8.725472
+5072,M,45,ItemKNN,3,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,8.611557
+5072,M,45,ItemKNN,4,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,8.466101
+5072,M,45,ItemKNN,5,1375,Star Trek III: The Search for Spock (1984),Action|Adventure|Sci-Fi,1984,8.376971
+5072,M,45,ItemKNN,6,329,Star Trek: Generations (1994),Action|Adventure|Sci-Fi,1994,8.156976
+5072,M,45,ItemKNN,7,1291,Indiana Jones and the Last Crusade (1989),Action|Adventure,1989,8.146098
+5072,M,45,ItemKNN,8,1036,Die Hard (1988),Action|Thriller,1988,8.124385
+5072,M,45,ItemKNN,9,1372,Star Trek VI: The Undiscovered Country (1991),Action|Adventure|Sci-Fi,1991,7.9839907
+5072,M,45,ItemKNN,10,1527,"Fifth Element, The (1997)",Action|Sci-Fi,1997,7.982225
+5072,M,45,LightFM-BPR,1,3175,Galaxy Quest (1999),Adventure|Comedy|Sci-Fi,1999,8.593888
+5072,M,45,LightFM-BPR,2,541,Blade Runner (1982),Film-Noir|Sci-Fi,1982,7.815296
+5072,M,45,LightFM-BPR,3,480,Jurassic Park (1993),Action|Adventure|Sci-Fi,1993,7.5271926
+5072,M,45,LightFM-BPR,4,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,7.2736506
+5072,M,45,LightFM-BPR,5,1,Toy Story (1995),Animation|Children's|Comedy,1995,7.1085973
+5072,M,45,LightFM-BPR,6,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,7.100437
+5072,M,45,LightFM-BPR,7,1584,Contact (1997),Drama|Sci-Fi,1997,7.053225
+5072,M,45,LightFM-BPR,8,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,6.913642
+5072,M,45,LightFM-BPR,9,1077,Sleeper (1973),Comedy|Sci-Fi,1973,6.72778
+5072,M,45,LightFM-BPR,10,2396,Shakespeare in Love (1998),Comedy|Romance,1998,6.6828322
+5072,M,45,ICSRec (GRU),1,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,1999,3.5390508
+5072,M,45,ICSRec (GRU),2,1265,Groundhog Day (1993),Comedy|Romance,1993,3.3113635
+5072,M,45,ICSRec (GRU),3,2028,Saving Private Ryan (1998),Action|Drama|War,1998,3.2709284
+5072,M,45,ICSRec (GRU),4,1259,Stand by Me (1986),Adventure|Comedy|Drama,1986,3.1673946
+5072,M,45,ICSRec (GRU),5,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,3.1615458
+5072,M,45,ICSRec (GRU),6,457,"Fugitive, The (1993)",Action|Thriller,1993,3.1311173
+5072,M,45,ICSRec (GRU),7,110,Braveheart (1995),Action|Drama|War,1995,3.077931
+5072,M,45,ICSRec (GRU),8,2396,Shakespeare in Love (1998),Comedy|Romance,1998,3.0704048
+5072,M,45,ICSRec (GRU),9,1307,When Harry Met Sally... (1989),Comedy|Romance,1989,3.0701551
+5072,M,45,ICSRec (GRU),10,1291,Indiana Jones and the Last Crusade (1989),Action|Adventure,1989,3.005178
+5174,M,45,ItemKNN,1,2966,"Straight Story, The (1999)",Drama,1999,1.4761645
+5174,M,45,ItemKNN,2,1719,"Sweet Hereafter, The (1997)",Drama,1997,1.3087115
+5174,M,45,ItemKNN,3,3083,All About My Mother (Todo Sobre Mi Madre) (1999),Comedy|Drama,1999,1.3077269
+5174,M,45,ItemKNN,4,162,Crumb (1994),Documentary,1994,1.2546082
+5174,M,45,ItemKNN,5,1916,Buffalo 66 (1998),Action|Comedy|Drama,1998,1.2532359
+5174,M,45,ItemKNN,6,562,Welcome to the Dollhouse (1995),Comedy|Drama,1995,1.2151836
+5174,M,45,ItemKNN,7,2442,Hilary and Jackie (1998),Drama,1998,1.2126077
+5174,M,45,ItemKNN,8,2858,American Beauty (1999),Comedy|Drama,1999,1.1996855
+5174,M,45,ItemKNN,9,2692,Run Lola Run (Lola rennt) (1998),Action|Crime|Romance,1998,1.1591048
+5174,M,45,ItemKNN,10,994,Big Night (1996),Drama,1996,1.1536934
+5174,M,45,LightFM-BPR,1,318,"Shawshank Redemption, The (1994)",Drama,1994,6.2706456
+5174,M,45,LightFM-BPR,2,2028,Saving Private Ryan (1998),Action|Drama|War,1998,6.2449117
+5174,M,45,LightFM-BPR,3,608,Fargo (1996),Crime|Drama|Thriller,1996,6.1247773
+5174,M,45,LightFM-BPR,4,527,Schindler's List (1993),Drama|War,1993,6.030598
+5174,M,45,LightFM-BPR,5,2858,American Beauty (1999),Comedy|Drama,1999,5.854688
+5174,M,45,LightFM-BPR,6,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1997,5.7683487
+5174,M,45,LightFM-BPR,7,593,"Silence of the Lambs, The (1991)",Drama|Thriller,1991,5.669165
+5174,M,45,LightFM-BPR,8,1358,Sling Blade (1996),Drama|Thriller,1996,5.527041
+5174,M,45,LightFM-BPR,9,2762,"Sixth Sense, The (1999)",Thriller,1999,5.5226736
+5174,M,45,LightFM-BPR,10,590,Dances with Wolves (1990),Adventure|Drama|Western,1990,5.503058
+5174,M,45,ICSRec (GRU),1,2858,American Beauty (1999),Comedy|Drama,1999,2.5895617
+5174,M,45,ICSRec (GRU),2,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.1614954
+5174,M,45,ICSRec (GRU),3,3408,Erin Brockovich (2000),Drama,2000,2.1266747
+5174,M,45,ICSRec (GRU),4,3578,Gladiator (2000),Action|Drama,2000,2.0972114
+5174,M,45,ICSRec (GRU),5,2762,"Sixth Sense, The (1999)",Thriller,1999,2.0430307
+5174,M,45,ICSRec (GRU),6,2959,Fight Club (1999),Drama,1999,2.0381842
+5174,M,45,ICSRec (GRU),7,2716,Ghostbusters (1984),Comedy|Horror,1984,2.0372887
+5174,M,45,ICSRec (GRU),8,2396,Shakespeare in Love (1998),Comedy|Romance,1998,2.0125272
+5174,M,45,ICSRec (GRU),9,223,Clerks (1994),Comedy,1994,1.92853
+5174,M,45,ICSRec (GRU),10,2599,Election (1999),Comedy,1999,1.9266559
+5885,M,25,ItemKNN,1,527,Schindler's List (1993),Drama|War,1993,13.166784
+5885,M,25,ItemKNN,2,318,"Shawshank Redemption, The (1994)",Drama,1994,12.489797
+5885,M,25,ItemKNN,3,296,Pulp Fiction (1994),Crime|Drama,1994,12.166139
+5885,M,25,ItemKNN,4,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,11.089762
+5885,M,25,ItemKNN,5,1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975,11.050391
+5885,M,25,ItemKNN,6,1198,Raiders of the Lost Ark (1981),Action|Adventure,1981,9.942229
+5885,M,25,ItemKNN,7,919,"Wizard of Oz, The (1939)",Adventure|Children's|Drama|Musical,1939,9.88111
+5885,M,25,ItemKNN,8,1208,Apocalypse Now (1979),Drama|War,1979,9.799065
+5885,M,25,ItemKNN,9,1214,Alien (1979),Action|Horror|Sci-Fi|Thriller,1979,9.763218
+5885,M,25,ItemKNN,10,32,Twelve Monkeys (1995),Drama|Sci-Fi,1995,9.6857395
+5885,M,25,LightFM-BPR,1,1252,Chinatown (1974),Film-Noir|Mystery|Thriller,1974,7.8590093
+5885,M,25,LightFM-BPR,2,296,Pulp Fiction (1994),Crime|Drama,1994,7.366875
+5885,M,25,LightFM-BPR,3,1732,"Big Lebowski, The (1998)",Comedy|Crime|Mystery|Thriller,1998,6.984039
+5885,M,25,LightFM-BPR,4,318,"Shawshank Redemption, The (1994)",Drama,1994,6.9567847
+5885,M,25,LightFM-BPR,5,3176,"Talented Mr. Ripley, The (1999)",Drama|Mystery|Thriller,1999,6.872534
+5885,M,25,LightFM-BPR,6,47,Seven (Se7en) (1995),Crime|Thriller,1995,6.8451276
+5885,M,25,LightFM-BPR,7,293,"Professional, The (a.k.a. Leon: The Professional) (1994)",Crime|Drama|Romance|Thriller,1994,6.794348
+5885,M,25,LightFM-BPR,8,866,Bound (1996),Crime|Drama|Romance|Thriller,1996,6.66203
+5885,M,25,LightFM-BPR,9,1625,"Game, The (1997)",Mystery|Thriller,1997,6.6443477
+5885,M,25,LightFM-BPR,10,1267,"Manchurian Candidate, The (1962)",Film-Noir|Thriller,1962,6.5912585
+5885,M,25,ICSRec (GRU),1,3408,Erin Brockovich (2000),Drama,2000,2.5002851
+5885,M,25,ICSRec (GRU),2,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,1977,2.4626374
+5885,M,25,ICSRec (GRU),3,3793,X-Men (2000),Action|Sci-Fi,2000,2.3712382
+5885,M,25,ICSRec (GRU),4,2683,Austin Powers: The Spy Who Shagged Me (1999),Comedy,1999,2.2952995
+5885,M,25,ICSRec (GRU),5,2355,"Bug's Life, A (1998)",Animation|Children's|Comedy,1998,2.270688
+5885,M,25,ICSRec (GRU),6,318,"Shawshank Redemption, The (1994)",Drama,1994,2.213715
+5885,M,25,ICSRec (GRU),7,2706,American Pie (1999),Comedy,1999,2.169609
+5885,M,25,ICSRec (GRU),8,2716,Ghostbusters (1984),Comedy|Horror,1984,2.126739
+5885,M,25,ICSRec (GRU),9,3081,Sleepy Hollow (1999),Horror|Romance,1999,2.1007645
+5885,M,25,ICSRec (GRU),10,527,Schindler's List (1993),Drama|War,1993,2.093783

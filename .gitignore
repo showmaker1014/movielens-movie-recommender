@@ -26,3 +26,6 @@ __pycache__/
 .chart-data-*/
 
 
+
+# Isolated smoke-test outputs.
+.smoke/

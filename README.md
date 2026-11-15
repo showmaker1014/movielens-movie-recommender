@@ -45,6 +45,7 @@ pip install -r requirements.txt
 
 python scripts/prepare_data.py --download
 python scripts/train_models.py
+python scripts/verify_project.py
 python scripts/build_report.py
 streamlit run app.py
 ```
@@ -145,3 +146,13 @@ terms and is not covered by this license.
 ## Optimized algorithm setup
 
 No pretrained checkpoint is used. LightFM includes weighted feature biases and uses BPR+Adam rather than the original logistic/Adagrad experiment. ICSRec retains all training transitions before windowing each prefix to 50 items; CPU budgets are 30000 training prefixes and 10000 clustering prefixes per epoch, sampled anew. GRU, CPU KMeans, singleton-pair handling and these caps are disclosed adaptations. Old checkpoints must be regenerated. Product examples rank the full catalog and exclude all observed ratings.
+
+## Additional documentation
+
+- [Installation and verification runbook](docs/runbook.md)
+- [Algorithm reproduction and evaluation assumptions](docs/reproduction_notes.md)
+- [Course submission checklist](docs/submission_checklist.md)
+- [Five-minute presentation script](docs/presentation_script.md)
+- [Review of the supplied 24-page presentation PDF](docs/presentation_review.md)
+
+Lecture provenance and team/Canvas actions require confirmation from actual course records; no lecture page or group member has been invented. The uploaded 24-page PDF contains old results and must not replace the corrected short deck unchanged.
