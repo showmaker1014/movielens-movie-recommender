@@ -11,3 +11,7 @@ Each step is validated, committed separately, and pushed to the configured GitHu
 - Add regression tests for metric denominators, rank-11 positives, and all-equal scores.
 
 Existing result tables and presentation numbers predate these fixes; they will be replaced after the model and data corrections in the final experiment step.
+
+## Step 2 — Metadata and dependencies
+
+Remove duplicate year features, handle constant ages, retain complete sequences and declare reportlab. Validate unique feature names and finite standardized features.

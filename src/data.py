@@ -182,7 +182,7 @@ def build_side_features(
     """Create standardized user and multi-hot item metadata features."""
     user_frame = users.copy()
     age_mean = user_frame["age"].mean()
-    age_std = user_frame["age"].std(ddof=0)
+    age_std = max(float(user_frame["age"].std(ddof=0)), 1.0)
     user_frame["age_standardized"] = (user_frame["age"] - age_mean) / age_std
     gender = pd.get_dummies(user_frame["gender"], prefix="gender", dtype=np.float32)
     occupation = pd.get_dummies(
@@ -199,7 +199,7 @@ def build_side_features(
     movie_frame["year_standardized"] = (
         movie_frame["release_year"] - year_mean
     ) / year_std
-    excluded = {"movie_id", "title", "genres", "decade", "release_year"}
+    excluded = {"movie_id", "title", "genres", "decade", "release_year", "year_standardized"}
     genre_cols = [c for c in movie_frame.columns if c not in excluded and movie_frame[c].dtype != "O"]
     item_features = np.column_stack(
         [
@@ -281,7 +281,7 @@ def sequences_from_frame(
     frame: pd.DataFrame,
     user_ids: np.ndarray,
     movie_to_idx: dict[int, int],
-    max_length: int,
+    max_length: int | None,
 ) -> list[np.ndarray]:
     """Return chronological positive-item sequences in internal item-index space."""
     source = frame.sort_values(["user_id", "timestamp", "movie_id"])
@@ -296,7 +296,7 @@ def sequences_from_frame(
             sequences.append(np.array([], dtype=np.int64))
             continue
         values = group["movie_id"].map(movie_to_idx).to_numpy(dtype=np.int64)
-        sequences.append(values[-max_length:])
+        sequences.append(values if max_length is None else values[-max_length:])
     return sequences
 
 
